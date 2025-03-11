@@ -167,6 +167,24 @@ TextureImporter:
   - first:
       213: 7699168269064032455
     second: ajolote_54
+  - first:
+      213: -6582833192504336897
+    second: ajolote_55
+  - first:
+      213: -2522457927734417757
+    second: ajolote_56
+  - first:
+      213: -2146106710349582162
+    second: ajolote_57
+  - first:
+      213: -7394845717680746270
+    second: ajolote_58
+  - first:
+      213: -1687270368831660601
+    second: ajolote_59
+  - first:
+      213: 8601310995666946330
+    second: ajolote_60
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -305,9 +323,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 99
-        y: 2559
-        width: 442
-        height: 482
+        y: 2584
+        width: 517
+        height: 457
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,9 +345,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 739
-        y: 2601
-        width: 442
-        height: 440
+        y: 2551
+        width: 472
+        height: 510
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,10 +366,10 @@ TextureImporter:
       name: ajolote_2
       rect:
         serializedVersion: 2
-        x: 1354
-        y: 2542
-        width: 502
-        height: 573
+        x: 1379
+        y: 2601
+        width: 486
+        height: 440
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +388,10 @@ TextureImporter:
       name: ajolote_3
       rect:
         serializedVersion: 2
-        x: 2013
-        y: 2576
-        width: 448
-        height: 465
+        x: 2019
+        y: 2592
+        width: 474
+        height: 449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,9 +411,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2659
-        y: 2551
-        width: 442
-        height: 490
+        y: 2592
+        width: 471
+        height: 449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,7 +476,7 @@ TextureImporter:
       name: ajolote_7
       rect:
         serializedVersion: 2
-        x: 979
+        x: 899
         y: 2639
         width: 42
         height: 42
@@ -480,7 +498,7 @@ TextureImporter:
       name: ajolote_8
       rect:
         serializedVersion: 2
-        x: 1619
+        x: 979
         y: 2639
         width: 42
         height: 42
@@ -502,7 +520,7 @@ TextureImporter:
       name: ajolote_9
       rect:
         serializedVersion: 2
-        x: 2259
+        x: 1539
         y: 2639
         width: 42
         height: 42
@@ -524,7 +542,7 @@ TextureImporter:
       name: ajolote_10
       rect:
         serializedVersion: 2
-        x: 2819
+        x: 1619
         y: 2639
         width: 42
         height: 42
@@ -546,10 +564,10 @@ TextureImporter:
       name: ajolote_11
       rect:
         serializedVersion: 2
-        x: 99
-        y: 1931
-        width: 442
-        height: 470
+        x: 2259
+        y: 2639
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -568,10 +586,10 @@ TextureImporter:
       name: ajolote_12
       rect:
         serializedVersion: 2
-        x: 739
-        y: 1964
-        width: 442
-        height: 437
+        x: 2899
+        y: 2639
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,10 +608,10 @@ TextureImporter:
       name: ajolote_13
       rect:
         serializedVersion: 2
-        x: 1499
-        y: 1931
-        width: 258
-        height: 430
+        x: 99
+        y: 1947
+        width: 467
+        height: 454
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -612,10 +630,10 @@ TextureImporter:
       name: ajolote_14
       rect:
         serializedVersion: 2
-        x: 2139
-        y: 1873
-        width: 238
-        height: 488
+        x: 739
+        y: 1914
+        width: 489
+        height: 487
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -634,10 +652,10 @@ TextureImporter:
       name: ajolote_15
       rect:
         serializedVersion: 2
-        x: 2779
-        y: 1873
-        width: 309
-        height: 488
+        x: 1379
+        y: 1980
+        width: 469
+        height: 421
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,10 +674,10 @@ TextureImporter:
       name: ajolote_16
       rect:
         serializedVersion: 2
-        x: 259
-        y: 1999
-        width: 42
-        height: 42
+        x: 2019
+        y: 1947
+        width: 499
+        height: 454
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -678,10 +696,10 @@ TextureImporter:
       name: ajolote_17
       rect:
         serializedVersion: 2
-        x: 899
-        y: 1999
-        width: 42
-        height: 42
+        x: 2779
+        y: 1956
+        width: 301
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -700,7 +718,7 @@ TextureImporter:
       name: ajolote_18
       rect:
         serializedVersion: 2
-        x: 979
+        x: 339
         y: 1999
         width: 42
         height: 42
@@ -722,9 +740,9 @@ TextureImporter:
       name: ajolote_19
       rect:
         serializedVersion: 2
-        x: 1579
+        x: 899
         y: 1999
-        width: 62
+        width: 42
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -744,7 +762,7 @@ TextureImporter:
       name: ajolote_20
       rect:
         serializedVersion: 2
-        x: 2199
+        x: 1539
         y: 1999
         width: 42
         height: 42
@@ -766,7 +784,7 @@ TextureImporter:
       name: ajolote_21
       rect:
         serializedVersion: 2
-        x: 2259
+        x: 2179
         y: 1999
         width: 42
         height: 42
@@ -788,7 +806,7 @@ TextureImporter:
       name: ajolote_22
       rect:
         serializedVersion: 2
-        x: 2799
+        x: 2259
         y: 1999
         width: 42
         height: 42
@@ -810,9 +828,9 @@ TextureImporter:
       name: ajolote_23
       rect:
         serializedVersion: 2
-        x: 2919
+        x: 2859
         y: 1999
-        width: 42
+        width: 62
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -833,9 +851,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 219
-        y: 1286
-        width: 306
-        height: 435
+        y: 1344
+        width: 281
+        height: 377
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -854,10 +872,10 @@ TextureImporter:
       name: ajolote_25
       rect:
         serializedVersion: 2
-        x: 706
-        y: 1294
-        width: 514
-        height: 467
+        x: 859
+        y: 1311
+        width: 270
+        height: 410
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -876,10 +894,10 @@ TextureImporter:
       name: ajolote_26
       rect:
         serializedVersion: 2
-        x: 1379
-        y: 1302
-        width: 486
-        height: 459
+        x: 1499
+        y: 1319
+        width: 258
+        height: 402
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -899,9 +917,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2019
-        y: 1269
-        width: 491
-        height: 492
+        y: 1302
+        width: 474
+        height: 459
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -921,9 +939,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2659
-        y: 1228
-        width: 462
-        height: 533
+        y: 1286
+        width: 487
+        height: 475
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -942,9 +960,9 @@ TextureImporter:
       name: ajolote_29
       rect:
         serializedVersion: 2
-        x: 299
+        x: 279
         y: 1359
-        width: 62
+        width: 42
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -964,7 +982,7 @@ TextureImporter:
       name: ajolote_30
       rect:
         serializedVersion: 2
-        x: 899
+        x: 339
         y: 1359
         width: 42
         height: 42
@@ -986,7 +1004,7 @@ TextureImporter:
       name: ajolote_31
       rect:
         serializedVersion: 2
-        x: 979
+        x: 879
         y: 1359
         width: 42
         height: 42
@@ -1008,7 +1026,7 @@ TextureImporter:
       name: ajolote_32
       rect:
         serializedVersion: 2
-        x: 1619
+        x: 999
         y: 1359
         width: 42
         height: 42
@@ -1030,9 +1048,9 @@ TextureImporter:
       name: ajolote_33
       rect:
         serializedVersion: 2
-        x: 2259
+        x: 1579
         y: 1359
-        width: 42
+        width: 62
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1052,7 +1070,7 @@ TextureImporter:
       name: ajolote_34
       rect:
         serializedVersion: 2
-        x: 2899
+        x: 2179
         y: 1359
         width: 42
         height: 42
@@ -1074,10 +1092,10 @@ TextureImporter:
       name: ajolote_35
       rect:
         serializedVersion: 2
-        x: 99
-        y: 739
-        width: 442
-        height: 382
+        x: 2259
+        y: 1359
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1096,10 +1114,10 @@ TextureImporter:
       name: ajolote_36
       rect:
         serializedVersion: 2
-        x: 739
-        y: 759
-        width: 442
-        height: 362
+        x: 2899
+        y: 1359
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1118,10 +1136,10 @@ TextureImporter:
       name: ajolote_37
       rect:
         serializedVersion: 2
-        x: 1379
-        y: 779
-        width: 442
-        height: 342
+        x: 99
+        y: 670
+        width: 492
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1140,10 +1158,10 @@ TextureImporter:
       name: ajolote_38
       rect:
         serializedVersion: 2
-        x: 2139
-        y: 779
-        width: 202
-        height: 302
+        x: 739
+        y: 678
+        width: 456
+        height: 443
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1162,10 +1180,10 @@ TextureImporter:
       name: ajolote_39
       rect:
         serializedVersion: 2
-        x: 2779
-        y: 779
-        width: 202
-        height: 302
+        x: 1379
+        y: 653
+        width: 486
+        height: 468
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1184,10 +1202,10 @@ TextureImporter:
       name: ajolote_40
       rect:
         serializedVersion: 2
-        x: 259
-        y: 719
-        width: 42
-        height: 42
+        x: 2019
+        y: 661
+        width: 482
+        height: 460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1206,10 +1224,10 @@ TextureImporter:
       name: ajolote_41
       rect:
         serializedVersion: 2
-        x: 899
-        y: 719
-        width: 42
-        height: 42
+        x: 2659
+        y: 661
+        width: 496
+        height: 460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1228,7 +1246,7 @@ TextureImporter:
       name: ajolote_42
       rect:
         serializedVersion: 2
-        x: 1539
+        x: 339
         y: 719
         width: 42
         height: 42
@@ -1250,7 +1268,7 @@ TextureImporter:
       name: ajolote_43
       rect:
         serializedVersion: 2
-        x: 1619
+        x: 979
         y: 719
         width: 42
         height: 42
@@ -1272,9 +1290,9 @@ TextureImporter:
       name: ajolote_44
       rect:
         serializedVersion: 2
-        x: 2199
+        x: 1539
         y: 719
-        width: 62
+        width: 42
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1294,7 +1312,7 @@ TextureImporter:
       name: ajolote_45
       rect:
         serializedVersion: 2
-        x: 2819
+        x: 2179
         y: 719
         width: 42
         height: 42
@@ -1316,7 +1334,7 @@ TextureImporter:
       name: ajolote_46
       rect:
         serializedVersion: 2
-        x: 2879
+        x: 2819
         y: 719
         width: 42
         height: 42
@@ -1338,10 +1356,10 @@ TextureImporter:
       name: ajolote_47
       rect:
         serializedVersion: 2
-        x: 219
-        y: 139
-        width: 202
-        height: 302
+        x: 2899
+        y: 719
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1360,10 +1378,10 @@ TextureImporter:
       name: ajolote_48
       rect:
         serializedVersion: 2
-        x: 859
-        y: 139
-        width: 202
-        height: 302
+        x: 219
+        y: 58
+        width: 273
+        height: 383
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1382,10 +1400,10 @@ TextureImporter:
       name: ajolote_49
       rect:
         serializedVersion: 2
-        x: 1499
-        y: 139
-        width: 202
-        height: 302
+        x: 859
+        y: 25
+        width: 270
+        height: 416
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1404,10 +1422,10 @@ TextureImporter:
       name: ajolote_50
       rect:
         serializedVersion: 2
-        x: 239
-        y: 79
-        width: 42
-        height: 42
+        x: 1499
+        y: 41
+        width: 316
+        height: 400
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1426,10 +1444,10 @@ TextureImporter:
       name: ajolote_51
       rect:
         serializedVersion: 2
-        x: 359
-        y: 79
-        width: 42
-        height: 42
+        x: 2139
+        y: 58
+        width: 263
+        height: 383
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1448,10 +1466,10 @@ TextureImporter:
       name: ajolote_52
       rect:
         serializedVersion: 2
-        x: 899
-        y: 79
-        width: 42
-        height: 42
+        x: 2779
+        y: 66
+        width: 260
+        height: 375
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1470,9 +1488,9 @@ TextureImporter:
       name: ajolote_53
       rect:
         serializedVersion: 2
-        x: 959
+        x: 279
         y: 79
-        width: 42
+        width: 62
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1492,9 +1510,9 @@ TextureImporter:
       name: ajolote_54
       rect:
         serializedVersion: 2
-        x: 1559
+        x: 899
         y: 79
-        width: 62
+        width: 42
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1510,11 +1528,143 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ajolote_55
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 79
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffdd029b61415a4a0800000000000000
+      internalID: -6582833192504336897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_56
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 79
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6a58811ed6efcd0800000000000000
+      internalID: -2522457927734417757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_57
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 79
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0f787415f7732e0800000000000000
+      internalID: -2146106710349582162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_58
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 79
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e012d4dffa306990800000000000000
+      internalID: -7394845717680746270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_59
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 79
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd1fb10a8c9598e0800000000000000
+      internalID: -1687270368831660601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_60
+      rect:
+        serializedVersion: 2
+        x: 2839
+        y: 79
+        width: 62
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19c36367cefd5770800000000000000
+      internalID: 8601310995666946330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3bba633166c12e84e82ba067ad2b56e2
+    spriteID: 93d68ce4cbb64504696bf70f6730b6f3
     internalID: 0
     vertices: []
     indices: 
@@ -1575,7 +1725,13 @@ TextureImporter:
       ajolote_52: -2612247386051608923
       ajolote_53: 2662458976317254657
       ajolote_54: 7699168269064032455
+      ajolote_55: -6582833192504336897
+      ajolote_56: -2522457927734417757
+      ajolote_57: -2146106710349582162
+      ajolote_58: -7394845717680746270
+      ajolote_59: -1687270368831660601
       ajolote_6: -5238405196713707008
+      ajolote_60: 8601310995666946330
       ajolote_7: -4406545575596407637
       ajolote_8: 2989251428719590961
       ajolote_9: -1734190504908708759
