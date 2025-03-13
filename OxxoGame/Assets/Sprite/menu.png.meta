@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -1438552683215292887
     second: menu_2
+  - first:
+      213: 7903818253674975445
+    second: menu_3
+  - first:
+      213: 2167916245709258091
+    second: menu_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,7 +151,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: elote
       rect:
         serializedVersion: 2
         x: 239
@@ -153,7 +159,7 @@ TextureImporter:
         width: 142
         height: 242
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,15 +173,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_1
+      name: racha
       rect:
         serializedVersion: 2
-        x: 679
-        y: 779
-        width: 542
-        height: 302
+        x: 799
+        y: 859
+        width: 162
+        height: 202
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,23 +195,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_2
+      name: exp
       rect:
         serializedVersion: 2
         x: 159
-        y: 219
-        width: 162
-        height: 202
+        y: 169
+        width: 243
+        height: 284
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9267446d4fb390ce0800000000000000
-      internalID: -1438552683215292887
+      spriteID: b6d7c40e65cf51e10800000000000000
+      internalID: 2167916245709258091
       vertices: []
       indices: 
       edges: []
@@ -214,7 +220,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b9040e5f301f0eb40bec35f4fc1a5a99
     internalID: 0
     vertices: []
     indices: 
@@ -223,7 +229,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      elote: 7042847911465117151
+      exp: 2167916245709258091
+      menu_5: -1123774789
+      racha: 6984307464289580096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
