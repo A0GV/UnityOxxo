@@ -1,46 +1,31 @@
 fileFormatVersion: 2
-guid: 98f7a38d8b3b8dc4184b70e72f4d9449
+guid: f8ebc848807a31245afe6bd01aa2ea50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5607304827812038496
-    second: Ajolote_0
+      213: 3941905351247023770
+    second: ajolote_rosa_0
   - first:
-      213: 5601607473702439196
-    second: Ajolote_1
+      213: -1683848901207795503
+    second: ajolote_rosa_1
   - first:
-      213: 1433186401402022889
-    second: Ajolote_2
+      213: -5700509593567465619
+    second: ajolote_rosa_2
   - first:
-      213: 5155934326398199868
-    second: Ajolote_3
+      213: 4605847285893975570
+    second: ajolote_rosa_3
   - first:
-      213: -1439233121128149990
-    second: Ajolote_4
+      213: 1412497801601273609
+    second: ajolote_rosa_4
   - first:
-      213: -9037918111293916894
-    second: Ajolote_5
+      213: 7452393474406827256
+    second: ajolote_rosa_5
   - first:
-      213: -7706410608980149810
-    second: Ajolote_6
+      213: -2362735429580203652
+    second: ajolote_rosa_6
   - first:
-      213: -4044258531843204439
-    second: Ajolote_7
-  - first:
-      213: 649492461284125302
-    second: Ajolote_8
-  - first:
-      213: -6367320923764104557
-    second: Ajolote_9
-  - first:
-      213: -6662743892537603114
-    second: Ajolote_10
-  - first:
-      213: -6822471358270433568
-    second: Ajolote_11
-  - first:
-      213: 7987675030505195174
-    second: Ajolote_12
+      213: 4015165850646613959
+    second: ajolote_rosa_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,6 +131,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -175,287 +173,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ajolote_0
+      name: ajolote_rosa_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 1308
-        width: 442
-        height: 453
+        x: 129
+        y: 1599
+        width: 652
+        height: 672
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a83ee6c7f9de22b0800000000000000
-      internalID: -5607304827812038496
+      spriteID: a9e4a47280674b630800000000000000
+      internalID: 3941905351247023770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_1
+      name: ajolote_rosa_1
       rect:
         serializedVersion: 2
-        x: 739
-        y: 1314
-        width: 442
-        height: 447
+        x: 929
+        y: 1599
+        width: 652
+        height: 672
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1905399158ecbd40800000000000000
-      internalID: 5601607473702439196
+      spriteID: 1d8d3148854c1a8e0800000000000000
+      internalID: -1683848901207795503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_2
+      name: ajolote_rosa_2
       rect:
         serializedVersion: 2
-        x: 259
-        y: 1359
-        width: 42
-        height: 42
+        x: 1729
+        y: 1599
+        width: 652
+        height: 672
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ebec705073b3e310800000000000000
-      internalID: 1433186401402022889
+      spriteID: d6f64bc2ab8b3e0b0800000000000000
+      internalID: -5700509593567465619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_3
+      name: ajolote_rosa_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 799
+        width: 652
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e486524b14bef30800000000000000
+      internalID: 4605847285893975570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_rosa_4
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 799
+        width: 652
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90fc67e44433a9310800000000000000
+      internalID: 1412497801601273609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_rosa_5
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 799
+        width: 652
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4457861683c6760800000000000000
+      internalID: 7452393474406827256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ajolote_rosa_6
       rect:
         serializedVersion: 2
         x: 339
-        y: 1359
-        width: 42
-        height: 42
+        y: 0
+        width: 422
+        height: 701
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c38253ad3fe8d8740800000000000000
-      internalID: 5155934326398199868
+      spriteID: c7954a525a0e53fd0800000000000000
+      internalID: -2362735429580203652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_4
+      name: ajolote_rosa_7
       rect:
         serializedVersion: 2
-        x: 979
-        y: 1359
-        width: 42
-        height: 42
+        x: 1139
+        y: 0
+        width: 422
+        height: 701
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1c0e2a0a11d60ce0800000000000000
-      internalID: -1439233121128149990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_5
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 654
-        width: 442
-        height: 467
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 229b14bdc5dd29280800000000000000
-      internalID: -9037918111293916894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_6
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 719
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec9bf66a1645d0590800000000000000
-      internalID: -7706410608980149810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_7
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 687
-        width: 442
-        height: 434
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9aa94adea48efd7c0800000000000000
-      internalID: -4044258531843204439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_8
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 719
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67a622fc3f5730900800000000000000
-      internalID: 649492461284125302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_9
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 51
-        width: 442
-        height: 430
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 392e028fa5bb2a7a0800000000000000
-      internalID: -6367320923764104557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_10
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 79
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6db84effabd2983a0800000000000000
-      internalID: -6662743892537603114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_11
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 61
-        width: 442
-        height: 420
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e693085276b151a0800000000000000
-      internalID: -6822471358270433568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_12
-      rect:
-        serializedVersion: 2
-        x: 899
-        y: 79
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a60586ae1ce9de60800000000000000
-      internalID: 7987675030505195174
+      spriteID: 7cf0212611cb8b730800000000000000
+      internalID: 4015165850646613959
       vertices: []
       indices: 
       edges: []
@@ -464,7 +352,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 81daddc8ddcee6f48b23125d2f405b70
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -474,19 +362,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ajolote_0: -5607304827812038496
-      Ajolote_1: 5601607473702439196
-      Ajolote_10: -6662743892537603114
-      Ajolote_11: -6822471358270433568
-      Ajolote_12: 7987675030505195174
-      Ajolote_2: 1433186401402022889
-      Ajolote_3: 5155934326398199868
-      Ajolote_4: -1439233121128149990
-      Ajolote_5: -9037918111293916894
-      Ajolote_6: -7706410608980149810
-      Ajolote_7: -4044258531843204439
-      Ajolote_8: 649492461284125302
-      Ajolote_9: -6367320923764104557
+      ajolote_rosa_0: 3941905351247023770
+      ajolote_rosa_1: -1683848901207795503
+      ajolote_rosa_2: -5700509593567465619
+      ajolote_rosa_3: 4605847285893975570
+      ajolote_rosa_4: 1412497801601273609
+      ajolote_rosa_5: 7452393474406827256
+      ajolote_rosa_6: -2362735429580203652
+      ajolote_rosa_7: 4015165850646613959
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
