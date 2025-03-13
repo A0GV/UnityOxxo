@@ -1,46 +1,40 @@
 fileFormatVersion: 2
-guid: 98f7a38d8b3b8dc4184b70e72f4d9449
+guid: 277a031352d3e4e4389d6d9b067f364d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5607304827812038496
-    second: Ajolote_0
+      213: 6937817954938267909
+    second: 2_0
   - first:
-      213: 5601607473702439196
-    second: Ajolote_1
+      213: 3191122964850554743
+    second: 2_1
   - first:
-      213: 1433186401402022889
-    second: Ajolote_2
+      213: 5382512944479897801
+    second: 2_2
   - first:
-      213: 5155934326398199868
-    second: Ajolote_3
+      213: -5515383189529662604
+    second: 2_3
   - first:
-      213: -1439233121128149990
-    second: Ajolote_4
+      213: -3926759211464601419
+    second: 2_4
   - first:
-      213: -9037918111293916894
-    second: Ajolote_5
+      213: -4424780041397978121
+    second: 2_5
   - first:
-      213: -7706410608980149810
-    second: Ajolote_6
+      213: 8817454751965551104
+    second: 2_6
   - first:
-      213: -4044258531843204439
-    second: Ajolote_7
+      213: 3974921216390489406
+    second: 2_7
   - first:
-      213: 649492461284125302
-    second: Ajolote_8
+      213: -779157609879621035
+    second: 2_8
   - first:
-      213: -6367320923764104557
-    second: Ajolote_9
+      213: -5883455936764719873
+    second: 2_9
   - first:
-      213: -6662743892537603114
-    second: Ajolote_10
-  - first:
-      213: -6822471358270433568
-    second: Ajolote_11
-  - first:
-      213: 7987675030505195174
-    second: Ajolote_12
+      213: -8839637946123531936
+    second: 2_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -175,287 +169,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ajolote_0
+      name: 2_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 1308
-        width: 442
-        height: 453
+        x: 50
+        y: 188
+        width: 30
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a83ee6c7f9de22b0800000000000000
-      internalID: -5607304827812038496
+      spriteID: 5092c600ca4184060800000000000000
+      internalID: 6937817954938267909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_1
+      name: 2_1
       rect:
         serializedVersion: 2
-        x: 739
-        y: 1314
-        width: 442
-        height: 447
+        x: 453
+        y: 179
+        width: 27
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1905399158ecbd40800000000000000
-      internalID: 5601607473702439196
+      spriteID: 7773282ed65294c20800000000000000
+      internalID: 3191122964850554743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_2
+      name: 2_2
       rect:
         serializedVersion: 2
-        x: 259
-        y: 1359
-        width: 42
-        height: 42
+        x: 153
+        y: 155
+        width: 26
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ebec705073b3e310800000000000000
-      internalID: 1433186401402022889
+      spriteID: 9c88aa6510782ba40800000000000000
+      internalID: 5382512944479897801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_3
+      name: 2_3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 147
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b6cebf53c6573b0800000000000000
+      internalID: -5515383189529662604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_4
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 161
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0d8225d495189c0800000000000000
+      internalID: -3926759211464601419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 140
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb3c3feef50892c0800000000000000
+      internalID: -4424780041397978121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 129
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a9cf94164ed5a70800000000000000
+      internalID: 8817454751965551104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 128
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e356e1949c1c92730800000000000000
+      internalID: 3974921216390489406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_8
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 120
+        width: 37
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552351f2840ef25f0800000000000000
+      internalID: -779157609879621035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_9
       rect:
         serializedVersion: 2
         x: 339
-        y: 1359
-        width: 42
-        height: 42
+        y: 92
+        width: 38
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c38253ad3fe8d8740800000000000000
-      internalID: 5155934326398199868
+      spriteID: ffcc9755ff3c95ea0800000000000000
+      internalID: -5883455936764719873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ajolote_4
+      name: 2_10
       rect:
         serializedVersion: 2
-        x: 979
-        y: 1359
-        width: 42
-        height: 42
+        x: 386
+        y: 88
+        width: 19
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1c0e2a0a11d60ce0800000000000000
-      internalID: -1439233121128149990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_5
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 654
-        width: 442
-        height: 467
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 229b14bdc5dd29280800000000000000
-      internalID: -9037918111293916894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_6
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 719
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec9bf66a1645d0590800000000000000
-      internalID: -7706410608980149810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_7
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 687
-        width: 442
-        height: 434
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9aa94adea48efd7c0800000000000000
-      internalID: -4044258531843204439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_8
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 719
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67a622fc3f5730900800000000000000
-      internalID: 649492461284125302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_9
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 51
-        width: 442
-        height: 430
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 392e028fa5bb2a7a0800000000000000
-      internalID: -6367320923764104557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_10
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 79
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6db84effabd2983a0800000000000000
-      internalID: -6662743892537603114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_11
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 61
-        width: 442
-        height: 420
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e693085276b151a0800000000000000
-      internalID: -6822471358270433568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ajolote_12
-      rect:
-        serializedVersion: 2
-        x: 899
-        y: 79
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a60586ae1ce9de60800000000000000
-      internalID: 7987675030505195174
+      spriteID: 0694e365f1c435580800000000000000
+      internalID: -8839637946123531936
       vertices: []
       indices: 
       edges: []
@@ -464,7 +414,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 81daddc8ddcee6f48b23125d2f405b70
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -474,19 +424,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ajolote_0: -5607304827812038496
-      Ajolote_1: 5601607473702439196
-      Ajolote_10: -6662743892537603114
-      Ajolote_11: -6822471358270433568
-      Ajolote_12: 7987675030505195174
-      Ajolote_2: 1433186401402022889
-      Ajolote_3: 5155934326398199868
-      Ajolote_4: -1439233121128149990
-      Ajolote_5: -9037918111293916894
-      Ajolote_6: -7706410608980149810
-      Ajolote_7: -4044258531843204439
-      Ajolote_8: 649492461284125302
-      Ajolote_9: -6367320923764104557
+      2_0: 6937817954938267909
+      2_1: 3191122964850554743
+      2_10: -8839637946123531936
+      2_2: 5382512944479897801
+      2_3: -5515383189529662604
+      2_4: -3926759211464601419
+      2_5: -4424780041397978121
+      2_6: 8817454751965551104
+      2_7: 3974921216390489406
+      2_8: -779157609879621035
+      2_9: -5883455936764719873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
