@@ -128,8 +128,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-<<<<<<< HEAD
-    buildTarget: VisionOS
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -142,8 +141,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-=======
->>>>>>> 048bd05032426d1e572204e2f1abc5b9b6f86705
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -173,155 +170,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tileset3_0
+      name: palmera
       rect:
         serializedVersion: 2
-        x: 0
-        y: 319
-        width: 193
-        height: 65
+        x: 252
+        y: 135
+        width: 86
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa09042103fb24bb0800000000000000
-      internalID: -4953186426968567633
+      spriteID: a277d14d50f57c04b8484cebae618037
+      internalID: 1292052954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tileset3_1
+      name: volcan
       rect:
         serializedVersion: 2
-        x: 0
-        y: 287
-        width: 321
-        height: 55
+        x: 295
+        y: 332
+        width: 80
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1563717aeb6b80050800000000000000
-      internalID: 5767060252811277905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset3_2
-      rect:
-        serializedVersion: 2
-        x: 287
-        y: 175
-        width: 97
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3743c1caa728370e0800000000000000
-      internalID: -2273329923506817933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset3_3
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 335
-        width: 71
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95583c10e35978d00800000000000000
-      internalID: 974911937899103577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset3_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 239
-        width: 273
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 064c83303a08ed930800000000000000
-      internalID: 4169911742613734496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset3_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 126
-        width: 241
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bff3f6f8841497ef0800000000000000
-      internalID: -109984935993982981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tileset3_6
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 143
-        width: 76
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f8ae721f3cef4320800000000000000
-      internalID: 2544512070125005044
+      spriteID: 6a5c787494c722945be672ce4534ca1a
+      internalID: -2146084830
       vertices: []
       indices: 
       edges: []
@@ -330,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 09921ffe354c7a340b80bad447c21b18
     internalID: 0
     vertices: []
     indices: 
@@ -340,13 +227,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tileset3_0: -4953186426968567633
-      Tileset3_1: 5767060252811277905
-      Tileset3_2: -2273329923506817933
-      Tileset3_3: 974911937899103577
-      Tileset3_4: 4169911742613734496
-      Tileset3_5: -109984935993982981
-      Tileset3_6: 2544512070125005044
+      palmera: 1292052954
+      volcan: -2146084830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
