@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: a221dd8f696094d0ea72ed814bc2eb04
+guid: 957c715dad69d7745aae37f632f09c84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4953186426968567633
-    second: Tileset3_0
+      213: 2494097175117456308
+    second: feria_0
   - first:
-      213: 5767060252811277905
-    second: Tileset3_1
+      213: 6354922186095443210
+    second: feria_1
   - first:
-      213: -2273329923506817933
-    second: Tileset3_2
-  - first:
-      213: 974911937899103577
-    second: Tileset3_3
-  - first:
-      213: 4169911742613734496
-    second: Tileset3_4
-  - first:
-      213: -109984935993982981
-    second: Tileset3_5
-  - first:
-      213: 2544512070125005044
-    second: Tileset3_6
+      213: -7244642238503599555
+    second: feria_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,19 +116,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -170,45 +145,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: palmera
+      name: feria_0
       rect:
         serializedVersion: 2
-        x: 252
-        y: 135
-        width: 86
-        height: 94
+        x: 0
+        y: 1379
+        width: 1280
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a277d14d50f57c04b8484cebae618037
-      internalID: 1292052954
+      spriteID: 4b36e2e9a20dc9220800000000000000
+      internalID: 2494097175117456308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: volcan
+      name: feria_1
       rect:
         serializedVersion: 2
-        x: 295
-        y: 332
-        width: 80
-        height: 43
+        x: 0
+        y: 739
+        width: 1280
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6a5c787494c722945be672ce4534ca1a
-      internalID: -2146084830
+      spriteID: a0db775fe08313850800000000000000
+      internalID: 6354922186095443210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feria_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 641
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32c331944cd57b90800000000000000
+      internalID: -7244642238503599555
       vertices: []
       indices: 
       edges: []
@@ -217,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 09921ffe354c7a340b80bad447c21b18
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -226,9 +223,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      palmera: 1292052954
-      volcan: -2146084830
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
