@@ -201,6 +201,58 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1009,7 +1061,43 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      froggy-pink_0: -2737614505049817580
+      froggy-pink_1: 2929848743065093037
+      froggy-pink_10: -7616694514278917940
+      froggy-pink_11: 5927496058857024099
+      froggy-pink_12: 345072757996553923
+      froggy-pink_13: -8504303708796561721
+      froggy-pink_14: -3537645407197812762
+      froggy-pink_15: 8239067689434580081
+      froggy-pink_16: 1293270954762702533
+      froggy-pink_17: 379044047946861251
+      froggy-pink_18: -4025829555707582619
+      froggy-pink_19: 6421282275697699670
+      froggy-pink_2: -7343520171231503489
+      froggy-pink_20: -2843810810335146411
+      froggy-pink_21: -4568465016902524528
+      froggy-pink_22: 5299965335976449391
+      froggy-pink_23: 3570448835578654869
+      froggy-pink_24: -8198564014077794585
+      froggy-pink_25: -1712896928052112620
+      froggy-pink_26: 8791890041645335976
+      froggy-pink_27: -1091051588767065227
+      froggy-pink_28: 3748574397460022059
+      froggy-pink_29: -760933452850594775
+      froggy-pink_3: -5838214988224215592
+      froggy-pink_30: -7368177312183790238
+      froggy-pink_31: 2361053042231498120
+      froggy-pink_32: -4513690346307132959
+      froggy-pink_33: -1515477558821349189
+      froggy-pink_34: 3719595271693607213
+      froggy-pink_35: 5279502284397979122
+      froggy-pink_4: 3179972916802310596
+      froggy-pink_5: -5182851144799082472
+      froggy-pink_6: -9074217123147653523
+      froggy-pink_7: -3630449698287225053
+      froggy-pink_8: 4903390444989124166
+      froggy-pink_9: -1250914371505711681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
