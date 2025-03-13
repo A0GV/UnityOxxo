@@ -361,7 +361,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajolote_azul_0: -7368584102340949192
+      ajolote_azul_1: 7377183060845974454
+      ajolote_azul_2: -7604062385058077484
+      ajolote_azul_3: 7800937918512082226
+      ajolote_azul_4: 5470561256232538302
+      ajolote_azul_5: 4849341301766201364
+      ajolote_azul_6: -4035933379809511890
+      ajolote_azul_7: -2648789039698492604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
