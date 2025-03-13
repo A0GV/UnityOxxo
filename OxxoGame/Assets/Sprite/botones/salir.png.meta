@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 84a1dacb4accb944a948fe031d4d6b8d
+guid: 0e2872db1173c1544a1269a7128830b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7042847911465117151
-    second: menu_0
-  - first:
-      213: 6984307464289580096
-    second: menu_1
-  - first:
-      213: -1438552683215292887
-    second: menu_2
+      213: 6428043885129688519
+    second: salir_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,84 +135,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: salir_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 899
-        width: 142
-        height: 242
+        x: 139
+        y: 139
+        width: 342
+        height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd5eaf16cd83db160800000000000000
-      internalID: 7042847911465117151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu_1
-      rect:
-        serializedVersion: 2
-        x: 776
-        y: 812
-        width: 211
-        height: 255
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 044f61362ae3de060800000000000000
-      internalID: 6984307464289580096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 161
-        width: 230
-        height: 299
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9267446d4fb390ce0800000000000000
-      internalID: -1438552683215292887
+      spriteID: 7c5e6c53bdff43950800000000000000
+      internalID: 6428043885129688519
       vertices: []
       indices: 
       edges: []
@@ -227,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f23c15b2c7c31e4ba5fb649d469d892
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      menu_0: 7042847911465117151
-      menu_1: 6984307464289580096
-      menu_2: -1438552683215292887
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

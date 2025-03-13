@@ -1,16 +1,34 @@
 fileFormatVersion: 2
-guid: 84a1dacb4accb944a948fe031d4d6b8d
+guid: 9dae6cdb1ae507a4c9e9178d5a9e62e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7042847911465117151
-    second: menu_0
+      213: 2731795287329381114
+    second: enemies_0
   - first:
-      213: 6984307464289580096
-    second: menu_1
+      213: 3229708652140166120
+    second: enemies_1
   - first:
-      213: -1438552683215292887
-    second: menu_2
+      213: 876784968147787122
+    second: enemies_2
+  - first:
+      213: 1961183383047197949
+    second: enemies_3
+  - first:
+      213: -3351989875833439213
+    second: enemies_4
+  - first:
+      213: -3029504926045522119
+    second: enemies_5
+  - first:
+      213: -2782341204894616949
+    second: enemies_6
+  - first:
+      213: 6230911579049521198
+    second: enemies_7
+  - first:
+      213: -8108438390446734492
+    second: enemies_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,30 +159,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: enemies_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 899
-        width: 142
-        height: 242
+        x: 99
+        y: 70
+        width: 393
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,52 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd5eaf16cd83db160800000000000000
-      internalID: 7042847911465117151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu_1
-      rect:
-        serializedVersion: 2
-        x: 776
-        y: 812
-        width: 211
-        height: 255
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 044f61362ae3de060800000000000000
-      internalID: 6984307464289580096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 161
-        width: 230
-        height: 299
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9267446d4fb390ce0800000000000000
-      internalID: -1438552683215292887
+      spriteID: afa9a54175949e520800000000000000
+      internalID: 2731795287329381114
       vertices: []
       indices: 
       edges: []
@@ -227,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f23c15b2c7c31e4ba5fb649d469d892
+    spriteID: 53863648615a8e643b003d73e7f13395
     internalID: 0
     vertices: []
     indices: 
@@ -237,9 +198,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menu_0: 7042847911465117151
-      menu_1: 6984307464289580096
-      menu_2: -1438552683215292887
+      enemies_0: 2731795287329381114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

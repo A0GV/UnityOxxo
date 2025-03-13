@@ -1,16 +1,61 @@
 fileFormatVersion: 2
-guid: 84a1dacb4accb944a948fe031d4d6b8d
+guid: 8acedc3e60eb8c141b88422bf7cc9cbb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7042847911465117151
-    second: menu_0
+      213: -258419554997568455
+    second: letra_0
   - first:
-      213: 6984307464289580096
-    second: menu_1
+      213: 4107101062102036372
+    second: letra_1
   - first:
-      213: -1438552683215292887
-    second: menu_2
+      213: -8854670427596049182
+    second: letra_2
+  - first:
+      213: 8438126055946492085
+    second: letra_3
+  - first:
+      213: 7105714886053185729
+    second: letra_4
+  - first:
+      213: 2467484286497041102
+    second: letra_5
+  - first:
+      213: -1239701274696284480
+    second: letra_6
+  - first:
+      213: 792976481433400651
+    second: letra_7
+  - first:
+      213: -606616554655572095
+    second: letra_8
+  - first:
+      213: -8658173730229093754
+    second: letra_9
+  - first:
+      213: -1043058508841848068
+    second: letra_10
+  - first:
+      213: 1997293063184884629
+    second: letra_11
+  - first:
+      213: 2604292444978711023
+    second: letra_12
+  - first:
+      213: -6857202357890539575
+    second: letra_13
+  - first:
+      213: 2122493236245422957
+    second: letra_14
+  - first:
+      213: 3744695701078936666
+    second: letra_15
+  - first:
+      213: 8737150880226696119
+    second: letra_16
+  - first:
+      213: 1281348555817651052
+    second: letra_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,30 +186,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: letra_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 899
-        width: 142
-        height: 242
+        x: 24
+        y: 60
+        width: 472
+        height: 115
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,52 +205,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd5eaf16cd83db160800000000000000
-      internalID: 7042847911465117151
+      spriteID: 93cfa5da8c8e96cf0800000000000000
+      internalID: -258419554997568455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_1
+      name: letra_1
       rect:
         serializedVersion: 2
-        x: 776
-        y: 812
-        width: 211
-        height: 255
+        x: 527
+        y: 57
+        width: 280
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 044f61362ae3de060800000000000000
-      internalID: 6984307464289580096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: menu_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 161
-        width: 230
-        height: 299
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9267446d4fb390ce0800000000000000
-      internalID: -1438552683215292887
+      spriteID: 7a42ad09fbbf104428edbcaf85b755b2
+      internalID: -1604320730
       vertices: []
       indices: 
       edges: []
@@ -227,7 +237,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f23c15b2c7c31e4ba5fb649d469d892
+    spriteID: c8543cc6b4c74a54a9074809d28953a4
     internalID: 0
     vertices: []
     indices: 
@@ -237,9 +247,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menu_0: 7042847911465117151
-      menu_1: 6984307464289580096
-      menu_2: -1438552683215292887
+      letra_0: -258419554997568455
+      letra_1: -1604320730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
