@@ -167,6 +167,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+<<<<<<< HEAD
     buildTarget: VisionOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -180,6 +181,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+=======
+>>>>>>> 048bd05032426d1e572204e2f1abc5b9b6f86705
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
