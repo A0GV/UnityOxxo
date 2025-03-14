@@ -8,7 +8,6 @@ public class UIControlDia : MonoBehaviour
     public GameObject canva;
     public GameObject pregunta;
     public int numpreguntas;
-    private int contestadas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,8 +45,13 @@ public class UIControlDia : MonoBehaviour
     {
         canva.SetActive(true);
         pregunta.SetActive(false);
+        DiaControl.Instance.Contarpreguntas();
     }
-
+    public void checarnumpreguntas(){
+        if(PlayerPrefs.GetInt("preguntas") <= 0){
+            ShowResultados();
+        }
+    }
     public void ShowResultados()
     {
         DiaControl.Instance.Gotoendgame();

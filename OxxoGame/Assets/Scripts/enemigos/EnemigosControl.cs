@@ -1,16 +1,32 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class EnemigosControl : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    static public EnemigosControl Instance;
+    public UIControlEnemigos uiController;
+
     void Start()
-    {
-        
+    {   
+        StopAllCoroutines();
+        Instance = this;
+        uiController.ShowApuntar();
+        init();
+    }  
+    void init(){
+        if(uiController!=null){
+            uiController.StartTime();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void EndMiniGame()
     {
-        
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void Gotoendgame()
+    {
+        SceneManager.LoadScene("EndGamesScene");
     }
 }
