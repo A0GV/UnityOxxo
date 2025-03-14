@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class IniciarSesion : MonoBehaviour
 {
     // Used to change to game scene if user starts their game
+    //Manda al menu
     public void PulsarIniciar()
     {
         SceneManager.LoadScene("MenuScene");

@@ -3630,7 +3630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2427a3bc44e7741871779c9a8f45d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 7
   rig: {fileID: 1096237780}
   sr: {fileID: 1096237777}
 --- !u!1 &1164676292
