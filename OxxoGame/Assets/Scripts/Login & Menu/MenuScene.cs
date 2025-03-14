@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuScene : MonoBehaviour
-{
+{   //Manda a la escena de juego seleccionada
     public void StartToPlay(string sceneName){
         SceneManager.LoadScene(sceneName);
     }

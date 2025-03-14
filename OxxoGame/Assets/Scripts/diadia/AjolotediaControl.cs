@@ -13,7 +13,7 @@ public class AjolotediaControl : MonoBehaviour
         animatorController = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    // Cuando hay un choque con el escenario cambia de dirección
     private void OnCollisionEnter2D(Collision2D collision)
     {   
         if(!isup){
@@ -26,7 +26,7 @@ public class AjolotediaControl : MonoBehaviour
         }
     }
 
-    
+    //Sirve para mover automaticamente al ajolote
     void Update()
     {
         //Mover al ajolote
@@ -45,10 +45,11 @@ public class AjolotediaControl : MonoBehaviour
         }
     }
 
+    //Lista de animaciones del ajolote
     public enum PlayerAnimation{
         leftie, rightie, upie, downie
     }
-
+    //Cambios
     void UpdateAnimation(PlayerAnimation nameAnimation){
         switch(nameAnimation)
         {
