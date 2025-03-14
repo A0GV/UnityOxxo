@@ -12,6 +12,7 @@ public class DiaControl : MonoBehaviour
     void Start()
     {   
         StopAllCoroutines();
+        PlayerPrefs.SetInt("preguntas",3);
         Instance = this;
         uiController.ShowCanva();
         init();
@@ -20,6 +21,13 @@ public class DiaControl : MonoBehaviour
         if(uiController!=null){
             uiController.StartTime();
         }
+    }
+    public int Getcontestadas(){
+        return PlayerPrefs.GetInt("preguntas",3);
+    }
+    public void Contarpreguntas(){
+        int newcontestadas = Getcontestadas()-1;
+        PlayerPrefs.SetInt("preguntas",newcontestadas);
     }
     public void Gotoendgame(){
         SceneManager.LoadScene("EndGamesScene");

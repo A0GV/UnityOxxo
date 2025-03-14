@@ -7,6 +7,8 @@ public class UIControlDia : MonoBehaviour
 {
     public GameObject canva;
     public GameObject pregunta;
+    public int numpreguntas;
+    private int contestadas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,12 +24,12 @@ public class UIControlDia : MonoBehaviour
     public void StartTime(){
         StartCoroutine(Mostrarpregunta());
     }
+
     IEnumerator Mostrarpregunta(){
         yield return new WaitForSeconds(5);
         ShowPregunta();
         StartCoroutine(Mostrarpregunta());
     }
-
     public void ShowCanva()
     {
         canva.SetActive(true);
