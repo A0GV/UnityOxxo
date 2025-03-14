@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 108bbfb3771fd49ca8a125110d756a79
+guid: f09d311efc56aa24dba8072abaa73562
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5003515379284555693
-    second: barandal_0
+      213: -7486637620348231365
+    second: walkmenu_0
+  - first:
+      213: -6023498973568431054
+    second: walkmenu_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: barandal_0
+      name: walkmenu_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 590
-        width: 3000
-        height: 673
+        x: 18
+        y: 518
+        width: 477
+        height: 464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +170,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3584a85b541ff8ab0800000000000000
-      internalID: -5003515379284555693
+      spriteID: b31611d00ce1a1890800000000000000
+      internalID: -7486637620348231365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkmenu_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 5
+        width: 482
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c068fe89b386ca0800000000000000
+      internalID: -6023498973568431054
       vertices: []
       indices: 
       edges: []
@@ -186,8 +211,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      barandal_0: -5003515379284555693
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
