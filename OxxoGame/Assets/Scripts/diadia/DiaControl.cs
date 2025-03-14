@@ -5,12 +5,13 @@ public class DiaControl : MonoBehaviour
 {
     static public DiaControl Instance;
     public UIControlDia uiController;
-    void EndMiniGame(){
+    public void EndMiniGame(){
         SceneManager.LoadScene("MenuScene");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {   
+        StopAllCoroutines();
         Instance = this;
         uiController.ShowCanva();
         init();
@@ -19,6 +20,9 @@ public class DiaControl : MonoBehaviour
         if(uiController!=null){
             uiController.StartTime();
         }
+    }
+    public void Gotoendgame(){
+        SceneManager.LoadScene("EndGamesScene");
     }
     // Update is called once per frame
     void Update()
