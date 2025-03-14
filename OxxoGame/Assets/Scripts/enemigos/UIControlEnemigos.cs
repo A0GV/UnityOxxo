@@ -76,11 +76,11 @@ public class UIControlEnemigos : MonoBehaviour
 
     public void ShowResultados()
     {
-        SuperControl.Instance.Gotoendgame();
+        EnemigosControl.Instance.Gotoendgame();
     }
 
     public void Gotomenu()
     {
-        SuperControl.Instance.EndMiniGame();
+        EnemigosControl.Instance.EndMiniGame();
     }
 }
