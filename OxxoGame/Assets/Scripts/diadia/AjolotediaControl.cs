@@ -22,6 +22,7 @@ public class AjolotediaControl : MonoBehaviour
             isup=true;
         }else{
             direccion = Vector3.right;
+            UpdateAnimation(PlayerAnimation.rightie);
             isup=!isup;
         }
     }
@@ -31,13 +32,6 @@ public class AjolotediaControl : MonoBehaviour
     {
         //Mover al ajolote
         this.transform.position += direccion * Time.deltaTime * velocidad;
-        if(direccion==Vector3.left){
-            UpdateAnimation(PlayerAnimation.leftie);
-        }else if(direccion==Vector3.right){
-            UpdateAnimation(PlayerAnimation.rightie);
-        }else if(direccion==Vector3.up){
-            UpdateAnimation(PlayerAnimation.upie);
-        }
         
         //Eliminar al ajolote
         if(transform.position.y<=-50){
