@@ -7,7 +7,6 @@ public class UIControlDia : MonoBehaviour
 {
     public GameObject canva;
     public GameObject pregunta;
-    public GameObject resultados;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,27 +32,26 @@ public class UIControlDia : MonoBehaviour
     {
         canva.SetActive(true);
         pregunta.SetActive(false);
-        resultados.SetActive(false);
     }
 
     public void ShowPregunta()
     {
         canva.SetActive(false);
         pregunta.SetActive(true);
-        resultados.SetActive(false);
     }
 
     public void HidePregunta()
     {
         canva.SetActive(true);
         pregunta.SetActive(false);
-        resultados.SetActive(false);
     }
 
     public void ShowResultados()
     {
-        canva.SetActive(false);
-        pregunta.SetActive(false);
-        resultados.SetActive(true);
+        DiaControl.Instance.Gotoendgame();
+    }
+    public void Gotomenu()
+    {
+        DiaControl.Instance.EndMiniGame();
     }
 }
