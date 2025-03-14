@@ -4,6 +4,7 @@ using System.Collections;
 
 public class UIControlSuper : MonoBehaviour
 {
+    // References to different UI panels
     public GameObject main;
     public GameObject manual;
     public GameObject pregunta;
@@ -12,30 +13,39 @@ public class UIControlSuper : MonoBehaviour
 
     void Start()
     {
-
+    
     }
 
-    public void StartTime(){
+    // Starts the coroutine to periodically show the summary panel
+    public void StartTime()
+    {
         StartCoroutine(MostrarResumen());
     }
 
-    IEnumerator MostrarResumen(){
-        yield return new WaitForSeconds(10); // Wait 60 secs before first appearance
-        ShowResumen();
-        StartCoroutine(MostrarResumen());
+    // Coroutine that waits for 8 seconds and then shows the summary panel repeatedly
+    IEnumerator MostrarResumen()
+    {
+        yield return new WaitForSeconds(8); // Waits 8 seconds
+        ShowResumen(); // Shows the summary panel
+        StartCoroutine(MostrarResumen()); // Calls itself again to keep looping
     }
 
-    public void ShowMain(){
+    // Displays the main panel and hides other panels
+    public void ShowMain()
+    {
         main.SetActive(true);
         resumen.SetActive(false);
         manual.SetActive(false);
     }
-    public void ShowResumen(){
+
+    // Displays the summary panel and hides the main panel
+    public void ShowResumen()
+    {
         main.SetActive(false);
         resumen.SetActive(true);
     }
 
-
+    // Controls the visibility of different UI panels based on the panel name
     public void ShowPanel(string panelName)
     {
         // Hide all panels first
@@ -45,7 +55,7 @@ public class UIControlSuper : MonoBehaviour
         resumen.SetActive(false);
         respuesta.SetActive(false);
 
-        // Show the selected panel
+        // Show the selected panel based on the provided name
         switch (panelName)
         {
             case "ManualCanvas":
@@ -56,16 +66,18 @@ public class UIControlSuper : MonoBehaviour
                 break;
             case "ResponseCanvas":
                 respuesta.SetActive(true);
-                main.SetActive(true);
+                main.SetActive(true); // Ensures the main panel remains active with the response panel
                 break;
         }
     }
 
+    // Calls the method to transition to the endgame scene
     public void ShowResultados()
     {
         SuperControl.Instance.Gotoendgame();
     }
 
+    // Calls the method to return to the menu scene
     public void Gotomenu()
     {
         SuperControl.Instance.EndMiniGame();
