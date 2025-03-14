@@ -23,11 +23,12 @@ public class DiaControl : MonoBehaviour
         }
     }
     public int Getcontestadas(){
-        return PlayerPrefs.GetInt("preguntas",3);
+        return PlayerPrefs.GetInt("preguntas");
     }
     public void Contarpreguntas(){
         int newcontestadas = Getcontestadas()-1;
         PlayerPrefs.SetInt("preguntas",newcontestadas);
+        uiController.checarnumpreguntas();
     }
     public void Gotoendgame(){
         SceneManager.LoadScene("EndGamesScene");

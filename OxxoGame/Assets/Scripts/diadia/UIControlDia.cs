@@ -47,7 +47,11 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(true);
         pregunta.SetActive(false);
     }
-
+    public void checarnumpreguntas(){
+        if(PlayerPrefs.GetInt("preguntas")==0){
+            ShowResultados();
+        }
+    }
     public void ShowResultados()
     {
         DiaControl.Instance.Gotoendgame();
