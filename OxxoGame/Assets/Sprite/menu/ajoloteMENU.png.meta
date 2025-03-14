@@ -336,7 +336,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajoloteMENU_0: 3264327770419892138
+      ajoloteMENU_1: 7261493341117312130
+      ajoloteMENU_2: 7160563085800060502
+      ajoloteMENU_3: 3334577126714057158
+      ajoloteMENU_4: -3056551398127486079
+      ajoloteMENU_5: -7507152259023562506
+      ajoloteMENU_6: -583417239406563052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
