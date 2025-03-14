@@ -10,7 +10,7 @@ public class SuperControl : MonoBehaviour
     {   
         StopAllCoroutines();
         Instance = this;
-        uiController.ShowResumen();
+        uiController.ShowMain();
         init();
     }
     void init(){

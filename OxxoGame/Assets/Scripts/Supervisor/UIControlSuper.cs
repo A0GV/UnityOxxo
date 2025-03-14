@@ -16,21 +16,23 @@ public class UIControlSuper : MonoBehaviour
     }
 
     public void StartTime(){
-    resumen.SetActive(false);  // Ensure the panel is hidden at the start
-    StartCoroutine(MostrarResumen());
+        StartCoroutine(MostrarResumen());
     }
 
     IEnumerator MostrarResumen(){
         yield return new WaitForSeconds(60); // Wait 60 secs before first appearance
         ShowResumen();
-    }
-
-    public void ShowResumen(){
-        ShowPanel("resumen");
+        StartCoroutine(MostrarResumen());
     }
 
     public void ShowMain(){
-        ShowPanel("main");
+        main.SetActive(true);
+        resumen.SetActive(false);
+        manual.SetActive(false);
+    }
+    public void ShowResumen(){
+        main.SetActive(false);
+        resumen.SetActive(true);
     }
 
 
@@ -46,20 +48,15 @@ public class UIControlSuper : MonoBehaviour
         // Show the selected panel
         switch (panelName)
         {
-            case "main":
-                main.SetActive(true);
-                break;
-            case "manual":
+            case "ManualCanvas":
                 manual.SetActive(true);
                 break;
-            case "pregunta":
+            case "QuestionCanvas":
                 pregunta.SetActive(true);
                 break;
-            case "respuesta":
+            case "ResponseCanvas":
                 respuesta.SetActive(true);
-                break;
-            case "resumen":
-                resumen.SetActive(true);
+                main.SetActive(true);
                 break;
         }
     }
