@@ -5,6 +5,7 @@ public class DiaControl : MonoBehaviour
 {
     static public DiaControl Instance;
     public UIControlDia uiController;
+    
     public void EndMiniGame(){
         SceneManager.LoadScene("MenuScene");
     }
@@ -23,11 +24,11 @@ public class DiaControl : MonoBehaviour
         }
     }
     public int Getcontestadas(){
-        return PlayerPrefs.GetInt("preguntas");
+        return PlayerPrefs.GetInt("preguntas",3);
     }
     public void Contarpreguntas(){
-        int newcontestadas = Getcontestadas()-1;
-        PlayerPrefs.SetInt("preguntas",newcontestadas);
+        int newcontestadas = Getcontestadas() - 1;
+        PlayerPrefs.SetInt("preguntas", newcontestadas);
         uiController.checarnumpreguntas();
     }
     public void Gotoendgame(){
