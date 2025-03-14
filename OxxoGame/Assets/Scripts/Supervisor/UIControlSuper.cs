@@ -20,7 +20,7 @@ public class UIControlSuper : MonoBehaviour
     }
 
     IEnumerator MostrarResumen(){
-        yield return new WaitForSeconds(10); // Wait 60 secs before first appearance
+        yield return new WaitForSeconds(8);
         ShowResumen();
         StartCoroutine(MostrarResumen());
     }
