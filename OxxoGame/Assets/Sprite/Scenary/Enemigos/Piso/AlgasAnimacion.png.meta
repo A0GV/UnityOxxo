@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 671e4630c15cb49dc90a74ce99c6c0c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6404255988683236911
+    second: AlgasAnimacion_0
+  - first:
+      213: 5484674944754256791
+    second: AlgasAnimacion_1
+  - first:
+      213: -3114256727075531566
+    second: AlgasAnimacion_2
+  - first:
+      213: 3640139232158681360
+    second: AlgasAnimacion_3
+  - first:
+      213: 8980659140860227820
+    second: AlgasAnimacion_4
+  - first:
+      213: -8100268797096410043
+    second: AlgasAnimacion_5
+  - first:
+      213: -5151832860460969877
+    second: AlgasAnimacion_6
+  - first:
+      213: -1426477313426706043
+    second: AlgasAnimacion_7
+  - first:
+      213: -3668710717097690212
+    second: AlgasAnimacion_8
+  - first:
+      213: 1634950086964014143
+    second: AlgasAnimacion_9
+  - first:
+      213: -3967703140555741074
+    second: AlgasAnimacion_10
+  - first:
+      213: 2078564112850787280
+    second: AlgasAnimacion_11
+  - first:
+      213: -8938003359894262784
+    second: AlgasAnimacion_12
+  - first:
+      213: -2940164292735704597
+    second: AlgasAnimacion_13
+  - first:
+      213: -2632917363780919102
+    second: AlgasAnimacion_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AlgasAnimacion_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 544
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d91ed70c138f17a0800000000000000
+      internalID: -6404255988683236911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 544
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b009e9dca7d1c40800000000000000
+      internalID: 5484674944754256791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 544
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4da4bb100f7c4d0800000000000000
+      internalID: -3114256727075531566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 544
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01908c9685f548230800000000000000
+      internalID: 3640139232158681360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 364
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0b6d338e5b1ac70800000000000000
+      internalID: 8980659140860227820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 364
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54443e33270169f80800000000000000
+      internalID: -8100268797096410043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 364
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b601a0a1f430188b0800000000000000
+      internalID: -5151832860460969877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 364
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5813c05f072243ce0800000000000000
+      internalID: -1426477313426706043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 184
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b39bb5a0f161dc0800000000000000
+      internalID: -3668710717097690212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 184
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cebf6117280b610800000000000000
+      internalID: 1634950086964014143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_10
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 184
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6829f4f303efe8c0800000000000000
+      internalID: -3967703140555741074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_11
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 184
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db98554c0b88dc10800000000000000
+      internalID: 2078564112850787280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c214cbc45d5f380800000000000000
+      internalID: -8938003359894262784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 4
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1633647207237d0800000000000000
+      internalID: -2940164292735704597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasAnimacion_14
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 4
+        width: 39
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c061e08b9ff57bd0800000000000000
+      internalID: -2632917363780919102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AlgasAnimacion_0: -6404255988683236911
+      AlgasAnimacion_1: 5484674944754256791
+      AlgasAnimacion_10: -3967703140555741074
+      AlgasAnimacion_11: 2078564112850787280
+      AlgasAnimacion_12: -8938003359894262784
+      AlgasAnimacion_13: -2940164292735704597
+      AlgasAnimacion_14: -2632917363780919102
+      AlgasAnimacion_2: -3114256727075531566
+      AlgasAnimacion_3: 3640139232158681360
+      AlgasAnimacion_4: 8980659140860227820
+      AlgasAnimacion_5: -8100268797096410043
+      AlgasAnimacion_6: -5151832860460969877
+      AlgasAnimacion_7: -1426477313426706043
+      AlgasAnimacion_8: -3668710717097690212
+      AlgasAnimacion_9: 1634950086964014143
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
