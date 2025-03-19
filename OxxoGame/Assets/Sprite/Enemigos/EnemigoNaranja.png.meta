@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EnemigoNaranja_0: -2119511266545452873
+      EnemigoNaranja_1: -9041396196728472371
+      EnemigoNaranja_2: 4852225312034107767
+      EnemigoNaranja_3: -8376858466522371944
+      EnemigoNaranja_4: 2119094710266680966
+      EnemigoNaranja_5: -3928148164885115096
+      EnemigoNaranja_6: -5816370926790667347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
