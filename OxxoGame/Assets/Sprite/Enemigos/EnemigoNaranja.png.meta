@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: fae7f5d6a34b140d48dfa6e63ba78d2f
+guid: 063c8310ad3de41ce9710faf04541e64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8889677558778103472
-    second: EnemigoRojoIdle_0
+      213: -2119511266545452873
+    second: EnemigoNaranja_0
   - first:
-      213: 2538017186692204889
-    second: EnemigoRojoIdle_1
+      213: -9041396196728472371
+    second: EnemigoNaranja_1
   - first:
-      213: 147397804462248060
-    second: EnemigoRojoIdle_2
+      213: 4852225312034107767
+    second: EnemigoNaranja_2
   - first:
-      213: 8065439530263550310
-    second: EnemigoRojoIdle_3
+      213: -8376858466522371944
+    second: EnemigoNaranja_3
   - first:
-      213: -6236595132503909518
-    second: EnemigoRojoIdle_4
+      213: 2119094710266680966
+    second: EnemigoNaranja_4
   - first:
-      213: -763338890293365108
-    second: EnemigoRojoIdle_5
+      213: -3928148164885115096
+    second: EnemigoNaranja_5
   - first:
-      213: -3946141756838622934
-    second: EnemigoRojoIdle_6
+      213: -5816370926790667347
+    second: EnemigoNaranja_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemigoRojoIdle_0
+      name: EnemigoNaranja_0
       rect:
         serializedVersion: 2
         x: 39
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b60bb2e3aa7e5b70800000000000000
-      internalID: 8889677558778103472
+      spriteID: 7b8be149bbbf592e0800000000000000
+      internalID: -2119511266545452873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_1
+      name: EnemigoNaranja_1
       rect:
         serializedVersion: 2
         x: 359
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95900ae2f29d83320800000000000000
-      internalID: 2538017186692204889
+      spriteID: dcc7e6cff02868280800000000000000
+      internalID: -9041396196728472371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_2
+      name: EnemigoNaranja_2
       rect:
         serializedVersion: 2
         x: 679
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7015afa589ab0200800000000000000
-      internalID: 147397804462248060
+      spriteID: 771b3fd8631965340800000000000000
+      internalID: 4852225312034107767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_3
+      name: EnemigoNaranja_3
       rect:
         serializedVersion: 2
         x: 39
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66990ce25823eef60800000000000000
-      internalID: 8065439530263550310
+      spriteID: 898e5317b9b6fbb80800000000000000
+      internalID: -8376858466522371944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_4
+      name: EnemigoNaranja_4
       rect:
         serializedVersion: 2
         x: 359
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27b9c2715c92379a0800000000000000
-      internalID: -6236595132503909518
+      spriteID: 686dada5969886d10800000000000000
+      internalID: 2119094710266680966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_5
+      name: EnemigoNaranja_5
       rect:
         serializedVersion: 2
         x: 679
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c86b2d8d2531865f0800000000000000
-      internalID: -763338890293365108
+      spriteID: 82f8be66e0a6c79c0800000000000000
+      internalID: -3928148164885115096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemigoRojoIdle_6
+      name: EnemigoNaranja_6
       rect:
         serializedVersion: 2
         x: 39
@@ -265,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a294c4ecafc7c39c0800000000000000
-      internalID: -3946141756838622934
+      spriteID: da39bb26579184fa0800000000000000
+      internalID: -5816370926790667347
       vertices: []
       indices: 
       edges: []
