@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SupervisorScene.unity
     guid: 31eeb52f48a5c944b88e039e9db5b43b
   - enabled: 1
-    path: Assets/Scenes/EnemigosScene.unity
+    path: Assets/Scenes/EnemigosGameScene.unity
     guid: dadd31b6c2e0ba34fbc5e876c50dde47
   - enabled: 1
     path: Assets/Scenes/DiaScene.unity
