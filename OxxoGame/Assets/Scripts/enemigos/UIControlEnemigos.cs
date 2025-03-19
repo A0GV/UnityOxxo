@@ -22,7 +22,7 @@ public class UIControlEnemigos : MonoBehaviour
 
     IEnumerator MostrarApuntar(){
         yield return new WaitForSeconds(60); // Wait 60 secs before first appearance
-        ShowResumen();
+        ShowApuntar();
         StartCoroutine(MostrarApuntar());
     }
 
@@ -34,11 +34,51 @@ public class UIControlEnemigos : MonoBehaviour
         Ganar.SetActive(false);
         Perder.SetActive(false);
     }
-    public void ShowResumen(){
+    public void ShowPregunta(){
         Apuntar.SetActive(false);
         Pregunta.SetActive(true);
+        RespuestaCorrecta.SetActive(false);
+        RespuestaIncorrecta.SetActive(false);
+        Ganar.SetActive(false);
+        Perder.SetActive(false);
     }
 
+     public void ShowRespuestaCorrecta(){
+        Apuntar.SetActive(false);
+        Pregunta.SetActive(false);
+        RespuestaCorrecta.SetActive(true);
+        RespuestaIncorrecta.SetActive(false);
+        Ganar.SetActive(false);
+        Perder.SetActive(false);
+    }
+
+
+     public void ShowRespuestaIncorrecta(){
+        Apuntar.SetActive(false);
+        Pregunta.SetActive(false);
+        RespuestaCorrecta.SetActive(false);
+        RespuestaIncorrecta.SetActive(true);
+        Ganar.SetActive(false);
+        Perder.SetActive(false);
+    }
+
+     public void ShowGanar(){
+        Apuntar.SetActive(false);
+        Pregunta.SetActive(false);
+        RespuestaCorrecta.SetActive(false);
+        RespuestaIncorrecta.SetActive(false);
+        Ganar.SetActive(true);
+        Perder.SetActive(false);
+    }
+
+      public void ShowPerder(){
+        Apuntar.SetActive(false);
+        Pregunta.SetActive(false);
+        RespuestaCorrecta.SetActive(false);
+        RespuestaIncorrecta.SetActive(false);
+        Ganar.SetActive(false);
+        Perder.SetActive(true);
+    }
 
     public void ShowPanel(string panelName)
     {
