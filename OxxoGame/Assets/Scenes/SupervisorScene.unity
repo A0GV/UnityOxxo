@@ -2820,7 +2820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continuar juego
+  m_Text: Continuar jugando
 --- !u!222 &1113676783
 CanvasRenderer:
   m_ObjectHideFlags: 0
