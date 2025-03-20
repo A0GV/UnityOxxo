@@ -7,6 +7,7 @@ public class UIControlDia : MonoBehaviour
 {
     public GameObject canva;
     public GameObject pregunta;
+    public GameObject pausa;
     public int numpreguntas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,7 @@ public class UIControlDia : MonoBehaviour
     {
         canva.SetActive(true);
         pregunta.SetActive(false);
+        pausa.SetActive(false);
     }
     //muestra preguntas y apaga muestras
     public void ShowPregunta()
@@ -64,5 +66,18 @@ public class UIControlDia : MonoBehaviour
     public void Gotomenu()
     {
         DiaControl.Instance.EndMiniGame();
+    }
+    //Pausa
+    public void pausado(){
+        canva.SetActive(false);
+        pregunta.SetActive(false);
+        pausa.SetActive(true);
+    }
+    //MOniii, este lo estoy usando de que en el boton para continuar y el de reiniciar, 
+    // pero se ocupa otraaa función para que eso jale realmente bien, tqm!! 
+    public void despausado(){
+        canva.SetActive(true);
+        pausa.SetActive(false);
+        pregunta.SetActive(false);
     }
 }
