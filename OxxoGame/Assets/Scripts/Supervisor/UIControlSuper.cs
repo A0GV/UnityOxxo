@@ -10,6 +10,8 @@ public class UIControlSuper : MonoBehaviour
     public GameObject pregunta;
     public GameObject resumen;
     public GameObject respuesta;
+    public GameObject pausa;
+
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class UIControlSuper : MonoBehaviour
         main.SetActive(true);
         resumen.SetActive(false);
         manual.SetActive(false);
+        pausa.SetActive(false);
     }
 
     // Displays the summary panel and hides the main panel
@@ -68,6 +71,11 @@ public class UIControlSuper : MonoBehaviour
                 respuesta.SetActive(true);
                 main.SetActive(true); // Ensures the main panel remains active with the response panel
                 break;
+            case "PauseCanvas":
+                pausa.SetActive(true);
+                main.SetActive(true);
+                break;
+
         }
     }
 
