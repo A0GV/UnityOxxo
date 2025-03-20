@@ -337,15 +337,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<< HEAD:OxxoGame/Assets/Sprite/Enemigos/EnemigoRojoIdle.png.meta
-      EnemigoRojoIdle_0: 8889677558778103472
-      EnemigoRojoIdle_1: 2538017186692204889
-      EnemigoRojoIdle_2: 147397804462248060
-      EnemigoRojoIdle_3: 8065439530263550310
-      EnemigoRojoIdle_4: -6236595132503909518
-      EnemigoRojoIdle_5: -763338890293365108
-      EnemigoRojoIdle_6: -3946141756838622934
-=======
       EnemigoVerde_0: 3982643099454806617
       EnemigoVerde_1: -9122065038043539933
       EnemigoVerde_2: 9019366029290605982
@@ -353,7 +344,6 @@ TextureImporter:
       EnemigoVerde_4: -2534339687658389496
       EnemigoVerde_5: 2013259152783410599
       EnemigoVerde_6: 7627608349373884186
->>>>>>> 05b85291ae23f94d62dc215da4131e55c353a5a5:OxxoGame/Assets/Sprite/Enemigos/EnemigoVerde.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
