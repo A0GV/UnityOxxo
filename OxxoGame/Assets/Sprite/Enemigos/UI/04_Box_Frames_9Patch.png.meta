@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: eed7e07acdcf145a29db011e255dc258
+guid: 0d992e0387739459a921e57bbb2a76c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8400699119254020259
-    second: CactoSleeping_0
+      213: 1556613293044321484
+    second: 04_Box_Frames_9Patch_0
   - first:
-      213: 3083499064032650104
-    second: CactoSleeping_1
+      213: 2716850062868137866
+    second: 04_Box_Frames_9Patch_1
   - first:
-      213: -8907521863398765479
-    second: CactoSleeping_2
+      213: 6248477802982815430
+    second: 04_Box_Frames_9Patch_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CactoSleeping_0
+      name: 04_Box_Frames_9Patch_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 19
-        width: 532
-        height: 552
+        x: 8
+        y: 8
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5f5debe8a8ba6b80800000000000000
-      internalID: -8400699119254020259
+      spriteID: cccce80fa833a9510800000000000000
+      internalID: 1556613293044321484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CactoSleeping_1
+      name: 04_Box_Frames_9Patch_1
       rect:
         serializedVersion: 2
-        x: 179
-        y: 489
-        width: 102
-        height: 92
+        x: 56
+        y: 8
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8736ae8cf0acaca20800000000000000
-      internalID: 3083499064032650104
+      spriteID: a87c049dcb034b520800000000000000
+      internalID: 2716850062868137866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CactoSleeping_2
+      name: 04_Box_Frames_9Patch_2
       rect:
         serializedVersion: 2
-        x: 519
-        y: 479
-        width: 72
-        height: 72
+        x: 98
+        y: 8
+        width: 38
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95c471f2f00226480800000000000000
-      internalID: -8907521863398765479
+      spriteID: 6c634b9b47d07b650800000000000000
+      internalID: 6248477802982815430
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      04_Box_Frames_9Patch_0: 1556613293044321484
+      04_Box_Frames_9Patch_1: 2716850062868137866
+      04_Box_Frames_9Patch_2: 6248477802982815430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
