@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EnemigoRojo_0: 3847382494309566756
+      EnemigoRojo_1: 1330209242319975477
+      EnemigoRojo_2: -4352521408817417434
+      EnemigoRojo_3: -5309434106952857290
+      EnemigoRojo_4: 8324370610287174859
+      EnemigoRojo_5: -5911700831365873485
+      EnemigoRojo_6: 7057923747355752126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
