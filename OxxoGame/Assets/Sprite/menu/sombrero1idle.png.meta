@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: bb6023d064a84468aadd76c3d8514435
+guid: ad643288a128fe74e803f7c8e288e6a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 326182069040782643
-    second: Mail_0
+      213: 485205696041972230
+    second: sombrero1idle_0
+  - first:
+      213: -6342084277145780866
+    second: sombrero1idle_1
+  - first:
+      213: -7169875629255950020
+    second: sombrero1idle_2
+  - first:
+      213: 7761882063941495616
+    second: sombrero1idle_3
+  - first:
+      213: -7389778141009351794
+    second: sombrero1idle_4
+  - first:
+      213: -5938869989550445681
+    second: sombrero1idle_5
+  - first:
+      213: 877208730162496833
+    second: sombrero1idle_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mail_0
+      name: sombrero1idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 140
-        height: 100
+        x: 29
+        y: 1019
+        width: 452
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +172,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33d17451dd4d68400800000000000000
-      internalID: 326182069040782643
+      spriteID: 602f393820ccbb600800000000000000
+      internalID: 485205696041972230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1019
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7db225a3f36cf7a0800000000000000
+      internalID: -6342084277145780866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_2
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1019
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3108725a1c7f7c90800000000000000
+      internalID: -7169875629255950020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_3
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 519
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b65b9ec9eb7bb60800000000000000
+      internalID: 7761882063941495616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_4
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 519
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8be038feeb327990800000000000000
+      internalID: -7389778141009351794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_5
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 519
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b2e91c535e49da0800000000000000
+      internalID: -5938869989550445681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sombrero1idle_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 19
+        width: 452
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145053341b87c2c00800000000000000
+      internalID: 877208730162496833
       vertices: []
       indices: 
       edges: []
@@ -173,8 +323,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mail_0: 326182069040782643
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
