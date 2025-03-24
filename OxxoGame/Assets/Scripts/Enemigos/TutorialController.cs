@@ -3,19 +3,19 @@ using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
-    public Image cactusImage;
-    public Sprite[] cactusSprites;
-    public Text dialogueText;
-    public string[] dialogues;
+    public Image cactusImage; // Imagen del cactus (puede ser UI o SpriteRenderer)
+    public Sprite[] cactusSprites; // Sprites por paso
+    public Text dialogueText; // Texto en el globo
+    public string[] dialogues;  // Frases del cactus
 
-    public GameObject panelTutorial;
-    public GameObject panelJuego;
+    public GameObject panelTutorial; // Panel que contiene el tutorial
+    public GameObject panelJuego; // Panel que contiene el gameplay
 
     private int currentStep = 0;
 
     void Start()
     {
-        ShowStep(0);
+        ShowStep(0); // Muestra el primer paso al iniciar
     }
 
     public void NextStep()
@@ -28,7 +28,7 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
-            StartGame();
+            StartGame(); // Aquí termina el tutorial
         }
     }
 
