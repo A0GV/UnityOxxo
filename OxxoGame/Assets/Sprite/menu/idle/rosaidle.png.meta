@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 521ec19baee6a7641921f4a65facd6b4
+guid: f13a7bac67dd6b847995653e688d0b9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8684348694950886549
-    second: sombrero3idle_0
+      213: -4872805029652481207
+    second: rosaidle_0
   - first:
-      213: -9049168092968511257
-    second: sombrero3idle_1
+      213: -6132335158594904209
+    second: rosaidle_1
   - first:
-      213: -1123008001576549214
-    second: sombrero3idle_2
+      213: 2393158035268535046
+    second: rosaidle_2
   - first:
-      213: 6385965518107485444
-    second: sombrero3idle_3
+      213: 4357266054707774781
+    second: rosaidle_3
   - first:
-      213: 8956964486105144828
-    second: sombrero3idle_4
+      213: -1223363129014285745
+    second: rosaidle_4
   - first:
-      213: -8735712915786851659
-    second: sombrero3idle_5
+      213: -9186678267569471922
+    second: rosaidle_5
   - first:
-      213: 8065585217845637717
-    second: sombrero3idle_6
+      213: -3516048971384846282
+    second: rosaidle_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -157,13 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sombrero3idle_0
+      name: rosaidle_0
       rect:
         serializedVersion: 2
         x: 29
         y: 1019
         width: 452
-        height: 383
+        height: 421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59cbc2c5021058870800000000000000
-      internalID: 8684348694950886549
+      spriteID: 94bb3db84a1506cb0800000000000000
+      internalID: -4872805029652481207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_1
+      name: rosaidle_1
       rect:
         serializedVersion: 2
         x: 529
         y: 1019
         width: 452
-        height: 383
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e810d16095ea6280800000000000000
-      internalID: -9049168092968511257
+      spriteID: f6fdf4ce9a195eaa0800000000000000
+      internalID: -6132335158594904209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_2
+      name: rosaidle_2
       rect:
         serializedVersion: 2
         x: 1029
         y: 1019
         width: 452
-        height: 383
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a4cb1a2c264a60f0800000000000000
-      internalID: -1123008001576549214
+      spriteID: 6038d87bd84363120800000000000000
+      internalID: 2393158035268535046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_3
+      name: rosaidle_3
       rect:
         serializedVersion: 2
         x: 29
         y: 519
         width: 452
-        height: 383
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 405a0beedc18f9850800000000000000
-      internalID: 6385965518107485444
+      spriteID: d3589b6146e187c30800000000000000
+      internalID: 4357266054707774781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_4
+      name: rosaidle_4
       rect:
         serializedVersion: 2
         x: 529
         y: 519
         width: 452
-        height: 383
+        height: 417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfd161c7eb78d4c70800000000000000
-      internalID: 8956964486105144828
+      spriteID: f4a0bcf37bdb50fe0800000000000000
+      internalID: -1223363129014285745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_5
+      name: rosaidle_5
       rect:
         serializedVersion: 2
         x: 1029
         y: 519
         width: 452
-        height: 383
+        height: 418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ba9bba036384c680800000000000000
-      internalID: -8735712915786851659
+      spriteID: e4e78bbe9cc528080800000000000000
+      internalID: -9186678267569471922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sombrero3idle_6
+      name: rosaidle_6
       rect:
         serializedVersion: 2
         x: 29
         y: 19
         width: 452
-        height: 383
+        height: 421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,8 +304,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 552b457b507beef60800000000000000
-      internalID: 8065585217845637717
+      spriteID: 6388abfd61c743fc0800000000000000
+      internalID: -3516048971384846282
       vertices: []
       indices: 
       edges: []
