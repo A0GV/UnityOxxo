@@ -8,18 +8,6 @@ TextureImporter:
   - first:
       213: 7956725871824286981
     second: CactoWaking_1
-  - first:
-      213: 7935227420359655184
-    second: CactoWaking_2
-  - first:
-      213: 5091838387871916199
-    second: CactoWaking_3
-  - first:
-      213: 7459679997702456901
-    second: CactoWaking_4
-  - first:
-      213: 5872026363668966531
-    second: CactoWaking_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,28 +128,6 @@ TextureImporter:
       name: CactoWaking_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 329
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5053f3d1608fb6e60800000000000000
-      internalID: 7956725871824286981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CactoWaking_2
-      rect:
-        serializedVersion: 2
         x: 169
         y: 0
         width: 392
@@ -174,74 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01ff972db479f1e60800000000000000
-      internalID: 7935227420359655184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CactoWaking_3
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 329
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a0adca3908d9a640800000000000000
-      internalID: 5091838387871916199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CactoWaking_4
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 289
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54644215f6b168760800000000000000
-      internalID: 7459679997702456901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CactoWaking_5
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 289
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38ca73ecdd0ad7150800000000000000
-      internalID: 5872026363668966531
+      spriteID: 5053f3d1608fb6e60800000000000000
+      internalID: 7956725871824286981
       vertices: []
       indices: 
       edges: []
@@ -259,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CactoWaking_0: 5615119176822191040
+      CactoWaking_1: 7956725871824286981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
