@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -323,7 +336,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rosaidle_0: -4872805029652481207
+      rosaidle_1: -6132335158594904209
+      rosaidle_2: 2393158035268535046
+      rosaidle_3: 4357266054707774781
+      rosaidle_4: -1223363129014285745
+      rosaidle_5: -9186678267569471922
+      rosaidle_6: -3516048971384846282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

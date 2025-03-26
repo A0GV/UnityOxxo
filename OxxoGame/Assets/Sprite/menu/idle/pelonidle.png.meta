@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -323,7 +336,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pelonidle_0: -8632249821062277397
+      pelonidle_1: 4360078605137889756
+      pelonidle_2: -7254687323764381205
+      pelonidle_3: 2397107497054488404
+      pelonidle_4: 4872079657090875409
+      pelonidle_5: 7226272188081407738
+      pelonidle_6: 2648776323113754355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
