@@ -323,7 +323,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rosaidle_0: -4872805029652481207
+      rosaidle_1: -6132335158594904209
+      rosaidle_2: 2393158035268535046
+      rosaidle_3: 4357266054707774781
+      rosaidle_4: -1223363129014285745
+      rosaidle_5: -9186678267569471922
+      rosaidle_6: -3516048971384846282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

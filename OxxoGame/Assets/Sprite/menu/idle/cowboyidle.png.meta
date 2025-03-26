@@ -323,7 +323,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cowboyidle_0: 1282165855692392655
+      cowboyidle_1: -5432659746316971140
+      cowboyidle_2: -118546161116056052
+      cowboyidle_3: -3325852596896530043
+      cowboyidle_4: 6942027548964000104
+      cowboyidle_5: -463714156772757391
+      cowboyidle_6: -7606516256640116733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
