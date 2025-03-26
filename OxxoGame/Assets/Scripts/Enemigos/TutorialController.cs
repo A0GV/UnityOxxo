@@ -1,47 +1,45 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
-    public Image cactusImage; // Imagen del cactus (puede ser UI o SpriteRenderer)
-    public Sprite[] cactusSprites; // Sprites por paso
-    public Text dialogueText; // Texto en el globo
-    public string[] dialogues;  // Frases del cactus
-
-    public GameObject panelTutorial; // Panel que contiene el tutorial
-    public GameObject panelJuego; // Panel que contiene el gameplay
+    public GameObject[] panelesPorPaso;  // Todos los paneles del tutorial en orden
+    public GameObject panelJuego;        // Panel del gameplay final
 
     private int currentStep = 0;
 
     void Start()
     {
-        ShowStep(0); // Muestra el primer paso al iniciar
+        MostrarPaso(0); // Comienza con el primer panel activo
     }
 
-    public void NextStep()
+    public void SiguientePaso()
     {
+        // Oculta el panel actual
+        panelesPorPaso[currentStep].SetActive(false);
         currentStep++;
 
-        if (currentStep < dialogues.Length)
+        // Si hay más pasos, muestra el siguiente
+        if (currentStep < panelesPorPaso.Length)
         {
-            ShowStep(currentStep);
+            MostrarPaso(currentStep);
         }
         else
         {
-            StartGame(); // Aquí termina el tutorial
+            IniciarJuego();
         }
     }
 
-    void ShowStep(int step)
+    void MostrarPaso(int index)
     {
-        dialogueText.text = dialogues[step];
-        cactusImage.sprite = cactusSprites[step];
+        panelesPorPaso[index].SetActive(true);
     }
 
-    void StartGame()
+    void IniciarJuego()
     {
-        panelTutorial.SetActive(false);
+        // Oculta todo el tutorial
+        gameObject.SetActive(false);
+
+        // Activa el panel del gameplay
         panelJuego.SetActive(true);
     }
 }
-
