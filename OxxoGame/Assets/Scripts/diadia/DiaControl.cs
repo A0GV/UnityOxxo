@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic; // To use library
 
 // Clase usada para monitorear los problemas activos
 public class ProblemaActivo
@@ -8,7 +9,7 @@ public class ProblemaActivo
     public float tiempoInicio;
     public bool resuelto;
 
-    // Constructor para el problema
+    // Constructor para el problema activo
     public ProblemaActivo(Problema datos, float startTime)
     {
         datosProblema = datos;
@@ -23,6 +24,9 @@ public class DiaControl : MonoBehaviour
     public UIControlDia uiController;
 
     // Valores de variables 
+    public List<ProblemaActivo> problemasActivos = new List<ProblemaActivo>();
+
+    // Variables 
     public int planograma = 7; 
     public int expiradoRetiro = 8;
     public int maquinasFuncionales = 9;
