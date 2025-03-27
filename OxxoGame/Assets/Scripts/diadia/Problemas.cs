@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
-
 [CreateAssetMenu(fileName = "ProblemaNuevo", menuName = "DiaDia/Problemas")]
 public class Problema : ScriptableObject
 {

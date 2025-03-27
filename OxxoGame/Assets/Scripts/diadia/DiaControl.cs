@@ -10,10 +10,10 @@ public class ProblemaActivo
     public bool resuelto;
 
     // Constructor para el problema activo
-    public ProblemaActivo(Problema datos, float startTime)
+    public ProblemaActivo(Problema datos, float _tiempoInicio)
     {
         datosProblema = datos;
-        tiempoInicio = tiempoInicio;
+        tiempoInicio = _tiempoInicio;
         resuelto = false;
     }
 }
@@ -23,7 +23,7 @@ public class DiaControl : MonoBehaviour
     static public DiaControl Instance;
     public UIControlDia uiController;
 
-    // Valores de variables 
+    // Lista de problemas activos 
     public List<ProblemaActivo> problemasActivos = new List<ProblemaActivo>();
 
     // Variables 
