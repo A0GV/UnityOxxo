@@ -26,6 +26,8 @@ public class UIControlDia : MonoBehaviour
         StartCoroutine(Mostrarpregunta());
     }
 
+    // Enseñar dinero 
+
     //Espera 5 segundos para mostrar la pregunta
     IEnumerator Mostrarpregunta(){
         yield return new WaitForSeconds(12);
@@ -33,7 +35,7 @@ public class UIControlDia : MonoBehaviour
         StartCoroutine(Mostrarpregunta());
     }
 
-    //Muestra metricas del juego y apaga el canva de preguntas
+    // Muestra metricas del juego y apaga el canva de preguntas
     public void ShowCanva()
     {
         canva.SetActive(true);
@@ -46,8 +48,7 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(false);
         pregunta.SetActive(true);
     }
-    //Esconde la pregunta y cuenta la
-    // s preguntas que han salido
+    //Esconde la pregunta y cuenta las preguntas que han salido
     public void HidePregunta()
     {
         canva.SetActive(true);
@@ -81,7 +82,7 @@ public class UIControlDia : MonoBehaviour
         pregunta.SetActive(false);
         pausa.SetActive(true);
     }
-    
+
     //MOniii, este lo estoy usando de que en el boton para continuar y el de reiniciar, 
     // pero se ocupa otraaa función para que eso jale realmente bien, tqm!! 
     public void despausado(){
