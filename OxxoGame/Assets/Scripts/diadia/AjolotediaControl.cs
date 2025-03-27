@@ -6,7 +6,7 @@ public class AjolotediaControl : MonoBehaviour
     public float velocidad;
     Animator animatorController;    
     private Vector3 direccion = Vector3.left;
-    bool isup=false;
+    bool isup = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +43,7 @@ public class AjolotediaControl : MonoBehaviour
     public enum PlayerAnimation{
         leftie, rightie, upie, downie
     }
+
     //Cambios
     void UpdateAnimation(PlayerAnimation nameAnimation){
         switch(nameAnimation)

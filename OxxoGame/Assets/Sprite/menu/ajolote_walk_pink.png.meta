@@ -211,7 +211,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajolote_walk_pink_0: -4568752956391659810
+      ajolote_walk_pink_1: -3167980887105062073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

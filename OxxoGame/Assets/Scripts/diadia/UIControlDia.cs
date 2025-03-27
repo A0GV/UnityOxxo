@@ -20,16 +20,19 @@ public class UIControlDia : MonoBehaviour
     {
         
     }
+
     //Inicia corrutinas para mostrar la pregunta después de mostrar una pregunta
     public void StartTime(){
         StartCoroutine(Mostrarpregunta());
     }
+
     //Espera 5 segundos para mostrar la pregunta
     IEnumerator Mostrarpregunta(){
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(12);
         ShowPregunta();
         StartCoroutine(Mostrarpregunta());
     }
+
     //Muestra metricas del juego y apaga el canva de preguntas
     public void ShowCanva()
     {
@@ -43,36 +46,42 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(false);
         pregunta.SetActive(true);
     }
-    //Esconde la pregunta y cuenta las preguntas que han salido
+    //Esconde la pregunta y cuenta la
+    // s preguntas que han salido
     public void HidePregunta()
     {
         canva.SetActive(true);
         pregunta.SetActive(false);
         DiaControl.Instance.Contarpreguntas();
     }
-    //checa si ya se contestaron la cantidad de preguntas determinadas y }
-    // en caso de que si manda a la escena final del juego
+
+    //checa si ya se contestaron la cantidad de preguntas determinadas y 
+    // en caso de que sí, manda a la escena final del juego
     public void checarnumpreguntas(){
         if(PlayerPrefs.GetInt("preguntas") <= 0){
             ShowResultados();
         }
     }
+
     //Manda a la escena final del juego
     public void ShowResultados()
     {
         DiaControl.Instance.Gotoendgame();
     }
+
     //Manda al menú
     public void Gotomenu()
     {
         DiaControl.Instance.EndMiniGame();
     }
+
     //Pausa
     public void pausado(){
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
     }
+    
     //MOniii, este lo estoy usando de que en el boton para continuar y el de reiniciar, 
     // pero se ocupa otraaa función para que eso jale realmente bien, tqm!! 
     public void despausado(){
