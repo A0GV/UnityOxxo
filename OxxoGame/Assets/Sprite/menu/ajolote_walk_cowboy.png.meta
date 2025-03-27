@@ -211,7 +211,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajolote_walk_cowboy_0: -5349033246328546053
+      ajolote_walk_cowboy_1: -423633261129753170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -211,7 +211,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajolote_walk_fancy_0: -1212085319430360512
+      ajolote_walk_fancy_1: 5177830580564287162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
