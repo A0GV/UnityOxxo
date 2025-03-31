@@ -20,8 +20,11 @@ public class ProblemaActivo
 
 public class DiaControl : MonoBehaviour
 {
-    static public DiaControl Instance;
+    static public DiaControl Instance; // Instance de controller
     public UIControlDia uiController;
+
+    // Dinero 
+    public int dinero = 0; 
 
     // Lista de problemas activos 
     public List<ProblemaActivo> problemasActivos = new List<ProblemaActivo>();
@@ -42,13 +45,14 @@ public class DiaControl : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //Termina corrutinas e inicializa variables
-    void Start()
+    //Termina corrutinas e inicializa variables, cambiado Start -> Awake 
+    void Awake()
     {   
         StopAllCoroutines();
         PlayerPrefs.SetInt("preguntas", 8);
+        PlayerPrefs.SetInt("dinero", PlayerPrefs.GetInt("dinero", dinero)); 
         Instance = this;
+        DontDestroyOnLoad(this.gameObject); // Para no destruir instancia
         uiController.ShowCanva(); //muestra metricas del juego
         init();
     }
