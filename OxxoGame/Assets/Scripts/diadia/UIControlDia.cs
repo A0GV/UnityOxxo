@@ -5,12 +5,19 @@ using System.Collections;
 
 public class UIControlDia : MonoBehaviour
 {
+    // Instance
+    static public DiaControl Instance; // Instance de controller
+
     public GameObject canva;
     public GameObject pregunta;
     public GameObject pausa;
     public int numpreguntas;
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
+
+    public Text textAct1; 
+    public Text textAct2; 
+    public Text textAct3;
     
 
     // De DiaControl
@@ -33,15 +40,17 @@ public class UIControlDia : MonoBehaviour
         
     }
 
-    //Inicia corrutinas para mostrar la pregunta después de mostrar una pregunta
+    /* Inicia corrutinas para mostrar la pregunta después de mostrar una pregunta
     public void StartTime() 
     {
         StartCoroutine(StartDay());
     }
+    */
 
     // Enseñar dinero durante día
     public void ShowMoney()
     {
+        dinero = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
         textDinero.text = "$ " + dinero; 
     }
 
@@ -51,6 +60,7 @@ public class UIControlDia : MonoBehaviour
         textDineroQuestion.text = "$ " + dinero; 
     }
 
+    /*
     // New time function
     IEnumerator StartDay()
     {
@@ -63,6 +73,7 @@ public class UIControlDia : MonoBehaviour
         {
             ShowPregunta(); // Shows new question
             time = 0; // Resets time to start a new day
+            DiaControl.Instance.GenerarProblemasDelDia(); // Calls instance to generate new problem
             StartCoroutine(StartDay()); // Starts the day again
         } 
         // Else has not finished day
@@ -71,6 +82,7 @@ public class UIControlDia : MonoBehaviour
             StartCoroutine(StartDay()); // Calls routine again
         }
     }
+    */
  
     //Espera 5 segundos para mostrar la pregunta
     /*
@@ -89,6 +101,7 @@ public class UIControlDia : MonoBehaviour
         pregunta.SetActive(false);
         pausa.SetActive(false);
     }
+
     //muestra preguntas y apaga muestras
     public void ShowPregunta()
     {
@@ -139,3 +152,11 @@ public class UIControlDia : MonoBehaviour
         pregunta.SetActive(false);
     }
 }
+
+/*
+TODO
+- Figure out how to assign the problems name to the text panel
+- Figure out how to destroy the questions when they are done
+- Figure out how to place the danger icons in the right place 
+- Make sure the equation works
+*/

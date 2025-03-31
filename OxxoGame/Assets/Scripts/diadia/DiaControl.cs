@@ -1,22 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic; // To use library
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Security.Cryptography; // To use library
 
-// Clase usada para monitorear los problemas activos
+/* Class to keep track of the active problems using the Problemas class 
 public class ProblemaActivo
 {
     public Problema datosProblema;
-    public float tiempoInicio;
+    //public float tiempoInicio;
     public bool resuelto;
 
     // Constructor para el problema activo
-    public ProblemaActivo(Problema datos, float _tiempoInicio)
+    public ProblemaActivo(Problema datos)
     {
         datosProblema = datos;
-        tiempoInicio = _tiempoInicio;
+        //tiempoInicio = _tiempoInicio;
         resuelto = false;
     }
+
+    public int lowerScore(Problema datos) 
+    {
+        
+    }
 }
+*/
 
 public class DiaControl : MonoBehaviour
 {
@@ -25,11 +34,15 @@ public class DiaControl : MonoBehaviour
 
     // Dinero 
     public int dinero = 0; 
+    int time = 0; 
 
-    // Lista de problemas activos 
-    public List<ProblemaActivo> problemasActivos = new List<ProblemaActivo>();
+    // Monitorear problemas
+    public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
+    public List<Problema> problemasActivos = new List<Problema>(); // Lista de problemas activos 
+    int numProblemasActivos = 0; // Monitorea número de problemas activos
 
-    // Variables 
+    // Valor máximo de cada tipo de problema
+    public int totalSatisfaction; 
     public int planograma = 7; 
     public int expiradoRetiro = 8;
     public int maquinasFuncionales = 9;
@@ -50,17 +63,54 @@ public class DiaControl : MonoBehaviour
     {   
         StopAllCoroutines();
         PlayerPrefs.SetInt("preguntas", 8);
-        PlayerPrefs.SetInt("dinero", PlayerPrefs.GetInt("dinero", dinero)); 
+        PlayerPrefs.SetInt("dinero", 0); // Sets to 0
         Instance = this;
         DontDestroyOnLoad(this.gameObject); // Para no destruir instancia
         uiController.ShowCanva(); //muestra metricas del juego
+        //DeclararProblemas(); // Function to help initialize all possible problems
+        problemasActivos.Clear(); // Make sure no problems are left over
         init();
     }
 
+    /*
+    public void DeclararProblemas()
+    {
+        Problema p1 = new Problema("Planograma", -3, "No se está siguiendo una parte del planograma"); 
+        todosProblemas.Append<p1>; 
+    }
+    */
+
     //Inicia corrutinas
     void init(){
+        /*
         if (uiController != null){
-            uiController.StartTime();
+            uiController.StartTime(); // Starts timer
+        }
+        */
+        GenerarProblemasDelDia(); 
+        StartCoroutine(StartDay()); 
+    }
+
+    // Starts a new day
+    IEnumerator StartDay()
+    {
+        yield return new WaitForSeconds(1); // Waits one second
+        time += 1; // Increases time by 1
+        uiController.ShowMoney(); // Update money text on UI
+
+        // Checks if 12 seconds have passed
+        if (time == 12)
+        {
+            uiController.ShowPregunta(); // Shows new question
+            time = 0; // Resets time to start a new day
+            //DiaControl.Instance.GenerarProblemasDelDia(); // Calls instance to generate new problem
+            GenerarProblemasDelDia(); // Generates new problems
+            StartCoroutine(StartDay()); // Starts the day again
+        } 
+        // Else has not finished day
+        else 
+        {
+            StartCoroutine(StartDay()); // Calls routine again
         }
     }
     
@@ -77,10 +127,55 @@ public class DiaControl : MonoBehaviour
     }
 
     // Ecuación de dinero
-    public void CalcularDinero() 
+    public int CalcularDinero() 
     {
+        // Sums all variables to calculate earnings
+        dinero += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
 
+        // Bajar cantidad de dinero en base al negative impact de cada uno
+        numProblemasActivos = problemasActivos.Count; // Get number of active problems
+        for (int i = 0; i < numProblemasActivos; i++)
+        {
+            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+        }
+
+        return dinero; // Returns money 
     }
+
+    // Manejar problemas
+    public void GenerarProblemasDelDia()
+    {
+        int diaActual = 9 - PlayerPrefs.GetInt("preguntas", 8); // Día 1 a 8
+
+        // If in day 1, generates three questions
+        if (PlayerPrefs.GetInt("preguntas") == 8)
+        {
+            problemasActivos.Clear();
+
+            // To eliminate option of repeating problems 
+            List<Problema> copiaProblemas = new List<Problema>(todosProblemas);
+
+            for (int i = 0; i < 3; i++)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, copiaProblemas.Count); // Random index of problem
+                Problema seleccionado = copiaProblemas[randomIndex]; // Stores Problema selected randomly
+                copiaProblemas.RemoveAt(randomIndex); // Eliminates for tracking
+                problemasActivos.Add(seleccionado); // Adds random problem
+            }
+        }
+        // Remaining days 
+        else
+        {
+            if (problemasActivos.Count < 3)
+            {
+                List<Problema> disponibles = todosProblemas.Except(problemasActivos).ToList(); // Stores all problems that were created but excludes active ones to avoid repetition
+                int randomIndex = UnityEngine.Random.Range(0, disponibles.Count);
+                Problema seleccionadoNuevo = disponibles[randomIndex];
+                problemasActivos.Add(seleccionadoNuevo);
+            }
+        }
+    }
+
 
     // Manda a la escena final del juego
     public void Gotoendgame(){

@@ -5518,6 +5518,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1349794129}
   dinero: 0
+  todosProblemas:
+  - {fileID: 11400000, guid: b01e287cf2d9b4fc4843384daf6924c8, type: 2}
+  - {fileID: 11400000, guid: 830e42fc5c9524f53ae71057385318b9, type: 2}
+  - {fileID: 11400000, guid: 9dd1b8632002f42a7a1c7689dfbcf969, type: 2}
+  - {fileID: 11400000, guid: c2503726357f247a7a79f5954850a04c, type: 2}
+  problemasActivos: []
+  totalSatisfaction: 0
   planograma: 7
   expiradoRetiro: 8
   maquinasFuncionales: 9
@@ -5949,7 +5956,7 @@ GameObject:
   - component: {fileID: 795372129}
   - component: {fileID: 795372128}
   m_Layer: 5
-  m_Name: numaccion
+  m_Name: numaccion1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12393,7 +12400,7 @@ GameObject:
   - component: {fileID: 1604884343}
   - component: {fileID: 1604884342}
   m_Layer: 5
-  m_Name: numaccion
+  m_Name: numaccion3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13931,7 +13938,7 @@ GameObject:
   - component: {fileID: 1797912714}
   - component: {fileID: 1797912713}
   m_Layer: 5
-  m_Name: numaccion
+  m_Name: numaccion2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
