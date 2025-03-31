@@ -57,6 +57,7 @@ public class UIControlDia : MonoBehaviour
     // Enseñar dinero en pantalla de desición
     public void ShowQuestionMoney()
     {
+        dinero = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
         textDineroQuestion.text = "$ " + dinero; 
     }
 
@@ -107,6 +108,13 @@ public class UIControlDia : MonoBehaviour
     {
         canva.SetActive(false);
         pregunta.SetActive(true);
+
+        string act1Txt = DiaControl.Instance.problemasActivos[0].GetNombreProblema(); // First active problem
+        textAct1.text = act1Txt;
+        string act2Txt = DiaControl.Instance.problemasActivos[1].GetNombreProblema(); // Second active problem
+        textAct2.text = act2Txt;
+        string act3Txt = DiaControl.Instance.problemasActivos[2].GetNombreProblema(); // Saca primer problema activo
+        textAct3.text = act3Txt;
     }
 
     // Esconde la pregunta y cuenta las preguntas que han salido

@@ -10120,6 +10120,9 @@ MonoBehaviour:
   numpreguntas: 0
   textDinero: {fileID: 1267643320}
   textDineroQuestion: {fileID: 2043214615}
+  textAct1: {fileID: 795372128}
+  textAct2: {fileID: 1797912713}
+  textAct3: {fileID: 1604884342}
 --- !u!1 &1359644114
 GameObject:
   m_ObjectHideFlags: 0

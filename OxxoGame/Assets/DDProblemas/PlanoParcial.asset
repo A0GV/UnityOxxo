@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607179c47dc5a44a3ba0803565e419e7, type: 3}
   m_Name: PlanoParcial
   m_EditorClassIdentifier: 
-  problemaNombre: 
-  impactoNegativo: 0
-  descripcion: 
-  icon: {fileID: 0}
+  problemaNombre: Planograma Parcial
+  impactoNegativo: -3
+  descripcion: "No se est\xE1 siguiendo una parte del planograma"
+  icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
