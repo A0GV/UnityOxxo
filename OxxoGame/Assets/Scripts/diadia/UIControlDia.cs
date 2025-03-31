@@ -18,6 +18,8 @@ public class UIControlDia : MonoBehaviour
     public Text textAct1; 
     public Text textAct2; 
     public Text textAct3;
+
+    public int dineroUI; 
     
 
     // De DiaControl
@@ -50,15 +52,15 @@ public class UIControlDia : MonoBehaviour
     // Enseñar dinero durante día
     public void ShowMoney()
     {
-        dinero = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
-        textDinero.text = "$ " + dinero; 
+        dineroUI = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
+        textDinero.text = "$ " + dineroUI; 
     }
 
     // Enseñar dinero en pantalla de desición
     public void ShowQuestionMoney()
     {
-        dinero = DiaControl.Instance.SkipCalcularDinero(); // Uses instance of DiaControl function to update money counted taking into account the skip
-        textDineroQuestion.text = "$ " + dinero; 
+        dineroUI = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted taking into account the skip
+        textDineroQuestion.text = "$ " + dineroUI; 
     }
 
     /*
@@ -103,12 +105,23 @@ public class UIControlDia : MonoBehaviour
         pausa.SetActive(false);
     }
 
+    // Function to set skip day
+    public void SkipDay() 
+    {
+        DiaControl.Instance.SkipCalcularDinero(); // Llama función indicando q se skip el día y actualize cantidad de dinero
+        ShowPregunta(); 
+    }
+
     //muestra preguntas y apaga muestras
     public void ShowPregunta()
     {
         canva.SetActive(false);
         pregunta.SetActive(true);
 
+        // Shows money
+        ShowQuestionMoney(); 
+
+        // Shows problem names
         string act1Txt = DiaControl.Instance.problemasActivos[0].GetNombreProblema(); // First active problem
         textAct1.text = act1Txt;
         string act2Txt = DiaControl.Instance.problemasActivos[1].GetNombreProblema(); // Second active problem
@@ -163,8 +176,6 @@ public class UIControlDia : MonoBehaviour
 
 /*
 TODO
-- Figure out how to assign the problems name to the text panel
-- Figure out how to destroy the questions when they are done
 - Figure out how to place the danger icons in the right place 
 - Make sure the equation works
 */

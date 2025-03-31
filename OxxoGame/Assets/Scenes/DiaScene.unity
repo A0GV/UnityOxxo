@@ -5518,6 +5518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1349794129}
   dinero: 0
+  dineroSkip: 0
   todosProblemas:
   - {fileID: 11400000, guid: b01e287cf2d9b4fc4843384daf6924c8, type: 2}
   - {fileID: 11400000, guid: 830e42fc5c9524f53ae71057385318b9, type: 2}
@@ -10123,6 +10124,7 @@ MonoBehaviour:
   textAct1: {fileID: 795372128}
   textAct2: {fileID: 1797912713}
   textAct3: {fileID: 1604884342}
+  dineroUI: 0
 --- !u!1 &1359644114
 GameObject:
   m_ObjectHideFlags: 0
