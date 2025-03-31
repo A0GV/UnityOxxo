@@ -57,7 +57,7 @@ public class UIControlDia : MonoBehaviour
     // Enseñar dinero en pantalla de desición
     public void ShowQuestionMoney()
     {
-        dinero = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
+        dinero = DiaControl.Instance.SkipCalcularDinero(); // Uses instance of DiaControl function to update money counted taking into account the skip
         textDineroQuestion.text = "$ " + dinero; 
     }
 
@@ -113,7 +113,7 @@ public class UIControlDia : MonoBehaviour
         textAct1.text = act1Txt;
         string act2Txt = DiaControl.Instance.problemasActivos[1].GetNombreProblema(); // Second active problem
         textAct2.text = act2Txt;
-        string act3Txt = DiaControl.Instance.problemasActivos[2].GetNombreProblema(); // Saca primer problema activo
+        string act3Txt = DiaControl.Instance.problemasActivos[2].GetNombreProblema(); // Tercer problema activo
         textAct3.text = act3Txt;
     }
 

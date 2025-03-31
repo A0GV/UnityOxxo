@@ -4,29 +4,6 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
 using System.Security.Cryptography; // To use library
-
-/* Class to keep track of the active problems using the Problemas class 
-public class ProblemaActivo
-{
-    public Problema datosProblema;
-    //public float tiempoInicio;
-    public bool resuelto;
-
-    // Constructor para el problema activo
-    public ProblemaActivo(Problema datos)
-    {
-        datosProblema = datos;
-        //tiempoInicio = _tiempoInicio;
-        resuelto = false;
-    }
-
-    public int lowerScore(Problema datos) 
-    {
-        
-    }
-}
-*/
-
 public class DiaControl : MonoBehaviour
 {
     static public DiaControl Instance; // Instance de controller
@@ -35,6 +12,7 @@ public class DiaControl : MonoBehaviour
     // Dinero 
     public int dinero = 0; 
     int time = 0; 
+    public int dineroVisual = 0; // Para enseñar la animación
 
     // Monitorear problemas
     public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
@@ -126,11 +104,27 @@ public class DiaControl : MonoBehaviour
         uiController.checarnumpreguntas();
     }
 
-    // Ecuación de dinero
+    // Ecuación de dinero por segundo
     public int CalcularDinero() 
     {
         // Sums all variables to calculate earnings
-        dinero += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
+        dineroVisual += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
+
+        // Bajar cantidad de dinero en base al negative impact de cada uno
+        numProblemasActivos = problemasActivos.Count; // Get number of active problems
+        for (int i = 0; i < numProblemasActivos; i++)
+        {
+            dineroVisual += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+        }
+
+        return dineroVisual; // Returns money 
+    }
+
+    // Calcula cantidad todal de dinero por si usuario se salta todo, actualiza la info
+    public int SkipCalcularDinero() 
+    {
+        // Sums all variables to calculate earnings
+        dinero += (planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente) * (12-time); // Usa los 12 segundos - tiempo q ya paso por si se salta el dinero
 
         // Bajar cantidad de dinero en base al negative impact de cada uno
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
@@ -175,7 +169,6 @@ public class DiaControl : MonoBehaviour
             }
         }
     }
-
 
     // Manda a la escena final del juego
     public void Gotoendgame(){
