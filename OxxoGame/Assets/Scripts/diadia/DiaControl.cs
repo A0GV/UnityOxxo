@@ -12,7 +12,7 @@ public class DiaControl : MonoBehaviour
     // Dinero 
     public int dinero = 0; 
     int time = 0; 
-    public int dineroVisual = 0; // Para enseñar la animación
+    public int dineroSkip = 0; // Para enseñar la animación
 
     // Monitorear problemas
     public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
@@ -108,32 +108,39 @@ public class DiaControl : MonoBehaviour
     public int CalcularDinero() 
     {
         // Sums all variables to calculate earnings
-        dineroVisual += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
+        dinero += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
 
         // Bajar cantidad de dinero en base al negative impact de cada uno
+        /*
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
-            dineroVisual += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
+        */
 
-        return dineroVisual; // Returns money 
+        return dinero; // Returns money 
     }
 
     // Calcula cantidad todal de dinero por si usuario se salta todo, actualiza la info
-    public int SkipCalcularDinero() 
+    public void SkipCalcularDinero() 
     {
-        // Sums all variables to calculate earnings
-        dinero += (planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente) * (12-time); // Usa los 12 segundos - tiempo q ya paso por si se salta el dinero
 
+        // Sums all variables to calculate earnings
+        dineroSkip += (planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente) * (12-time); // Usa los 12 segundos - tiempo q ya paso por si se salta el dinero
+
+        /*
         // Bajar cantidad de dinero en base al negative impact de cada uno
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
             dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
+        */
 
-        return dinero; // Returns money 
+        dinero += dineroSkip; // Agrega dinero del skip al principal
+
+        //return dineroSkip; // Returns money 
     }
 
     // Manejar problemas
@@ -169,6 +176,8 @@ public class DiaControl : MonoBehaviour
             }
         }
     }
+
+    // Resolver problema
 
     // Manda a la escena final del juego
     public void Gotoendgame(){
