@@ -21,6 +21,7 @@ public class DiaControl : MonoBehaviour
     public int dineroSkip = 0; // Para enseñar la animación
 
     // Control de tiempo
+    public int timePerDay = 12; // Sets day length
     public int time = 0; // Public because needed in UI control to reset time
     bool checkDayActive = true; // Used to check if day is active 
     public Coroutine dayCoroutine; // To track the day coroutine
@@ -96,8 +97,8 @@ public class DiaControl : MonoBehaviour
             dineroDiaActual += CalcularSatisfaccionPorSegundo(); // Updates money earned every second based on active problems
             uiController.ShowMoney(); // Update money text on UI
 
-            // Checks if 12 seconds have passed
-            if (time == 12)
+            // Checks if day is over seconds have passed
+            if (time == timePerDay)
             {
                 checkDayActive = false; // Pause the day
                 dinero += dineroDiaActual; // Suma dinero del día al total cuando se acaba
@@ -143,7 +144,7 @@ public class DiaControl : MonoBehaviour
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
-            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+            satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
         */
 
@@ -163,64 +164,27 @@ public class DiaControl : MonoBehaviour
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
-            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+            satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
         */
 
-        //dinero = satisfaccionPorSegundo * time; // Multiplica en base a cuanto tiempo ha pasado
-
-        //return dinero; // Returns final money of that day 
         return satisfaccionPorSegundo; // To update count dynamically based on seconds, or once has 12 seconds
     }
 
     // Calcula cantidad todal de dinero por si usuario se salta todo, actualiza la info
     public void SkipCalcularDinero() 
     {
-
-        // Sums all variables to calculate earnings
-        // Sums all variables to calculate earnings for each second, m in y = mx
-        //int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
-
-        /*
-        // Bajar cantidad de dinero en base al negative impact de cada uno
-        numProblemasActivos = problemasActivos.Count; // Get number of active problems
-        for (int i = 0; i < numProblemasActivos; i++)
-        {
-            satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
-        }
-        */
-
-       
-        /*
-        int tiempoSkipped = 12 - time; // Cantidad de tiempo que no se saltó
-        int dineroSkipped = satisfaccionPorSegundo * tiempoSkipped; // La cantidad de dinero que ganaría si no se saltara el día
-        
-        dinero += CalcularDineroVisual(); // Uses current time to add to dinero 
-        dinero += dineroSkip; // Adds dinero generated through skip
-
-        // Sets time equal to 12 seconds to calculate the money user should've earned 
-        //time = 12; 
-        //dinero += CalcularDinero(); // Calcula dinero cumulativo del día and adds to cumulative value
-
-        checkDayActive = false; // Stops the day so that time stops passing 
-        uiController.ShowPregunta(); // Switches to question panel
-        
-        int tiempoSkipped = 12 - time;
-        int dineroSkipped = satisfaccionPorSegundo * tiempoSkipped;
-
-        // Add money up to this point + the skipped part
-        dinero += CalcularDinero();
-        dinero += dineroSkipped;
-
-        checkDayActive = false;
-        uiController.ShowPregunta(); 
-        */
-        int tiempoRestante = 12 - time; // Checks how much time was left before the skip
+        int tiempoRestante = timePerDay - time; // Checks how much time was left before the skip
         int satisfaccionPorSegundo = CalcularSatisfaccionPorSegundo(); // Guarda satisfaccion por segundo del día
         dineroDiaActual += satisfaccionPorSegundo * tiempoRestante;
         dinero += dineroDiaActual; // Update dinero total
 
-        checkDayActive = false; // Stops time 
+        dineroDiaActual = 0; // Resets money for day
+        StopCoroutine(dayCoroutine); // Stops the coroutine
+        checkDayActive = false; // Stops the day properly 
+
+
+        uiController.ShowMoney(); // Shows money text
         uiController.ShowPregunta(); // Shows questioin
     }
 

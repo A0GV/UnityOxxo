@@ -111,6 +111,7 @@ public class UIControlDia : MonoBehaviour
     public void SkipDay() 
     {
         DiaControl.Instance.SkipCalcularDinero(); // Llama función indicando q se skip el día y actualize cantidad de dinero
+        ShowMoney(); // Shows money just in case
         ShowPregunta(); 
     }
 
