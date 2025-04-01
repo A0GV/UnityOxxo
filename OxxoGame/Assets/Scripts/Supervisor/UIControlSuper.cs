@@ -27,7 +27,7 @@ public class UIControlSuper : MonoBehaviour
     {
         if (resumenCoroutine == null)
         {
-            resumenCoroutine = StartCoroutine(MostrarResumen()); // Start the coroutine
+            // resumenCoroutine = StartCoroutine(MostrarResumen()); // Start the coroutine
         }
     }
 
