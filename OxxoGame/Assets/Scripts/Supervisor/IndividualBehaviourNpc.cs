@@ -3,7 +3,7 @@ using UnityEngine;
 public class IndividualBehaviourNpc : MonoBehaviour
 {
 
-    public float moveSpeed;
+    private float moveSpeed = 5;
     private Animator animatorController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +18,7 @@ public class IndividualBehaviourNpc : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log("W pressed");
+            // Debug.Log("W pressed");
             UpdateAnimation(NpcAnimation.Walking);
             this.transform.position += Vector3.left * Time.deltaTime * moveSpeed;
             if (transform.position.x < -50)
@@ -29,12 +29,12 @@ public class IndividualBehaviourNpc : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.T))
         {
-            Debug.Log("T pressed");
+            // Debug.Log("T pressed");
             UpdateAnimation(NpcAnimation.Talking);
         }
         else
         {
-            Debug.Log("No key pressed");
+            // Debug.Log("No key pressed");
             UpdateAnimation(NpcAnimation.Idle);
         }
     }
@@ -62,4 +62,16 @@ public class IndividualBehaviourNpc : MonoBehaviour
                 break;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Colisión con: " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("AjoloteTerminator"))
+        {
+            Debug.Log("Colisión con AjoloteTerminator");
+            GameObject.Destroy(this.gameObject);
+        }
+    }
+
 }
