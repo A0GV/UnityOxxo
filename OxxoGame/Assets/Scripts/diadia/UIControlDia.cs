@@ -44,13 +44,6 @@ public class UIControlDia : MonoBehaviour
         
     }
 
-    /* Inicia corrutinas para mostrar la pregunta después de mostrar una pregunta
-    public void StartTime() 
-    {
-        StartCoroutine(StartDay());
-    }
-    */
-
     // Enseñar dinero durante día
     public void ShowMoney()
     {
@@ -64,40 +57,6 @@ public class UIControlDia : MonoBehaviour
         dineroUI = DiaControl.Instance.dinero; // Uses dinero cumulativo value
         textDineroQuestion.text = "$ " + dineroUI; 
     }
-
-    /*
-    // New time function
-    IEnumerator StartDay()
-    {
-        yield return new WaitForSeconds(1); // Waits one second
-        time += 1; // Increases time by 1
-        ShowMoney(); // Update money text
-
-        // Checks if 12 seconds have passed
-        if (time == 12)
-        {
-            ShowPregunta(); // Shows new question
-            time = 0; // Resets time to start a new day
-            DiaControl.Instance.GenerarProblemasDelDia(); // Calls instance to generate new problem
-            StartCoroutine(StartDay()); // Starts the day again
-        } 
-        // Else has not finished day
-        else 
-        {
-            StartCoroutine(StartDay()); // Calls routine again
-        }
-    }
-    */
- 
-    //Espera 5 segundos para mostrar la pregunta
-    /*
-    IEnumerator Mostrarpregunta()
-    {
-        yield return new WaitForSeconds(12);
-        ShowPregunta();
-        StartCoroutine(Mostrarpregunta());
-    }
-    */
 
     // Muestra metricas del juego y apaga el canva de preguntas
     public void ShowCanva()
@@ -193,5 +152,4 @@ public class UIControlDia : MonoBehaviour
 /*
 TODO
 - Figure out how to place the danger icons in the right place 
-- Make sure the equation works
 */

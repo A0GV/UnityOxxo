@@ -64,14 +64,6 @@ public class DiaControl : MonoBehaviour
         init();
     }
 
-    /*
-    public void DeclararProblemas()
-    {
-        Problema p1 = new Problema("Planograma", -3, "No se está siguiendo una parte del planograma"); 
-        todosProblemas.Append<p1>; 
-    }
-    */
-
     //Inicia corrutinas
     void init(){
         /*
@@ -134,40 +126,17 @@ public class DiaControl : MonoBehaviour
         uiController.checarnumpreguntas();
     }
 
-    // Ecuación de dinero por segundo
-    public int CalcularDinero() 
-    {
-        // Sums all variables to calculate earnings for each second, m in y = mx
-        int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
-
-        // Bajar cantidad de dinero en base al negative impact de cada uno
-        /*
-        numProblemasActivos = problemasActivos.Count; // Get number of active problems
-        for (int i = 0; i < numProblemasActivos; i++)
-        {
-            satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
-        }
-        */
-
-        //dinero = satisfaccionPorSegundo * time; // Multiplica en base a cuanto tiempo ha pasado
-
-        //return dinero; // Returns final money of that day 
-        return satisfaccionPorSegundo * time; // To update count dynamically based on seconds, or once has 12 seconds
-    }
-
     public int CalcularSatisfaccionPorSegundo()
     {
         // Sums all variables to calculate earnings for each second, m in y = mx
         int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
 
         // Bajar cantidad de dinero en base al negative impact de cada uno
-        /*
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
             satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
-        */
 
         return satisfaccionPorSegundo; // To update count dynamically based on seconds, or once has 12 seconds
     }
@@ -236,6 +205,5 @@ public class DiaControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WaitSolve(); // To wait for user to solve a question
     }
 }
