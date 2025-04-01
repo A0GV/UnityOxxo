@@ -1,37 +1,63 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 // File to solve the problems, so if the button is clicked, eliminates them from list and eliminates the obj from the list. See how to pause time while this is happening too. Like an await for either of these three to return a true. 
 public class DDResolver : MonoBehaviour
 {    
-    public DiaControl diaController; // Instancia de DiaControl
-    public UIControlDia uiController; // Instancia de UI 
+    public DiaControl diaControl; // Instance de controller
+    public UIControlDia uiControl;
 
-    public bool SolveProblem1() 
+    public void SolveProblem1() 
     {
-        bool solved1 = false; 
-
         // Eliminate problem from list
+        if (diaControl.problemasActivos.Count >= 1)
+        {
+            diaControl.problemasActivos.RemoveAt(0);
+        }
+        // Problem not defined for some reason
+        else 
+        {
+            Debug.Log("No existe ese problema");
+        }
 
-        solved1 = true; 
-        return solved1;
+        Debug.Log("Seleccionó primera pregunta");
+        uiControl.HidePregunta(); // Calls UI to handle question closing
     }
 
-    public bool SolveProblem2() 
+    public void SolveProblem2() 
     {
-        bool solved2 = false; 
+        // Eliminate problem from list
+        if (diaControl.problemasActivos.Count >= 2)
+        {
+            diaControl.problemasActivos.RemoveAt(1);
+        }
+        // Problem not defined for some reason
+        else 
+        {
+            Debug.Log("No existe ese problema");
+        }
 
-        solved2 = true; 
-        return solved2;
+        Debug.Log("Seleccionó segunda pregunta");
+        uiControl.HidePregunta(); // Calls UI to handle question closing
     }
 
-    public bool SolveProblem3() 
+    public void SolveProblem3() 
     {
-        bool solved3 = false; 
+        // Eliminate problem from list
+        if (diaControl.problemasActivos.Count >= 3)
+        {
+            diaControl.problemasActivos.RemoveAt(2);
+        }
+        // Problem not defined for some reason
+        else 
+        {
+            Debug.Log("No existe ese problema");
+        }
 
-        solved3 = true; 
-        return solved3;
+        Debug.Log("Seleccionó tercera pregunta");
+        uiControl.HidePregunta(); // Calls UI to handle question closing
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

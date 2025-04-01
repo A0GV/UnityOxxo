@@ -100,6 +100,7 @@ public class DiaControl : MonoBehaviour
         }
     }
 
+    /*
     public void WaitSolve() 
     {
         bool userSolved1 = resolverInstance.SolveProblem1(); // To wait for user to solve question 
@@ -113,6 +114,7 @@ public class DiaControl : MonoBehaviour
         }
 
     }
+    */
     
     // Get para saber cuantas preguntas han sido contestadas
     public int Getcontestadas(){

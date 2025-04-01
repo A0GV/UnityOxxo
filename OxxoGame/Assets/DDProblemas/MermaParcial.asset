@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607179c47dc5a44a3ba0803565e419e7, type: 3}
   m_Name: MermaParcial
   m_EditorClassIdentifier: 
-  problemaNombre: Merma parcial
+  problemaNombre: Merma Parcial
   impactoNegativo: -4
   descripcion: "No se est\xE1n retirando algunos de los productos expirados de los
     estantes"
