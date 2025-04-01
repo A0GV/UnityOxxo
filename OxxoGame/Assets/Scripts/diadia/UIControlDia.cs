@@ -151,5 +151,6 @@ public class UIControlDia : MonoBehaviour
 
 /*
 TODO
+- Make it so that DDResolver can track which problem is clicked and eliminates from list, and generate a new problem
 - Figure out how to place the danger icons in the right place 
 */
