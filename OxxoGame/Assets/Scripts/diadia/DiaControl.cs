@@ -1,3 +1,8 @@
+/* 
+Future things 
+* Make it so that once user selects answer, the buttons change colors so that the ones that were more dangerous, detract more points, have a different color (yellow, orange, red)
+* Make it so that the user can't skip the days until an active problem has arisen
+*/ 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -8,11 +13,18 @@ public class DiaControl : MonoBehaviour
 {
     static public DiaControl Instance; // Instance de controller
     public UIControlDia uiController;
+    public DDResolver resolverInstance; 
 
-    // Dinero 
-    public int dinero = 0; 
-    int time = 0; 
+    // Control dinero 
+    public int dinero = 0; // Total money earned
+    public int dineroDiaActual = 0; // Money earned during that day 
     public int dineroSkip = 0; // Para enseñar la animación
+
+    // Control de tiempo
+    public int time = 0; // Public because needed in UI control to reset time
+    bool checkDayActive = true; // Used to check if day is active 
+    public Coroutine dayCoroutine; // To track the day coroutine
+    
 
     // Monitorear problemas
     public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
@@ -66,30 +78,46 @@ public class DiaControl : MonoBehaviour
         }
         */
         GenerarProblemasDelDia(); 
-        StartCoroutine(StartDay()); 
+        dayCoroutine = StartCoroutine(StartDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
     }
 
-    // Starts a new day
-    IEnumerator StartDay()
+    // Starts a new day, public to restart day from UIControl
+    public IEnumerator StartDay()
     {
-        yield return new WaitForSeconds(1); // Waits one second
-        time += 1; // Increases time by 1
-        uiController.ShowMoney(); // Update money text on UI
+        checkDayActive = true; // Starts the day 
+        time = 0; // Ensures time is reset just in case
+        dineroDiaActual = 0; // Resets day earnings 
 
-        // Checks if 12 seconds have passed
-        if (time == 12)
+        // While the day is started, keeps running the functions 
+        while(checkDayActive)
         {
-            uiController.ShowPregunta(); // Shows new question
-            time = 0; // Resets time to start a new day
-            //DiaControl.Instance.GenerarProblemasDelDia(); // Calls instance to generate new problem
-            GenerarProblemasDelDia(); // Generates new problems
-            StartCoroutine(StartDay()); // Starts the day again
-        } 
-        // Else has not finished day
-        else 
-        {
-            StartCoroutine(StartDay()); // Calls routine again
+            yield return new WaitForSeconds(1); // Waits one second
+            time += 1; // Increases time by 1
+            dineroDiaActual += CalcularSatisfaccionPorSegundo(); // Updates money earned every second based on active problems
+            uiController.ShowMoney(); // Update money text on UI
+
+            // Checks if 12 seconds have passed
+            if (time == 12)
+            {
+                checkDayActive = false; // Pause the day
+                dinero += dineroDiaActual; // Suma dinero del día al total cuando se acaba
+                uiController.ShowPregunta(); // Switch to question panel
+            }
         }
+    }
+
+    public void WaitSolve() 
+    {
+        bool userSolved1 = resolverInstance.SolveProblem1(); // To wait for user to solve question 
+        bool userSolved2 = resolverInstance.SolveProblem2(); // To wait for user to solve question 
+        bool userSolved3 = resolverInstance.SolveProblem3();
+        // Update calls this function, so waits until user solves one
+        if (userSolved1 || userSolved2 || userSolved3)
+        {
+            // Restarts time 
+            time = 0; 
+        }
+
     }
     
     // Get para saber cuantas preguntas han sido contestadas
@@ -107,8 +135,8 @@ public class DiaControl : MonoBehaviour
     // Ecuación de dinero por segundo
     public int CalcularDinero() 
     {
-        // Sums all variables to calculate earnings
-        dinero += planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
+        // Sums all variables to calculate earnings for each second, m in y = mx
+        int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
 
         // Bajar cantidad de dinero en base al negative impact de cada uno
         /*
@@ -119,7 +147,30 @@ public class DiaControl : MonoBehaviour
         }
         */
 
-        return dinero; // Returns money 
+        //dinero = satisfaccionPorSegundo * time; // Multiplica en base a cuanto tiempo ha pasado
+
+        //return dinero; // Returns final money of that day 
+        return satisfaccionPorSegundo * time; // To update count dynamically based on seconds, or once has 12 seconds
+    }
+
+    public int CalcularSatisfaccionPorSegundo()
+    {
+        // Sums all variables to calculate earnings for each second, m in y = mx
+        int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
+
+        // Bajar cantidad de dinero en base al negative impact de cada uno
+        /*
+        numProblemasActivos = problemasActivos.Count; // Get number of active problems
+        for (int i = 0; i < numProblemasActivos; i++)
+        {
+            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+        }
+        */
+
+        //dinero = satisfaccionPorSegundo * time; // Multiplica en base a cuanto tiempo ha pasado
+
+        //return dinero; // Returns final money of that day 
+        return satisfaccionPorSegundo; // To update count dynamically based on seconds, or once has 12 seconds
     }
 
     // Calcula cantidad todal de dinero por si usuario se salta todo, actualiza la info
@@ -127,20 +178,50 @@ public class DiaControl : MonoBehaviour
     {
 
         // Sums all variables to calculate earnings
-        dineroSkip += (planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente) * (12-time); // Usa los 12 segundos - tiempo q ya paso por si se salta el dinero
+        // Sums all variables to calculate earnings for each second, m in y = mx
+        //int satisfaccionPorSegundo = planograma + expiradoRetiro + maquinasFuncionales + cajerosHorario + cajerosFinanzas + horarioPuntual + ejecucionPromo + limpieza + atencionCliente;
 
         /*
         // Bajar cantidad de dinero en base al negative impact de cada uno
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
         for (int i = 0; i < numProblemasActivos; i++)
         {
-            dinero += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
+            satisfaccionPorSegundo += problemasActivos[i].GetImpactoNegativo(); // Reduces the amount of money earned based on active problems
         }
         */
 
-        dinero += dineroSkip; // Agrega dinero del skip al principal
+       
+        /*
+        int tiempoSkipped = 12 - time; // Cantidad de tiempo que no se saltó
+        int dineroSkipped = satisfaccionPorSegundo * tiempoSkipped; // La cantidad de dinero que ganaría si no se saltara el día
+        
+        dinero += CalcularDineroVisual(); // Uses current time to add to dinero 
+        dinero += dineroSkip; // Adds dinero generated through skip
 
-        //return dineroSkip; // Returns money 
+        // Sets time equal to 12 seconds to calculate the money user should've earned 
+        //time = 12; 
+        //dinero += CalcularDinero(); // Calcula dinero cumulativo del día and adds to cumulative value
+
+        checkDayActive = false; // Stops the day so that time stops passing 
+        uiController.ShowPregunta(); // Switches to question panel
+        
+        int tiempoSkipped = 12 - time;
+        int dineroSkipped = satisfaccionPorSegundo * tiempoSkipped;
+
+        // Add money up to this point + the skipped part
+        dinero += CalcularDinero();
+        dinero += dineroSkipped;
+
+        checkDayActive = false;
+        uiController.ShowPregunta(); 
+        */
+        int tiempoRestante = 12 - time; // Checks how much time was left before the skip
+        int satisfaccionPorSegundo = CalcularSatisfaccionPorSegundo(); // Guarda satisfaccion por segundo del día
+        dineroDiaActual += satisfaccionPorSegundo * tiempoRestante;
+        dinero += dineroDiaActual; // Update dinero total
+
+        checkDayActive = false; // Stops time 
+        uiController.ShowPregunta(); // Shows questioin
     }
 
     // Manejar problemas
@@ -187,6 +268,6 @@ public class DiaControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //WaitSolve(); // To wait for user to solve a question
     }
 }

@@ -21,9 +21,11 @@ public class UIControlDia : MonoBehaviour
 
     public int dineroUI; 
     
-
     // De DiaControl
     int dinero;
+
+    // Usado en DiaControl
+    public bool answered = false; // Sets question answered to false 
 
     // Local to file
     int time = 0; // To wait exactly 12 seconds every day 
@@ -52,14 +54,14 @@ public class UIControlDia : MonoBehaviour
     // Enseñar dinero durante día
     public void ShowMoney()
     {
-        dineroUI = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted
+        dineroUI = DiaControl.Instance.dinero + DiaControl.Instance.dineroDiaActual; // Uses instance of DiaControl dinero stored and adds the one that is being calculated every second to update by parts 
         textDinero.text = "$ " + dineroUI; 
     }
 
     // Enseñar dinero en pantalla de desición
     public void ShowQuestionMoney()
     {
-        dineroUI = DiaControl.Instance.CalcularDinero(); // Uses instance of DiaControl function to update money counted taking into account the skip
+        dineroUI = DiaControl.Instance.dinero; // Uses dinero cumulativo value
         textDineroQuestion.text = "$ " + dineroUI; 
     }
 
@@ -112,9 +114,10 @@ public class UIControlDia : MonoBehaviour
         ShowPregunta(); 
     }
 
-    //muestra preguntas y apaga muestras
+    // Muestra las preguntas
     public void ShowPregunta()
     {
+        //answered = false; // Sets answered to false until answers something 
         canva.SetActive(false);
         pregunta.SetActive(true);
 
@@ -133,9 +136,12 @@ public class UIControlDia : MonoBehaviour
     // Esconde la pregunta y cuenta las preguntas que han salido
     public void HidePregunta()
     {
-        canva.SetActive(true);
-        pregunta.SetActive(false);
-        DiaControl.Instance.Contarpreguntas();
+        canva.SetActive(true); // Switches a vista tienda 
+        pregunta.SetActive(false); // turns off the question
+        DiaControl.Instance.Contarpreguntas(); // Updates number of questions 
+        DiaControl.Instance.GenerarProblemasDelDia(); // Adds a new problem to list from controller
+        DiaControl.Instance.time = 0; // Reset time counting
+        DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restart timer
     }
 
     //checa si ya se contestaron la cantidad de preguntas determinadas y 
