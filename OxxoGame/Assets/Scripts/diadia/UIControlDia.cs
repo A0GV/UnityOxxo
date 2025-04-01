@@ -110,6 +110,7 @@ public class UIControlDia : MonoBehaviour
     // Function to set skip day
     public void SkipDay() 
     {
+        DiaControl.Instance.daySkipped = true;
         DiaControl.Instance.SkipCalcularDinero(); // Llama función indicando q se skip el día y actualize cantidad de dinero
         ShowMoney(); // Shows money just in case
         ShowPregunta(); 
@@ -141,8 +142,16 @@ public class UIControlDia : MonoBehaviour
         pregunta.SetActive(false); // turns off the question
         DiaControl.Instance.Contarpreguntas(); // Updates number of questions 
         DiaControl.Instance.GenerarProblemasDelDia(); // Adds a new problem to list from controller
-        DiaControl.Instance.time = 0; // Reset time counting
-        DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restart timer
+
+        // If day was not skipped, resets money and time 
+        if (!DiaControl.Instance.daySkipped)
+        {
+            DiaControl.Instance.dineroDiaActual = 0;
+            DiaControl.Instance.time = 0;
+        }
+        
+        DiaControl.Instance.daySkipped = false; // Sets back to day has not been skipped flag 
+        DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restart day timer
     }
 
     //checa si ya se contestaron la cantidad de preguntas determinadas y 

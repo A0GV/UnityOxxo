@@ -25,6 +25,7 @@ public class DiaControl : MonoBehaviour
     public int time = 0; // Public because needed in UI control to reset time
     bool checkDayActive = true; // Used to check if day is active 
     public Coroutine dayCoroutine; // To track the day coroutine
+    public bool daySkipped = false; // Checks if user skipped day animation
     
 
     // Monitorear problemas
@@ -89,8 +90,8 @@ public class DiaControl : MonoBehaviour
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
 
-        // While the day is started, keeps running the functions 
-        while(checkDayActive)
+        // While the day is started and user has not skipped it, keeps running the functions 
+        while (checkDayActive && !daySkipped)
         {
             yield return new WaitForSeconds(1); // Waits one second
             time += 1; // Increases time by 1
@@ -98,11 +99,11 @@ public class DiaControl : MonoBehaviour
             uiController.ShowMoney(); // Update money text on UI
 
             // Checks if day is over seconds have passed
-            if (time == timePerDay)
+            if (time >= timePerDay)
             {
-                checkDayActive = false; // Pause the day
-                dinero += dineroDiaActual; // Suma dinero del día al total cuando se acaba
-                uiController.ShowPregunta(); // Switch to question panel
+                checkDayActive = false;
+                dinero += dineroDiaActual;
+                uiController.ShowPregunta();
             }
         }
     }
@@ -174,16 +175,19 @@ public class DiaControl : MonoBehaviour
     // Calcula cantidad todal de dinero por si usuario se salta todo, actualiza la info
     public void SkipCalcularDinero() 
     {
+        daySkipped = true; // Ensure variable for skip is set
+
         int tiempoRestante = timePerDay - time; // Checks how much time was left before the skip
         int satisfaccionPorSegundo = CalcularSatisfaccionPorSegundo(); // Guarda satisfaccion por segundo del día
         dineroDiaActual += satisfaccionPorSegundo * tiempoRestante;
         dinero += dineroDiaActual; // Update dinero total
 
+        // Reset values 
         dineroDiaActual = 0; // Resets money for day
         StopCoroutine(dayCoroutine); // Stops the coroutine
         checkDayActive = false; // Stops the day properly 
 
-
+        // UI controllers 
         uiController.ShowMoney(); // Shows money text
         uiController.ShowPregunta(); // Shows questioin
     }
