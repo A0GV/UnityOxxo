@@ -110,7 +110,8 @@ public class UIControlDia : MonoBehaviour
         }
         
         DiaControl.Instance.daySkipped = false; // Sets back to day has not been skipped flag 
-        DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restart day timer
+        //DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restarts day
+        DiaControl.Instance.StartDay(); // Starts day now without coroutine
     }
 
     //checa si ya se contestaron la cantidad de preguntas determinadas y 
@@ -134,18 +135,22 @@ public class UIControlDia : MonoBehaviour
     }
 
     //Pausa
-    public void pausado(){
+    public void pausado()
+    {
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
+        DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
     }
 
-    //MOniii, este lo estoy usando de que en el boton para continuar y el de reiniciar, 
-    // pero se ocupa otraaa función para que eso jale realmente bien, tqm!! 
-    public void despausado(){
+    // Resume game
+    public void despausado()
+    {
         canva.SetActive(true);
         pausa.SetActive(false);
         pregunta.SetActive(false);
+        DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.ResumeDay()); // To resume, must create a new instance and save reference in dayCoroutine agian
+
     }
 }
 
@@ -153,4 +158,6 @@ public class UIControlDia : MonoBehaviour
 TODO
 - Make it so that DDResolver can track which problem is clicked and eliminates from list, and generate a new problem
 - Figure out how to place the danger icons in the right place 
+- Change it so that it waits a bit to generate a new problem (once icons work)
+- Add a comparison model for the points so that it is easier to calculate the amount of corn they win based on how well they answered, or a number to keep track of their priorization
 */
