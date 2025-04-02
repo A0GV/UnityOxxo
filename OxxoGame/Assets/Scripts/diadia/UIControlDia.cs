@@ -15,9 +15,15 @@ public class UIControlDia : MonoBehaviour
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
 
+    // Texto de título
     public Text textAct1; 
     public Text textAct2; 
     public Text textAct3;
+
+    // Texto de descripción
+    public Text textDesc1; 
+    public Text textDesc2; 
+    public Text textDesc3; 
 
     public int dineroUI; 
     
@@ -26,6 +32,10 @@ public class UIControlDia : MonoBehaviour
 
     // Usado en DiaControl
     public bool answered = false; // Sets question answered to false 
+
+    // Para manage problemas desde UI
+    Problema[] problemasMostrados = new Problema[3];
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -82,6 +92,32 @@ public class UIControlDia : MonoBehaviour
         // Shows money
         ShowQuestionMoney(); 
 
+        // Links name and description where there are only 3 active problems and checkign w count just in case
+        for (int i = 0; i < DiaControl.Instance.problemasActivos.Count && i < 3; i++)
+        {
+            Problema problemaUI = DiaControl.Instance.problemasActivos[i]; // Gets problemas activos 
+            problemasMostrados[i] = problemaUI; // Adds a arreglo de UI
+
+            string problemName = problemaUI.GetNombreProblema(); // Stores problem name
+            string problemDesc = problemaUI.GetDescripcionProblema(); // Gets problem description
+            if (i == 0) 
+            {
+                textAct1.text = problemName;
+                textDesc1.text = problemDesc; 
+            }
+            if (i == 1) 
+            {
+                textAct2.text = problemName;
+                textDesc2.text = problemDesc; 
+            }
+            if (i == 2) 
+            {
+                textAct3.text = problemName;
+                textDesc3.text = problemDesc; 
+            }
+        }
+
+        /*
         // Shows problem names
         string act1Txt = DiaControl.Instance.problemasActivos[0].GetNombreProblema(); // First active problem
         textAct1.text = act1Txt;
@@ -89,6 +125,7 @@ public class UIControlDia : MonoBehaviour
         textAct2.text = act2Txt;
         string act3Txt = DiaControl.Instance.problemasActivos[2].GetNombreProblema(); // Tercer problema activo
         textAct3.text = act3Txt;
+        */
     }
 
     // Esconde la pregunta y cuenta las preguntas que han salido
