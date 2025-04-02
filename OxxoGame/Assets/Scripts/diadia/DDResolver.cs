@@ -14,6 +14,7 @@ public class DDResolver : MonoBehaviour
         // Eliminate problem from list
         if (diaControl.problemasActivos.Count >= 1)
         {
+            diaControl.problemasActivos[0].SetRenderStatus(false); // Sets as false because no longer active
             diaControl.problemasActivos.RemoveAt(0);
         }
         // Problem not defined for some reason
@@ -31,6 +32,7 @@ public class DDResolver : MonoBehaviour
         // Eliminate problem from list
         if (diaControl.problemasActivos.Count >= 2)
         {
+            diaControl.problemasActivos[1].SetRenderStatus(false); // Sets as false because no longer active
             diaControl.problemasActivos.RemoveAt(1);
         }
         // Problem not defined for some reason
@@ -48,6 +50,7 @@ public class DDResolver : MonoBehaviour
         // Eliminate problem from list
         if (diaControl.problemasActivos.Count >= 3)
         {
+             diaControl.problemasActivos[2].SetRenderStatus(false); // Sets as false because no longer active
             diaControl.problemasActivos.RemoveAt(2);
         }
         // Problem not defined for some reason

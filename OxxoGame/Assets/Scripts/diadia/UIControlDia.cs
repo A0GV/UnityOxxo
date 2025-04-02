@@ -27,9 +27,6 @@ public class UIControlDia : MonoBehaviour
     // Usado en DiaControl
     public bool answered = false; // Sets question answered to false 
 
-    // Local to file
-    int time = 0; // To wait exactly 12 seconds every day 
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

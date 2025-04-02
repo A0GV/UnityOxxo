@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
-using System.Security.Cryptography; // To use library
+using System.Security.Cryptography;
+using System; // To use library
 public class DiaControl : MonoBehaviour
 {
+    // Instances 
     static public DiaControl Instance; // Instance de controller
     public UIControlDia uiController;
     public DDResolver resolverInstance; 
@@ -28,7 +30,8 @@ public class DiaControl : MonoBehaviour
     public bool daySkipped = false; // Checks if user skipped day animation
     
 
-    // Monitorear problemas
+    // Problemas
+    public GameObject problemaPrefab; // Prefab de danger icon
     public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
     public List<Problema> problemasActivos = new List<Problema>(); // Lista de problemas activos 
     int numProblemasActivos = 0; // Monitorea número de problemas activos
@@ -83,27 +86,14 @@ public class DiaControl : MonoBehaviour
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
 
-        dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
-        
-        /*
-
-        // While the day is started and user has not skipped it, keeps running the functions 
-        while (checkDayActive && !daySkipped)
+        // Debugging for problem amounts 
+        GenerarProblemasDelDia(); // Sets new problems
+        for (int i = 0; i < problemasActivos.Count; i++) 
         {
-            yield return new WaitForSeconds(1); // Waits one second
-            time += 1; // Increases time by 1
-            dineroDiaActual += CalcularSatisfaccionPorSegundo(); // Updates money earned every second based on active problems
-            uiController.ShowMoney(); // Update money text on UI
-
-            // Checks if day is over seconds have passed
-            if (time >= timePerDay)
-            {
-                checkDayActive = false;
-                dinero += dineroDiaActual;
-                uiController.ShowPregunta();
-            }
+            Debug.Log(problemasActivos[i].GetNombreProblema());
         }
-        */
+
+        dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
     }
 
     public IEnumerator ResumeDay()
@@ -127,22 +117,6 @@ public class DiaControl : MonoBehaviour
             }
         }
     }
-
-    /*
-    public void WaitSolve() 
-    {
-        bool userSolved1 = resolverInstance.SolveProblem1(); // To wait for user to solve question 
-        bool userSolved2 = resolverInstance.SolveProblem2(); // To wait for user to solve question 
-        bool userSolved3 = resolverInstance.SolveProblem3();
-        // Update calls this function, so waits until user solves one
-        if (userSolved1 || userSolved2 || userSolved3)
-        {
-            // Restarts time 
-            time = 0; 
-        }
-
-    }
-    */
     
     // Get para saber cuantas preguntas han sido contestadas
     public int Getcontestadas(){
@@ -210,6 +184,7 @@ public class DiaControl : MonoBehaviour
                 Problema seleccionado = copiaProblemas[randomIndex]; // Stores Problema selected randomly
                 copiaProblemas.RemoveAt(randomIndex); // Eliminates for tracking
                 problemasActivos.Add(seleccionado); // Adds random problem
+                problemasActivos[i].SetRenderStatus(true); // Sets problem as active to render it 
             }
         }
         // Remaining days 
@@ -221,11 +196,43 @@ public class DiaControl : MonoBehaviour
                 int randomIndex = UnityEngine.Random.Range(0, disponibles.Count);
                 Problema seleccionadoNuevo = disponibles[randomIndex];
                 problemasActivos.Add(seleccionadoNuevo);
+                problemasActivos[2].SetRenderStatus(true); // Makes it so that it does render
+            }
+        }
+
+        SpawnIconProblem(); // Renders icons
+    }
+
+    // Ícono de problemas
+    public void SpawnIconProblem()
+    {
+        ClearDangerIcons(); // Erases previous ones before starting
+
+        numProblemasActivos = problemasActivos.Count; // Get number of active problems
+        Debug.Log(numProblemasActivos);
+        for (int i = 0; i < numProblemasActivos; i++)
+        {
+            if (problemasActivos[i].GetRenderStatus())
+            {
+            // Instantiates the problem
+            GameObject nuevoProblema = Instantiate(problemaPrefab, problemasActivos[i].posicion, Quaternion.identity);
+            // Renders sprite
+            SpriteRenderer sr = nuevoProblema.GetComponent<SpriteRenderer>();
+            sr.sprite = problemasActivos[i].icon; 
             }
         }
     }
 
-    // Resolver problema
+    // To erase danger icons
+    void ClearDangerIcons()
+    {
+        // Looks for game obj with danger tag
+        GameObject[] problemasIcons = GameObject.FindGameObjectsWithTag("VisualDanger");
+        foreach (GameObject icon in problemasIcons)
+        {
+            Destroy(icon);
+        }
+    }
 
     // Manda a la escena final del juego
     public void Gotoendgame(){

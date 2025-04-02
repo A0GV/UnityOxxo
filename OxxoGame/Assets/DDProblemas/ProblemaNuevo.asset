@@ -16,3 +16,5 @@ MonoBehaviour:
   impactoNegativo: -7
   descripcion: "No se est\xE1 siguiendo el planograma para nada"
   icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
+  posicion: {x: -3.46, y: -1.01}
+  renderedIcon: 0

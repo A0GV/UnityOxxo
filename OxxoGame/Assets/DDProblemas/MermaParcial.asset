@@ -17,3 +17,5 @@ MonoBehaviour:
   descripcion: "No se est\xE1n retirando algunos de los productos expirados de los
     estantes"
   icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
+  posicion: {x: 5.2, y: 0.52}
+  renderedIcon: 0
