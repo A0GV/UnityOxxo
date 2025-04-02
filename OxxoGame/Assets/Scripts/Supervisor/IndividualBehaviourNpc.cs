@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 
 public class IndividualBehaviourNpc : MonoBehaviour
 {
@@ -6,10 +8,17 @@ public class IndividualBehaviourNpc : MonoBehaviour
     private float moveSpeed = 5;
     private Animator animatorController;
 
+    public float position1;
+
+    public bool goToSuicide;
+
+    private Coroutine controlMovement;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animatorController = GetComponent<Animator>();
+        controlMovement = StartCoroutine("MoveToPosition");
 
     }
 
@@ -21,10 +30,6 @@ public class IndividualBehaviourNpc : MonoBehaviour
             // Debug.Log("W pressed");
             UpdateAnimation(NpcAnimation.Walking);
             this.transform.position += Vector3.left * Time.deltaTime * moveSpeed;
-            if (transform.position.x < -50)
-            {
-                GameObject.Destroy(this.gameObject);
-            }
 
         }
         else if (Input.GetKey(KeyCode.T))
@@ -73,5 +78,34 @@ public class IndividualBehaviourNpc : MonoBehaviour
             GameObject.Destroy(this.gameObject);
         }
     }
+
+    IEnumerator MoveToPosition()
+    {
+        while (goToSuicide && transform.position.x > position1)
+        {
+            transform.position += Vector3.left * Time.deltaTime * moveSpeed;
+            yield return null; // Espera un frame antes de continuar
+        }
+    }
+
+    public void restarMovement()
+    {
+        if (controlMovement != null)
+        {
+            StopCoroutine(controlMovement);
+            controlMovement = null;
+        }
+    }
+
+    public void stopMovement()
+    {
+        if (controlMovement==null)
+        {
+            controlMovement=StartCoroutine("MoveToPosition");
+        }
+
+    }
+
+
 
 }
