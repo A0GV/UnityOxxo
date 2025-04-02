@@ -40,7 +40,7 @@ public class DiaControl : MonoBehaviour
     public int maquinasFuncionales = 9;
     public int cajerosHorario = 8;
     public int cajerosFinanzas = 5;
-    public int horarioPuntual = 10;
+    public int horarioPuntual = 10; 
     public int ejecucionPromo = 6; 
     public int limpieza = 10; 
     public int atencionCliente = 8;
@@ -64,25 +64,53 @@ public class DiaControl : MonoBehaviour
         init();
     }
 
-    //Inicia corrutinas
+    // Inicia todo 
     void init(){
         /*
         if (uiController != null){
             uiController.StartTime(); // Starts timer
         }
         */
-        GenerarProblemasDelDia(); 
-        dayCoroutine = StartCoroutine(StartDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
+        GenerarProblemasDelDia(); // Genera problemas
+        StartDay(); // Inicia día 
+        //dayCoroutine = StartCoroutine(StartDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
     }
 
-    // Starts a new day, public to restart day from UIControl
-    public IEnumerator StartDay()
+    // Starts a new day, public to restart day from UIControl IEnumerator
+    public void StartDay()
     {
         checkDayActive = true; // Starts the day 
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
 
+        dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
+        
+        /*
+
         // While the day is started and user has not skipped it, keeps running the functions 
+        while (checkDayActive && !daySkipped)
+        {
+            yield return new WaitForSeconds(1); // Waits one second
+            time += 1; // Increases time by 1
+            dineroDiaActual += CalcularSatisfaccionPorSegundo(); // Updates money earned every second based on active problems
+            uiController.ShowMoney(); // Update money text on UI
+
+            // Checks if day is over seconds have passed
+            if (time >= timePerDay)
+            {
+                checkDayActive = false;
+                dinero += dineroDiaActual;
+                uiController.ShowPregunta();
+            }
+        }
+        */
+    }
+
+    public IEnumerator ResumeDay()
+    {
+        // Just doesn't reset values
+        checkDayActive = true; 
+
         while (checkDayActive && !daySkipped)
         {
             yield return new WaitForSeconds(1); // Waits one second
