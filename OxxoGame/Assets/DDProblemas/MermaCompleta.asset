@@ -16,3 +16,5 @@ MonoBehaviour:
   impactoNegativo: -8
   descripcion: "No se est\xE1 retirando casi ning\xFAn producto expirado de los estantes"
   icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
+  posicion: {x: -6.26, y: 0.23}
+  renderedIcon: 0

@@ -8,7 +8,7 @@ public class UIControlEnemigos : MonoBehaviour
     public GameObject Pregunta;
     public GameObject RespuestaCorrecta;
     public GameObject RespuestaIncorrecta;
-    public GameObject Ganar;
+    public GameObject Pausa;
     public GameObject Perder;
 
     void Start()
@@ -31,7 +31,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(false);
     }
     public void ShowPregunta(){
@@ -39,7 +39,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(true);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(false);
     }
 
@@ -48,7 +48,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(true);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(false);
     }
 
@@ -58,7 +58,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(true);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(false);
     }
 
@@ -67,7 +67,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(true);
+        Pausa.SetActive(true);
         Perder.SetActive(false);
     }
 
@@ -76,7 +76,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(true);
     }
 
@@ -87,7 +87,7 @@ public class UIControlEnemigos : MonoBehaviour
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
-        Ganar.SetActive(false);
+        Pausa.SetActive(false);
         Perder.SetActive(false);
 
         // Show the selected panel
@@ -106,7 +106,7 @@ public class UIControlEnemigos : MonoBehaviour
                 RespuestaIncorrecta.SetActive(true);
                 break;  
             case "Ganar":
-                Ganar.SetActive(true);
+                Pausa.SetActive(true);
                 break;
             case "Perder":
                 Perder.SetActive(true);

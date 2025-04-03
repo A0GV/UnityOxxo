@@ -4,21 +4,58 @@ public class TutorialController : MonoBehaviour
 {
     public GameObject[] panelesPorPaso;  // Todos los paneles del tutorial en orden
     public GameObject panelJuego;        // Panel del gameplay final
+    public GameObject scenery;           // Objeto Scenery
 
     private int currentStep = 0;
 
+    void Awake()
+    {
+        // Desactivar todo al inicio para asegurar que nada aparezca antes del tutorial
+        if (scenery != null)
+            scenery.SetActive(false);
+
+        if (panelJuego != null)
+            panelJuego.SetActive(false);
+
+        foreach (GameObject panel in panelesPorPaso)
+        {
+            if (panel != null)
+                panel.SetActive(false);
+        }
+    }
+
     void Start()
     {
-        MostrarPaso(0); // Comienza con el primer panel activo
+        // Asegurarse de que el primer panel siempre esté activo
+        if (panelesPorPaso.Length > 0 && panelesPorPaso[0] != null)
+        {
+            currentStep = 0;
+            MostrarPaso(currentStep); // Muestra el primer panel del tutorial
+        }
+        else
+        {
+            Debug.LogWarning("El primer panel del tutorial no está asignado o el array está vacío.");
+        }
     }
 
     public void SiguientePaso()
     {
-        // Oculta el panel actual
+        Debug.Log($"currentStep: {currentStep}, panelesPorPaso.Length: {panelesPorPaso.Length}");
+        if (currentStep >= panelesPorPaso.Length)
+        {
+            IniciarJuego();
+            return;
+        }
+
+        if (panelesPorPaso[currentStep] == null)
+        {
+            Debug.LogError($"El panel en el índice {currentStep} es null. Verifica el array panelesPorPaso.");
+            return;
+        }
+
         panelesPorPaso[currentStep].SetActive(false);
         currentStep++;
 
-        // Si hay más pasos, muestra el siguiente
         if (currentStep < panelesPorPaso.Length)
         {
             MostrarPaso(currentStep);
@@ -29,17 +66,61 @@ public class TutorialController : MonoBehaviour
         }
     }
 
+    public void SaltarTutorial()
+    {
+        foreach (GameObject panel in panelesPorPaso)
+        {
+            if (panel != null)
+                panel.SetActive(false);
+        }
+
+        IniciarJuego();
+    }
+
+    public void SalirJuego()
+    {
+        Debug.Log("Saliendo del juego...");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
     void MostrarPaso(int index)
     {
-        panelesPorPaso[index].SetActive(true);
+        if (index >= 0 && index < panelesPorPaso.Length)
+        {
+            GameObject panel = panelesPorPaso[index];
+            if (panel == null)
+            {
+                Debug.LogError($"El panel en el índice {index} es null. Verifica el array panelesPorPaso en el Inspector.");
+                return;
+            }
+
+            panel.SetActive(true);
+
+            // Centrar el panel en la pantalla
+            RectTransform rt = panel.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                rt.anchoredPosition = Vector2.zero; // Centra el panel en la pantalla
+            }
+        }
+        else
+        {
+            Debug.LogError("Índice fuera de rango al intentar mostrar un panel.");
+        }
     }
 
     void IniciarJuego()
     {
-        // Oculta todo el tutorial
         gameObject.SetActive(false);
 
-        // Activa el panel del gameplay
-        panelJuego.SetActive(true);
+        if (scenery != null)
+            scenery.SetActive(true);
+
+        if (panelJuego != null)
+            panelJuego.SetActive(true);
     }
 }
