@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607179c47dc5a44a3ba0803565e419e7, type: 3}
+  m_Name: MaquinaRefrigerador
+  m_EditorClassIdentifier: 
+  problemaNombre: Refrigerador bebidas
+  impactoNegativo: -3
+  descripcion: Se descompuso el refrigerador de bebidas
+  icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
+  posicion: {x: -7.33, y: 3.13}
+  renderedIcon: 0

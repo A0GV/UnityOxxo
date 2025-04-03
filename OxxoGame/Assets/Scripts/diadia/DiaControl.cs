@@ -18,13 +18,13 @@ public class DiaControl : MonoBehaviour
     public DDResolver resolverInstance; 
 
     // Control dinero 
-    public int dinero = 0; // Total money earned
-    public int dineroDiaActual = 0; // Money earned during that day 
-    public int dineroSkip = 0; // Para enseñar la animación
+    public int dinero; // Total money earned
+    public int dineroDiaActual; // Money earned during that day 
+    public int dineroSkip; // Para enseñar la animación
 
     // Control de tiempo
     public int timePerDay = 12; // Sets day length
-    public int time = 0; // Public because needed in UI control to reset time
+    public int time; // Public because needed in UI control to reset time
     bool checkDayActive = true; // Used to check if day is active 
     public Coroutine dayCoroutine; // To track the day coroutine
     public bool daySkipped = false; // Checks if user skipped day animation
@@ -57,15 +57,30 @@ public class DiaControl : MonoBehaviour
     void Awake()
     {   
         StopAllCoroutines();
+        // Reset values 
+        time = 0; 
+        dineroSkip = 0; 
+        dineroDiaActual = 0;
         PlayerPrefs.SetInt("preguntas", 8);
         PlayerPrefs.SetInt("dinero", 0); // Sets to 0
+        problemasActivos.Clear(); // Make sure no problems are left over
+
+        // Instances
         Instance = this;
         DontDestroyOnLoad(this.gameObject); // Para no destruir instancia
-        uiController.ShowCanva(); //muestra metricas del juego
-        //DeclararProblemas(); // Function to help initialize all possible problems
-        problemasActivos.Clear(); // Make sure no problems are left over
-        init();
     }
+
+    void Start()
+    {
+        // Sets all items to render off
+        for (int i = 0; i < todosProblemas.Count; i++)
+        {
+            todosProblemas[i].SetRenderStatus(false); 
+        }
+
+        uiController.ShowCanva(); // Métricas del juego
+        init(); // Starts day 
+    } 
 
     // Inicia todo 
     void init(){
@@ -86,8 +101,10 @@ public class DiaControl : MonoBehaviour
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
 
-        // Debugging for problem amounts 
+        // Problem handling
         GenerarProblemasDelDia(); // Sets new problems
+        SpawnIconProblem(); // Renders icons
+
         for (int i = 0; i < problemasActivos.Count; i++) 
         {
             Debug.Log(problemasActivos[i].GetNombreProblema());
@@ -199,8 +216,6 @@ public class DiaControl : MonoBehaviour
                 problemasActivos[2].SetRenderStatus(true); // Makes it so that it does render
             }
         }
-
-        SpawnIconProblem(); // Renders icons
     }
 
     // Ícono de problemas
@@ -209,7 +224,7 @@ public class DiaControl : MonoBehaviour
         ClearDangerIcons(); // Erases previous ones before starting
 
         numProblemasActivos = problemasActivos.Count; // Get number of active problems
-        Debug.Log(numProblemasActivos);
+        //Debug.Log(numProblemasActivos);
         for (int i = 0; i < numProblemasActivos; i++)
         {
             if (problemasActivos[i].GetRenderStatus())
