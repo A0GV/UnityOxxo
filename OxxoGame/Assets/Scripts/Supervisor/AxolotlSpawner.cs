@@ -9,6 +9,10 @@ public class AxolotlSpawner : MonoBehaviour
     public Button spawnButton2; // Segundo botón
     private GameObject currentAxolotl; // Referencia al axolote actual
 
+    public UIControlSuper uIControlSuper;
+
+    private int contador = 0;
+
     private void Start()
     {
 
@@ -20,10 +24,16 @@ public class AxolotlSpawner : MonoBehaviour
         {
             SpawnAxolotl();
         }
+
+        if (contador == 7)
+        {
+            uIControlSuper.ShowResumen();
+        }
     }
 
     public void SpawnAxolotl()
     {
+        contador++;
         // Si ya hay un Axolotl en la escena, lo eliminamos
 
         // Selecciona aleatoriamente un prefab de axolote
