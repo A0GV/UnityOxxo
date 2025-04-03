@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class StopAndContinueWalk : MonoBehaviour
 {
-    private IndividualBehaviourNpc controlMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +16,7 @@ public class StopAndContinueWalk : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("He sido activado");
-        controlMovement.stopMovement();
+        IndividualBehaviourNpc.instance = null;
     }
 }
 //NullReferenceException: Object reference not set to an instance of an object

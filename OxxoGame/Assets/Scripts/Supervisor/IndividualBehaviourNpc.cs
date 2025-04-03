@@ -8,24 +8,30 @@ public class IndividualBehaviourNpc : MonoBehaviour
     private float moveSpeed = 5;
     private Animator animatorController;
 
-    public float position1;
 
-    public bool goToSuicide;
-
-    private Coroutine controlMovement;
+    public static  IndividualBehaviourNpc instance{get; set;}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+         // Initialize the singleton instance
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         animatorController = GetComponent<Animator>();
-        controlMovement = StartCoroutine("MoveToPosition");
+        // controlMovement = StartCoroutine("MoveToPosition");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (instance != null)
         {
             // Debug.Log("W pressed");
             UpdateAnimation(NpcAnimation.Walking);
@@ -79,32 +85,6 @@ public class IndividualBehaviourNpc : MonoBehaviour
         }
     }
 
-    IEnumerator MoveToPosition()
-    {
-        while (goToSuicide && transform.position.x > position1)
-        {
-            transform.position += Vector3.left * Time.deltaTime * moveSpeed;
-            yield return null; // Espera un frame antes de continuar
-        }
-    }
-
-    public void restarMovement()
-    {
-        if (controlMovement != null)
-        {
-            StopCoroutine(controlMovement);
-            controlMovement = null;
-        }
-    }
-
-    public void stopMovement()
-    {
-        if (controlMovement==null)
-        {
-            controlMovement=StartCoroutine("MoveToPosition");
-        }
-
-    }
 
 
 

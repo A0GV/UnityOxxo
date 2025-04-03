@@ -11,21 +11,20 @@ public class AxolotlSpawner : MonoBehaviour
 
     private void Start()
     {
-        // // Asignar función a cada botón
-        // if (spawnButton1 != null)
-        //     spawnButton1.onClick.AddListener(SpawnAxolotl);
 
-        // if (spawnButton2 != null)
-        //     spawnButton2.onClick.AddListener(SpawnAxolotl);
+    }
+
+    void Update()
+    {
+        if (currentAxolotl == null)
+        {
+            SpawnAxolotl();
+        }
     }
 
     public void SpawnAxolotl()
     {
         // Si ya hay un Axolotl en la escena, lo eliminamos
-        if (currentAxolotl != null)
-        {
-            Destroy(currentAxolotl);
-        }
 
         // Selecciona aleatoriamente un prefab de axolote
         GameObject selectedAxolotl = axolotlPrefabs[Random.Range(0, axolotlPrefabs.Length)];
