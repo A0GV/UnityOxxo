@@ -9,6 +9,26 @@ public class DDResolver : MonoBehaviour
     public DiaControl diaControl; // Instance de controller
     public UIControlDia uiControl;
 
+    public void SolveProblem(Problema problemaResuelto)
+    {
+        // Por si no hay uno q se resolvió, nomas se sale de la función para no crashear todo
+        if (problemaResuelto == null) {
+            Debug.Log("No exsiste el problema");
+            return;
+        }
+
+        // Checa si exsiste el problema
+        if (diaControl.problemasActivos.Contains(problemaResuelto))
+        {
+            problemaResuelto.SetRenderStatus(false); // Apagarlo
+            diaControl.problemasActivos.Remove(problemaResuelto); // So long bye bye
+        }
+
+        Debug.Log($"Se resolvió el problema: {problemaResuelto.GetNombreProblema()}"); // Temporary debugging
+        uiControl.HidePregunta(); // UI handles question closing 
+    }
+
+    /*
     public void SolveProblem1() 
     {
         // Eliminate problem from list
@@ -62,6 +82,7 @@ public class DDResolver : MonoBehaviour
         Debug.Log("Seleccionó tercera pregunta");
         uiControl.HidePregunta(); // Calls UI to handle question closing
     }
+    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

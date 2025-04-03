@@ -36,6 +36,15 @@ public class UIControlDia : MonoBehaviour
     // Para manage problemas desde UI
     Problema[] problemasMostrados = new Problema[3];
 
+    public Button botonSolve1;
+    public Button botonSolve2;
+    public Button botonSolve3;
+
+    public DDButtonSolve1 botonScript1; 
+    public DDButtonSolve2 botonScript2; 
+    public DDButtonSolve3 botonScript3; 
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -100,20 +109,25 @@ public class UIControlDia : MonoBehaviour
 
             string problemName = problemaUI.GetNombreProblema(); // Stores problem name
             string problemDesc = problemaUI.GetDescripcionProblema(); // Gets problem description
+
+            // Uses index to set name, desc, and then link problem to a button
             if (i == 0) 
             {
                 textAct1.text = problemName;
                 textDesc1.text = problemDesc; 
+                botonScript1.SetProblema(problemaUI);
             }
             if (i == 1) 
             {
                 textAct2.text = problemName;
                 textDesc2.text = problemDesc; 
+                botonScript2.SetProblema(problemaUI);
             }
             if (i == 2) 
             {
                 textAct3.text = problemName;
                 textDesc3.text = problemDesc; 
+                botonScript3.SetProblema(problemaUI);
             }
         }
 
