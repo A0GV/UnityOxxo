@@ -63,9 +63,16 @@ public class DiaControl : MonoBehaviour
     //Termina corrutinas e inicializa variables, cambiado Start -> Awake 
     void Awake()
     {   
-        // To count game money and exp
-        PlayerPrefs.SetInt("elotes", 0); 
-        PlayerPrefs.SetInt("exp", 0);
+        // To count game money and exp and avoid scene reloading issues
+        if (!PlayerPrefs.HasKey("elotes"))
+        {
+        PlayerPrefs.SetInt("elotes", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("exp"))
+        {
+            PlayerPrefs.SetInt("exp", 0);
+        }
 
         StopAllCoroutines();
         // Reset values 
@@ -320,7 +327,8 @@ public class DiaControl : MonoBehaviour
     }
 
     // Manda a la escena final del juego
-    public void Gotoendgame(){
+    public void Gotoendgame()
+    {
         SceneManager.LoadScene("EndGamesScene");
     }
 

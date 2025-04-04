@@ -16,6 +16,10 @@ public class UIControlDia : MonoBehaviour
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
 
+    // Texto de exp y elote
+    public Text textElote; 
+    public Text textExp;
+
     // Texto de título
     public Text textAct1; 
     public Text textAct2; 
@@ -175,6 +179,9 @@ public class UIControlDia : MonoBehaviour
     public void ShowResultados()
     {
         DiaControl.Instance.Gotoendgame();
+        // Valores acumulados 
+        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
+        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
     }
 
     // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
@@ -194,13 +201,16 @@ public class UIControlDia : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
-    //Pausa
+    // Pausa
     public void pausado()
     {
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
+        // Valores acumulados 
+        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
+        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
     }
 
     // Resume game
@@ -210,6 +220,7 @@ public class UIControlDia : MonoBehaviour
         pausa.SetActive(false);
         pregunta.SetActive(false);
         DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.ResumeDay()); // To resume, must create a new instance and save reference in dayCoroutine agian
+
 
     }
 }
