@@ -1,102 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class UIControlEnemigos : MonoBehaviour
 {
-    public GameObject Apuntar;
+    // Paneles de UI
+    public GameObject Estatus;
     public GameObject Pregunta;
     public GameObject RespuestaCorrecta;
     public GameObject RespuestaIncorrecta;
     public GameObject Pausa;
     public GameObject Perder;
 
-    void Start()
-    {
+    // Elementos de UI para balas y vidas
+    public Text balasTexto;  // Texto que muestra la cantidad de balas
+    public Image[] vidasImagenes;  // Array de imágenes de corazones
 
-    }
-
-    public void StartTime(){
-        StartCoroutine(MostrarApuntar());
-    }
-
-    IEnumerator MostrarApuntar(){
-        yield return new WaitForSeconds(60); // Wait 60 secs before first appearance
-        ShowApuntar();
-        StartCoroutine(MostrarApuntar());
-    }
-
-    public void ShowApuntar(){
-        Apuntar.SetActive(true);
-        Pregunta.SetActive(false);
-        RespuestaCorrecta.SetActive(false);
-        RespuestaIncorrecta.SetActive(false);
-        Pausa.SetActive(false);
-        Perder.SetActive(false);
-    }
-    public void ShowPregunta(){
-        Apuntar.SetActive(false);
-        Pregunta.SetActive(true);
-        RespuestaCorrecta.SetActive(false);
-        RespuestaIncorrecta.SetActive(false);
-        Pausa.SetActive(false);
-        Perder.SetActive(false);
-    }
-
-     public void ShowRespuestaCorrecta(){
-        Apuntar.SetActive(false);
-        Pregunta.SetActive(false);
-        RespuestaCorrecta.SetActive(true);
-        RespuestaIncorrecta.SetActive(false);
-        Pausa.SetActive(false);
-        Perder.SetActive(false);
-    }
-
-
-     public void ShowRespuestaIncorrecta(){
-        Apuntar.SetActive(false);
-        Pregunta.SetActive(false);
-        RespuestaCorrecta.SetActive(false);
-        RespuestaIncorrecta.SetActive(true);
-        Pausa.SetActive(false);
-        Perder.SetActive(false);
-    }
-
-     public void ShowGanar(){
-        Apuntar.SetActive(false);
-        Pregunta.SetActive(false);
-        RespuestaCorrecta.SetActive(false);
-        RespuestaIncorrecta.SetActive(false);
-        Pausa.SetActive(true);
-        Perder.SetActive(false);
-    }
-
-      public void ShowPerder(){
-        Apuntar.SetActive(false);
-        Pregunta.SetActive(false);
-        RespuestaCorrecta.SetActive(false);
-        RespuestaIncorrecta.SetActive(false);
-        Pausa.SetActive(false);
-        Perder.SetActive(true);
-    }
-
+    // Método para mostrar un panel específico
     public void ShowPanel(string panelName)
     {
-        // Hide all panels first
-        Apuntar.SetActive(false);
+        // Ocultar todos los paneles primero
+        Estatus.SetActive(false);
         Pregunta.SetActive(false);
         RespuestaCorrecta.SetActive(false);
         RespuestaIncorrecta.SetActive(false);
         Pausa.SetActive(false);
         Perder.SetActive(false);
 
-        // Show the selected panel
+        // Mostrar el panel seleccionado
         switch (panelName)
         {
-            case "ApuntarPanel":
-                Apuntar.SetActive(true);
+            case "Estatus":
+                Estatus.SetActive(true);
                 break;
-            case "PreguntaPanel":
+            case "Pregunta":
                 Pregunta.SetActive(true);
                 break;
             case "RespuestaCorrecta":
@@ -104,16 +40,32 @@ public class UIControlEnemigos : MonoBehaviour
                 break;
             case "RespuestaIncorrecta":
                 RespuestaIncorrecta.SetActive(true);
-                break;  
+                break;
             case "Ganar":
                 Pausa.SetActive(true);
                 break;
             case "Perder":
                 Perder.SetActive(true);
-                break;              
+                break;
         }
     }
 
+    // Actualizar el número de balas en la UI
+    public void ActualizarBalas(int cantidad)
+    {
+        balasTexto.text = "x" + cantidad.ToString();
+    }
+
+    // Actualizar el contador de vidas en la UI
+    public void ActualizarVidas(int vidasRestantes)
+    {
+        for (int i = 0; i < vidasImagenes.Length; i++)
+        {
+            vidasImagenes[i].enabled = i < vidasRestantes;
+        }
+    }
+
+    // Métodos para la transición de pantallas
     public void ShowResultados()
     {
         EnemigosControl.Instance.Gotoendgame();

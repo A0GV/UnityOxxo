@@ -80,11 +80,8 @@ public class TutorialController : MonoBehaviour
     public void SalirJuego()
     {
         Debug.Log("Saliendo del juego...");
-#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        // Application.Quit();
     }
 
     void MostrarPaso(int index)
@@ -122,5 +119,8 @@ public class TutorialController : MonoBehaviour
 
         if (panelJuego != null)
             panelJuego.SetActive(true);
+
+        // Mostrar el panel "Apuntar" al iniciar el juego
+        FindFirstObjectByType<UIControlEnemigos>().ShowPanel("Estatus");
     }
 }

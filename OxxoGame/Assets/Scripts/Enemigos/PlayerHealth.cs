@@ -4,21 +4,24 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxLives = 3;
     private int currentLives;
+    private UIControlEnemigos uiController;
 
     void Start()
     {
         currentLives = maxLives;
+        uiController = FindFirstObjectByType<UIControlEnemigos>();
+        uiController.ActualizarVidas(currentLives);
     }
 
     public void TakeDamage(int damage)
     {
         currentLives -= damage;
-        Debug.Log("Vidas restantes: " + currentLives);
+        uiController.ActualizarVidas(currentLives);
 
         if (currentLives <= 0)
         {
             Debug.Log("¡El jugador ha muerto!");
-            // Llamar a un método que muestre el panel de Game Over
+            uiController.ShowPanel("Perder");
         }
     }
 }
