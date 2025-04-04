@@ -9,16 +9,23 @@ public class UIControlDia : MonoBehaviour
     // Instance
     static public DiaControl Instance; // Instance de controller
 
+    // Pop-ups
     public GameObject canva;
     public GameObject pregunta;
     public GameObject pausa;
-    public int numpreguntas;
+    public GameObject menuResultados;
+
+    // Texto dinero
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
 
-    // Texto de exp y elote
+    // Texto de exp y elote pausa
     public Text textElote; 
     public Text textExp;
+
+    // Texto panel final
+    public Text textFinalElote; 
+    public Text textFinalExp;
 
     // Texto de título
     public Text textAct1; 
@@ -30,6 +37,7 @@ public class UIControlDia : MonoBehaviour
     public Text textDesc2; 
     public Text textDesc3; 
 
+    // Calculo de dinero
     public int dineroUI; 
     
     // De DiaControl
@@ -85,6 +93,7 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(true);
         pregunta.SetActive(false);
         pausa.SetActive(false);
+        menuResultados.SetActive(false);
     }
 
     // Function to set skip day
@@ -135,16 +144,6 @@ public class UIControlDia : MonoBehaviour
                 botonScript3.SetProblema(problemaUI);
             }
         }
-
-        /*
-        // Shows problem names
-        string act1Txt = DiaControl.Instance.problemasActivos[0].GetNombreProblema(); // First active problem
-        textAct1.text = act1Txt;
-        string act2Txt = DiaControl.Instance.problemasActivos[1].GetNombreProblema(); // Second active problem
-        textAct2.text = act2Txt;
-        string act3Txt = DiaControl.Instance.problemasActivos[2].GetNombreProblema(); // Tercer problema activo
-        textAct3.text = act3Txt;
-        */
     }
 
     // Esconde la pregunta y cuenta las preguntas que han salido
@@ -178,10 +177,15 @@ public class UIControlDia : MonoBehaviour
     //Manda a la escena final del juego
     public void ShowResultados()
     {
-        DiaControl.Instance.Gotoendgame();
+        canva.SetActive(false);
+        pausa.SetActive(false);
+        pregunta.SetActive(false);
+        menuResultados.SetActive(true);
         // Valores acumulados 
-        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
-        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
+        textFinalElote.text = DiaControl.Instance.elotesGanados.ToString(); 
+        textFinalExp.text = DiaControl.Instance.expGanado.ToString(); 
+        // Frena el tiempo
+        DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
     }
 
     // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
@@ -190,14 +194,15 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(true);
         pausa.SetActive(false);
         pregunta.SetActive(false);
-        DiaControl.Instance.ReiniciarDia(); 
+        menuResultados.SetActive(false);
+        //DiaControl.Instance.ReiniciarDia(); 
     }
 
 
     // Manda al menú de resultados si se pica en fin
     public void Gotomenu()
     {
-        // Save elotes amount
+        // Save elotes and exp amount amount
         SceneManager.LoadScene("MenuScene");
     }
 
@@ -207,6 +212,7 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
+        menuResultados.SetActive(false);
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
         // Valores acumulados 
         /*
@@ -223,6 +229,7 @@ public class UIControlDia : MonoBehaviour
         canva.SetActive(true);
         pausa.SetActive(false);
         pregunta.SetActive(false);
+        menuResultados.SetActive(false);
         DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.ResumeDay()); // To resume, must create a new instance and save reference in dayCoroutine agian
 
 
@@ -231,9 +238,6 @@ public class UIControlDia : MonoBehaviour
 
 /*
 TODO
-- Make it so that DDResolver can track which problem is clicked and eliminates from list, and generate a new problem
-- Figure out how to place the danger icons in the right place 
-- Change it so that it waits a bit to generate a new problem (once icons work)
-- Add a comparison model for the points so that it is easier to calculate the amount of corn they win based on how well they answered, or a number to keep track of their priorization
 - Also missing the restart day
+- At game start, pull num of exp from DB to set a int multiplicador that will round exp to int but still be like number of times user has played so adds the num of days to the corn calculated
 */

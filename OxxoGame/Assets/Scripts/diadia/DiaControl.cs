@@ -33,7 +33,7 @@ public class DiaControl : MonoBehaviour
     public Coroutine dayCoroutine; // To track the day coroutine
     public bool daySkipped = false; // Checks if user skipped day animation
     
-    // User values
+    // User money
     public int elotesGanados; 
     public int expGanado; 
 
@@ -42,6 +42,12 @@ public class DiaControl : MonoBehaviour
     public List<Problema> todosProblemas = new List<Problema>(); // Lista de todos los problemas posibles
     public List<Problema> problemasActivos = new List<Problema>(); // Lista de problemas activos 
     int numProblemasActivos = 0; // Monitorea número de problemas activos
+
+    // To count user priorities
+    public int solvedHigh; 
+    public int solvedMed; 
+    public int solvedLow;
+    
 
     // Valor máximo de cada tipo de problema
     public int totalSatisfaction; 
@@ -68,17 +74,6 @@ public class DiaControl : MonoBehaviour
     //Termina corrutinas e inicializa variables, cambiado Start -> Awake 
     void Awake()
     {   
-        // To count game money and exp and avoid scene reloading issues
-        if (!PlayerPrefs.HasKey("elotes"))
-        {
-        PlayerPrefs.SetInt("elotes", 0);
-        }
-
-        if (!PlayerPrefs.HasKey("exp"))
-        {
-            PlayerPrefs.SetInt("exp", 0);
-        }
-
         StopAllCoroutines();
         // Reset values 
         time = 0; 
@@ -329,12 +324,6 @@ public class DiaControl : MonoBehaviour
         {
             Destroy(icon);
         }
-    }
-
-    // Manda a la escena final del juego
-    public void Gotoendgame()
-    {
-        SceneManager.LoadScene("EndGamesScene");
     }
 
     // Update is called once per frame
