@@ -20,7 +20,30 @@ public class DDResolver : MonoBehaviour
         // Checa si exsiste el problema
         if (diaControl.problemasActivos.Contains(problemaResuelto))
         {
-            problemaResuelto.SetRenderStatus(false); // Apagarlo
+            problemaResuelto.SetRenderStatus(false); // Cambiar a false para que no se render el sprite
+            int prioridadResuelto = problemaResuelto.GetPrioridad(); // Store la prioridad
+
+
+            // Incrementar prioridad alta 
+            if (prioridadResuelto == 3) 
+            {
+                int currentValue = PlayerPrefs.GetInt("countAlta", 0);
+                PlayerPrefs.SetInt("countAlta", currentValue + 1);
+            }
+            else if (prioridadResuelto == 2) 
+            {
+                int currentValue = PlayerPrefs.GetInt("countMed", 0);
+                PlayerPrefs.SetInt("countMed", currentValue + 1);
+            }
+            else if (prioridadResuelto == 1)
+            {
+                int currentValue = PlayerPrefs.GetInt("countMed", 0);
+                PlayerPrefs.SetInt("countLow", currentValue + 1);
+            }
+            else 
+            {
+                Debug.Log("Error incrementando count de prioridades");
+            }
 
             /*
             // Update el exp
@@ -35,8 +58,8 @@ public class DDResolver : MonoBehaviour
 
             PlayerPrefs.Save(); // Porque a veces no los salva
             */
-            diaControl.elotesGanados += problemaResuelto.GetPrioridad();
-            diaControl.expGanado += problemaResuelto.GetPrioridad() * 2;
+            diaControl.elotesGanados += prioridadResuelto;
+            diaControl.expGanado += prioridadResuelto * 2;
 
             diaControl.problemasActivos.Remove(problemaResuelto); // So long bye bye
         }

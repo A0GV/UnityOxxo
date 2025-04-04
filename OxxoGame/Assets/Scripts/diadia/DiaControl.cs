@@ -43,10 +43,11 @@ public class DiaControl : MonoBehaviour
     public List<Problema> problemasActivos = new List<Problema>(); // Lista de problemas activos 
     int numProblemasActivos = 0; // Monitorea número de problemas activos
 
-    // To count user priorities
+    /* To count user priorities
     public int solvedHigh; 
     public int solvedMed; 
     public int solvedLow;
+    */
     
 
     // Valor máximo de cada tipo de problema
@@ -80,6 +81,10 @@ public class DiaControl : MonoBehaviour
         dineroDiaActual = 0;
         PlayerPrefs.SetInt("preguntas", 8);
         PlayerPrefs.SetInt("dinero", 0); // Sets to 0
+        PlayerPrefs.SetInt("countAlta", 0); 
+        PlayerPrefs.SetInt("countMed", 0); 
+        PlayerPrefs.SetInt("countLow", 0);
+
         problemasActivos.Clear(); // Make sure no problems are left over
 
         // Instances
@@ -111,6 +116,9 @@ public class DiaControl : MonoBehaviour
         checkDayActive = true; // Starts the day 
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
+
+        // Updates prioridades ya resueltas de UI
+        uiController.UpdatePrioridad(); 
 
         // Problem handling
         GenerarProblemasDelDia(); // Sets new problems

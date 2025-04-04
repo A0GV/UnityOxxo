@@ -19,6 +19,17 @@ public class UIControlDia : MonoBehaviour
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
 
+    // Texto prioridedes in-game
+    public Text countTextHigh; 
+    public Text countTextMed; 
+    public Text countTextLow;
+
+    // Texto prioridades menú final
+    public Text finalTextHigh; 
+    public Text finalTextMed; 
+    public Text finalTextLow;
+
+
     // Texto de exp y elote pausa
     public Text textElote; 
     public Text textExp;
@@ -78,6 +89,14 @@ public class UIControlDia : MonoBehaviour
     {
         dineroUI = DiaControl.Instance.dinero + DiaControl.Instance.dineroDiaActual; // Uses instance of DiaControl dinero stored and adds the one that is being calculated every second to update by parts 
         textDinero.text = "$ " + dineroUI; 
+    }
+
+    // Enseñar cuenta de prioridades resueltas
+    public void UpdatePrioridad()
+    {
+        countTextHigh.text = PlayerPrefs.GetInt("countAlta", 0).ToString(); 
+        countTextMed.text = PlayerPrefs.GetInt("countMed", 0).ToString(); 
+        countTextLow.text = PlayerPrefs.GetInt("countLow", 0).ToString(); 
     }
 
     // Enseñar dinero en pantalla de desición
@@ -177,15 +196,22 @@ public class UIControlDia : MonoBehaviour
     //Manda a la escena final del juego
     public void ShowResultados()
     {
+        // Frena el tiempo
+        DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
+
         canva.SetActive(false);
         pausa.SetActive(false);
         pregunta.SetActive(false);
         menuResultados.SetActive(true);
-        // Valores acumulados 
+
+        // Valores para BD 
         textFinalElote.text = DiaControl.Instance.elotesGanados.ToString(); 
         textFinalExp.text = DiaControl.Instance.expGanado.ToString(); 
-        // Frena el tiempo
-        DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
+        
+        // Valores de prioridades 
+        finalTextHigh.text = PlayerPrefs.GetInt("countAlta", 0).ToString(); 
+        finalTextMed.text = PlayerPrefs.GetInt("countMed", 0).ToString(); 
+        finalTextLow.text = PlayerPrefs.GetInt("countLow", 0).ToString(); 
     }
 
     // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
