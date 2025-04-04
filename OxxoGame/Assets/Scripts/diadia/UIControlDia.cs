@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class UIControlDia : MonoBehaviour
@@ -176,10 +177,21 @@ public class UIControlDia : MonoBehaviour
         DiaControl.Instance.Gotoendgame();
     }
 
-    //Manda al menú
+    // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
+    public void RestartGame()
+    {
+        canva.SetActive(true);
+        pausa.SetActive(false);
+        pregunta.SetActive(false);
+        DiaControl.Instance.ReiniciarDia(); 
+    }
+
+
+    // Manda al menú de resultados si se pica en fin
     public void Gotomenu()
     {
-        DiaControl.Instance.EndMiniGame();
+        // Save elotes amount
+        SceneManager.LoadScene("MenuScene");
     }
 
     //Pausa
@@ -208,4 +220,5 @@ TODO
 - Figure out how to place the danger icons in the right place 
 - Change it so that it waits a bit to generate a new problem (once icons work)
 - Add a comparison model for the points so that it is easier to calculate the amount of corn they win based on how well they answered, or a number to keep track of their priorization
+- Also missing the restart day
 */

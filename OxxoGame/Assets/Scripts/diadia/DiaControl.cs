@@ -9,7 +9,9 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
 using System.Security.Cryptography;
-using System; // To use library
+using System;
+using Unity.Burst.CompilerServices; // To use library
+
 public class DiaControl : MonoBehaviour
 {
     // Instances 
@@ -17,10 +19,12 @@ public class DiaControl : MonoBehaviour
     public UIControlDia uiController;
     public DDResolver resolverInstance; 
 
+    // To reload game
+    public GameObject storeView;
+
     // Control dinero 
     public int dinero; // Total money earned
     public int dineroDiaActual; // Money earned during that day 
-    public int dineroSkip; // Para enseñar la animación
 
     // Control de tiempo
     public int timePerDay = 12; // Sets day length
@@ -48,18 +52,24 @@ public class DiaControl : MonoBehaviour
     public int limpieza = 10; 
     public int atencionCliente = 8;
 
-    //Regresa al menu
-    public void EndMiniGame(){
-        SceneManager.LoadScene("MenuScene");
+    // Si usuario reinicia el día, solo se vuelve a llamar awake para destruir la info, no funciona bien tho
+    public void ReiniciarDia()
+    {
+        SceneManager.LoadScene("storeView"); // Restarts the scene
+        dinero = 0;
+        //Awake();
     }
 
     //Termina corrutinas e inicializa variables, cambiado Start -> Awake 
     void Awake()
     {   
+        // To count game money and exp
+        PlayerPrefs.SetInt("elotes", 0); 
+        PlayerPrefs.SetInt("exp", 0);
+
         StopAllCoroutines();
         // Reset values 
         time = 0; 
-        dineroSkip = 0; 
         dineroDiaActual = 0;
         PlayerPrefs.SetInt("preguntas", 8);
         PlayerPrefs.SetInt("dinero", 0); // Sets to 0
@@ -83,15 +93,9 @@ public class DiaControl : MonoBehaviour
     } 
 
     // Inicia todo 
-    void init(){
-        /*
-        if (uiController != null){
-            uiController.StartTime(); // Starts timer
-        }
-        */
-        GenerarProblemasDelDia(); // Genera problemas
+    void init()
+    {
         StartDay(); // Inicia día 
-        //dayCoroutine = StartCoroutine(StartDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
     }
 
     // Starts a new day, public to restart day from UIControl IEnumerator
@@ -113,6 +117,7 @@ public class DiaControl : MonoBehaviour
         dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
     }
 
+    // Coroutine para manejar el tiempo del día
     public IEnumerator ResumeDay()
     {
         // Just doesn't reset values
@@ -136,7 +141,8 @@ public class DiaControl : MonoBehaviour
     }
     
     // Get para saber cuantas preguntas han sido contestadas
-    public int Getcontestadas(){
+    public int Getcontestadas()
+    {
         return PlayerPrefs.GetInt("preguntas", 8);
     }
 
@@ -147,6 +153,7 @@ public class DiaControl : MonoBehaviour
         uiController.checarnumpreguntas();
     }
 
+    // Calcula las ganancias por segundo
     public int CalcularSatisfaccionPorSegundo()
     {
         // Sums all variables to calculate earnings for each second, m in y = mx
@@ -215,6 +222,69 @@ public class DiaControl : MonoBehaviour
                 problemasActivos.Add(seleccionadoNuevo);
                 problemasActivos[2].SetRenderStatus(true); // Makes it so that it does render
             }
+        }
+
+        // Calls to check priorities
+        AsignarPrioridades();
+    }
+
+    public void AsignarPrioridades() 
+    {
+        Debug.Log("Asignando prioridades a " + problemasActivos.Count + " problemas:");
+
+        if (problemasActivos.Count == 3)
+        {
+            // Apparently hay manera de ordenar por valor usando Linq, es lista que referencia a los valores originales 
+            List<Problema> problemasOrdenados = problemasActivos.OrderBy(currentProblem => currentProblem.GetImpactoNegativo()).ToList(); 
+
+            // Guardar problemas
+            Problema p1 = problemasOrdenados[0];
+            Problema p2 = problemasOrdenados[1];
+            Problema p3 = problemasOrdenados[2];
+            
+            // Guarda impacto negativo de los problemas
+            int negativo1 = problemasOrdenados[0].GetImpactoNegativo(); 
+            int negativo2 = problemasOrdenados[1].GetImpactoNegativo(); 
+            int negativo3 = problemasOrdenados[2].GetImpactoNegativo(); 
+
+            // Casos de prioridad
+            // Orden 1 mayor negativo, 2 medio, 3 menor impacto negativo
+            if (negativo1 < negativo2 && negativo2 < negativo3)
+            {
+                p1.SetPrioridad(3);
+                p2.SetPrioridad(2);
+                p3.SetPrioridad(1);
+            }
+            // Todos mismo valor
+            else if (negativo1 == negativo2 && negativo2 == negativo3)
+            {
+                p1.SetPrioridad(3);
+                p2.SetPrioridad(3);
+                p3.SetPrioridad(3);
+            }
+            // Negativo 1 y 2 más negativo, 3 menor
+            else if (negativo1 == negativo2 && negativo2 < negativo3)
+            {
+                p1.SetPrioridad(3);
+                p2.SetPrioridad(3);
+                p3.SetPrioridad(2);
+            }
+            // Negativo 1 más alto, 2 y 3 menor
+            else if (negativo1 < negativo2 && negativo2 == negativo3)
+            {
+                p1.SetPrioridad(3);
+                p2.SetPrioridad(2);
+                p3.SetPrioridad(2);
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Debug.Log("Problema " + i + " " + problemasOrdenados[i].GetNombreProblema()?.ToString() + ": " + problemasOrdenados[i].GetImpactoNegativo().ToString() + " con " + problemasOrdenados[i].GetPrioridad().ToString());
+            }
+        }
+        else 
+        {
+            Debug.Log("Problema asignando valores, cantidad de problemas:" + problemasActivos.Count);
         }
     }
 

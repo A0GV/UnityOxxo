@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &40752603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5729,9 +5729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1349794129}
   resolverInstance: {fileID: 1321622537}
+  storeView: {fileID: 1253369322}
   dinero: 0
   dineroDiaActual: 0
-  dineroSkip: 0
   timePerDay: 12
   time: 0
   daySkipped: 0
@@ -10443,7 +10443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1349794128
 Transform:
   m_ObjectHideFlags: 0
@@ -12450,7 +12450,7 @@ GameObject:
   - component: {fileID: 1580180655}
   - component: {fileID: 1580180654}
   m_Layer: 5
-  m_Name: Salir
+  m_Name: Reintentar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12537,7 +12537,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1349794129}
         m_TargetAssemblyTypeName: UIControlDia, Assembly-CSharp
-        m_MethodName: despausado
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
