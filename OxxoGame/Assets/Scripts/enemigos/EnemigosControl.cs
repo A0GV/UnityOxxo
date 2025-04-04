@@ -8,15 +8,10 @@ public class EnemigosControl : MonoBehaviour
 
     void Start()
     {   
-        StopAllCoroutines();
-        Instance = this;
-        uiController.ShowApuntar();
-        init();
+
     }  
     void init(){
-        if(uiController!=null){
-            uiController.StartTime();
-        }
+
     }
 
 

@@ -3,50 +3,39 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     public float speed = 2.0f;  // Velocidad del enemigo
+    public int experiencePoints = 50; // Experiencia que otorga este enemigo
+
     private Transform player;   // Referencia al jugador
     private Rigidbody2D rb;     // Referencia al Rigidbody2D del enemigo
+
+    private Vector2 moveDirection; // Dirección de movimiento del enemigo
 
     void Start()
     {
         // Encontrar al jugador en la escena
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (player == null)
-        {
-            Debug.LogError("No se encontró el jugador con el tag 'Player'");
-        }
-
         // Obtener el Rigidbody2D del enemigo
         rb = GetComponent<Rigidbody2D>();
-        if (rb == null)
+    }
+
+    void Update()
+    {
+        if (player != null)
         {
-            Debug.LogError("No se encontró un Rigidbody2D en el enemigo");
+            // Calcular la dirección hacia el jugador en el plano 2D
+            Vector2 posicionJugador = new Vector2(player.position.x, player.position.y);
+            Vector2 posicionEnemigo = new Vector2(transform.position.x, transform.position.y);
+            moveDirection = (posicionJugador - posicionEnemigo).normalized;
         }
     }
 
     void FixedUpdate()
     {
-        MoverHaciaJugador();
-    }
-
-    void MoverHaciaJugador()
-    {
-        if (player != null && rb != null)
+        if (rb != null)
         {
-            // Obtener las posiciones actuales del jugador y del enemigo
-            Vector3 posicionJugador = player.position;
-            Vector3 posicionEnemigo = transform.position;
-
-            // Mostrar las posiciones en la consola
-            Debug.Log($"Posición del jugador: {posicionJugador}, Posición del enemigo: {posicionEnemigo}");
-
-            // Calcular la dirección hacia el jugador en el plano 2D (ignorando el eje Z)
-            Vector2 direccion = new Vector2(posicionJugador.x - posicionEnemigo.x, posicionJugador.y - posicionEnemigo.y).normalized;
-
-            Debug.Log($"Dirección calculada: {direccion}");
-
-            // Mover el enemigo hacia el jugador usando Rigidbody2D
-            rb.linearVelocity = direccion * speed;
+            // Aplicar la velocidad al Rigidbody2D
+            rb.linearVelocity = moveDirection * speed;
         }
     }
 
@@ -54,6 +43,17 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
+            // Agregar experiencia al jugador
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                PlayerExperience playerExperience = playerObject.GetComponent<PlayerExperience>();
+                if (playerExperience != null)
+                {
+                    playerExperience.AddExperience(experiencePoints);
+                }
+            }
+
             // Destruir tanto la bala como el enemigo al colisionar
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -65,7 +65,6 @@ public class EnemyBehavior : MonoBehaviour
 
             // Llamar a un método en el jugador para reducir la vida
             collision.GetComponent<PlayerHealth>()?.TakeDamage(1);
-            Debug.Log("El enemigo tocó al jugador");
         }
     }
 }

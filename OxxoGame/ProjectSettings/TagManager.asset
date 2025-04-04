@@ -7,6 +7,9 @@ TagManager:
   - AjoloteTerminator
   - Red
   - VisualDanger
+  - escenario
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

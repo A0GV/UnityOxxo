@@ -33,6 +33,11 @@ public class AxolotlSpawner : MonoBehaviour
 
     public void SpawnAxolotl()
     {
+        // Aqui mi idea es que, cuando se haga spawn de uno, llame a la funcion que jala los datos, de ahi, los guarda en pleyer prefs,
+        // DEspues, cuando ya se pulse el boton. Poder saber si presiono Acept o deny, en base esto, comparar con lo que llego de API
+        // Y guardarlo en otro player prefs, que se enseñara al final, despues y tendra la opcion de ver en que se equivoco y porque.
+
+        
         contador++;
         // Si ya hay un Axolotl en la escena, lo eliminamos
 
