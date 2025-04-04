@@ -209,8 +209,12 @@ public class UIControlDia : MonoBehaviour
         pausa.SetActive(true);
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
         // Valores acumulados 
+        /*
         textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
         textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
+        */
+        textElote.text = DiaControl.Instance.elotesGanados.ToString(); 
+        textExp.text = DiaControl.Instance.expGanado.ToString(); 
     }
 
     // Resume game

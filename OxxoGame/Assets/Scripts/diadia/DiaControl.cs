@@ -33,6 +33,9 @@ public class DiaControl : MonoBehaviour
     public Coroutine dayCoroutine; // To track the day coroutine
     public bool daySkipped = false; // Checks if user skipped day animation
     
+    // User values
+    public int elotesGanados; 
+    public int expGanado; 
 
     // Problemas
     public GameObject problemaPrefab; // Prefab de danger icon
@@ -57,6 +60,8 @@ public class DiaControl : MonoBehaviour
     {
         SceneManager.LoadScene("storeView"); // Restarts the scene
         dinero = 0;
+        elotesGanados = 0; 
+        expGanado = 0;
         //Awake();
     }
 

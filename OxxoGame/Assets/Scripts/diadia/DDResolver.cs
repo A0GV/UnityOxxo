@@ -21,6 +21,8 @@ public class DDResolver : MonoBehaviour
         if (diaControl.problemasActivos.Contains(problemaResuelto))
         {
             problemaResuelto.SetRenderStatus(false); // Apagarlo
+
+            /*
             // Update el exp
             int elotePregunta = PlayerPrefs.GetInt("elotes"); 
             elotePregunta += problemaResuelto.GetPrioridad(); // Incrementa elotes por prioridad dada
@@ -32,6 +34,9 @@ public class DDResolver : MonoBehaviour
             PlayerPrefs.SetInt("exp", expPregunta);
 
             PlayerPrefs.Save(); // Porque a veces no los salva
+            */
+            diaControl.elotesGanados += problemaResuelto.GetPrioridad();
+            diaControl.expGanado += problemaResuelto.GetPrioridad() * 2;
 
             diaControl.problemasActivos.Remove(problemaResuelto); // So long bye bye
         }
