@@ -193,7 +193,7 @@ public class UIControlDia : MonoBehaviour
         }
     }
 
-    //Manda a la escena final del juego
+    // Manda a la escena final del juego
     public void ShowResultados()
     {
         // Frena el tiempo

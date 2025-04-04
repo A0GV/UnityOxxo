@@ -75,3 +75,8 @@ public class AjolotediaControl : MonoBehaviour
         }
     }
 }
+
+/* 
+TODO 
+- Program a bottom walk
+*/
