@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class UIControlDia : MonoBehaviour
@@ -14,6 +15,10 @@ public class UIControlDia : MonoBehaviour
     public int numpreguntas;
     public Text textDinero; // Texto auto-updating durante dia
     public Text textDineroQuestion; // Texto con cantidad de dinero durante pausa
+
+    // Texto de exp y elote
+    public Text textElote; 
+    public Text textExp;
 
     // Texto de título
     public Text textAct1; 
@@ -174,21 +179,42 @@ public class UIControlDia : MonoBehaviour
     public void ShowResultados()
     {
         DiaControl.Instance.Gotoendgame();
+        // Valores acumulados 
+        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
+        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
     }
 
-    //Manda al menú
+    // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
+    public void RestartGame()
+    {
+        canva.SetActive(true);
+        pausa.SetActive(false);
+        pregunta.SetActive(false);
+        DiaControl.Instance.ReiniciarDia(); 
+    }
+
+
+    // Manda al menú de resultados si se pica en fin
     public void Gotomenu()
     {
-        DiaControl.Instance.EndMiniGame();
+        // Save elotes amount
+        SceneManager.LoadScene("MenuScene");
     }
 
-    //Pausa
+    // Pausa
     public void pausado()
     {
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
+        // Valores acumulados 
+        /*
+        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
+        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
+        */
+        textElote.text = DiaControl.Instance.elotesGanados.ToString(); 
+        textExp.text = DiaControl.Instance.expGanado.ToString(); 
     }
 
     // Resume game
@@ -199,6 +225,7 @@ public class UIControlDia : MonoBehaviour
         pregunta.SetActive(false);
         DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.ResumeDay()); // To resume, must create a new instance and save reference in dayCoroutine agian
 
+
     }
 }
 
@@ -208,4 +235,5 @@ TODO
 - Figure out how to place the danger icons in the right place 
 - Change it so that it waits a bit to generate a new problem (once icons work)
 - Add a comparison model for the points so that it is easier to calculate the amount of corn they win based on how well they answered, or a number to keep track of their priorization
+- Also missing the restart day
 */

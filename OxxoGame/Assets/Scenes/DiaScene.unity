@@ -2938,7 +2938,7 @@ GameObject:
   - component: {fileID: 330624764}
   - component: {fileID: 330624763}
   m_Layer: 5
-  m_Name: text
+  m_Name: eloteText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2996,7 +2996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 0
 --- !u!222 &330624764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5729,9 +5729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1349794129}
   resolverInstance: {fileID: 1321622537}
+  storeView: {fileID: 1253369322}
   dinero: 0
   dineroDiaActual: 0
-  dineroSkip: 0
   timePerDay: 12
   time: 0
   daySkipped: 0
@@ -6883,7 +6883,7 @@ GameObject:
   - component: {fileID: 845758797}
   - component: {fileID: 845758796}
   m_Layer: 5
-  m_Name: text
+  m_Name: expText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6941,7 +6941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 0
 --- !u!222 &845758797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8866,7 +8866,7 @@ Transform:
   m_GameObject: {fileID: 1176521085}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -2.48, z: 0}
+  m_LocalPosition: {x: 1.3, y: 3.11, z: 0}
   m_LocalScale: {x: 1.3183, y: 1.1273, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10477,6 +10477,8 @@ MonoBehaviour:
   numpreguntas: 0
   textDinero: {fileID: 1267643320}
   textDineroQuestion: {fileID: 2043214615}
+  textElote: {fileID: 330624763}
+  textExp: {fileID: 845758796}
   textAct1: {fileID: 795372128}
   textAct2: {fileID: 1797912713}
   textAct3: {fileID: 1604884342}
@@ -12450,7 +12452,7 @@ GameObject:
   - component: {fileID: 1580180655}
   - component: {fileID: 1580180654}
   m_Layer: 5
-  m_Name: Salir
+  m_Name: Reintentar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12537,7 +12539,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1349794129}
         m_TargetAssemblyTypeName: UIControlDia, Assembly-CSharp
-        m_MethodName: despausado
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17096,7 +17098,7 @@ GameObject:
   - component: {fileID: 2123525077}
   - component: {fileID: 2123525076}
   m_Layer: 5
-  m_Name: poposito
+  m_Name: CuadroPausa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

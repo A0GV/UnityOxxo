@@ -21,68 +21,29 @@ public class DDResolver : MonoBehaviour
         if (diaControl.problemasActivos.Contains(problemaResuelto))
         {
             problemaResuelto.SetRenderStatus(false); // Apagarlo
+
+            /*
+            // Update el exp
+            int elotePregunta = PlayerPrefs.GetInt("elotes"); 
+            elotePregunta += problemaResuelto.GetPrioridad(); // Incrementa elotes por prioridad dada
+            Debug.Log("Elotes nuevos: " + elotePregunta);
+            PlayerPrefs.SetInt("elotes", elotePregunta); // Sets elote al valor nuevo
+
+            int expPregunta = PlayerPrefs.GetInt("exp");
+            expPregunta += problemaResuelto.GetPrioridad() * 2; 
+            PlayerPrefs.SetInt("exp", expPregunta);
+
+            PlayerPrefs.Save(); // Porque a veces no los salva
+            */
+            diaControl.elotesGanados += problemaResuelto.GetPrioridad();
+            diaControl.expGanado += problemaResuelto.GetPrioridad() * 2;
+
             diaControl.problemasActivos.Remove(problemaResuelto); // So long bye bye
         }
 
         Debug.Log($"Se resolvió el problema: {problemaResuelto.GetNombreProblema()}"); // Temporary debugging
         uiControl.HidePregunta(); // UI handles question closing 
     }
-
-    /*
-    public void SolveProblem1() 
-    {
-        // Eliminate problem from list
-        if (diaControl.problemasActivos.Count >= 1)
-        {
-            diaControl.problemasActivos[0].SetRenderStatus(false); // Sets as false because no longer active
-            diaControl.problemasActivos.RemoveAt(0);
-        }
-        // Problem not defined for some reason
-        else 
-        {
-            Debug.Log("No existe ese problema");
-        }
-
-        Debug.Log("Seleccionó primera pregunta");
-        uiControl.HidePregunta(); // Calls UI to handle question closing
-    }
-
-    public void SolveProblem2() 
-    {
-        // Eliminate problem from list
-        if (diaControl.problemasActivos.Count >= 2)
-        {
-            diaControl.problemasActivos[1].SetRenderStatus(false); // Sets as false because no longer active
-            diaControl.problemasActivos.RemoveAt(1);
-        }
-        // Problem not defined for some reason
-        else 
-        {
-            Debug.Log("No existe ese problema");
-        }
-
-        Debug.Log("Seleccionó segunda pregunta");
-        uiControl.HidePregunta(); // Calls UI to handle question closing
-    }
-
-    public void SolveProblem3() 
-    {
-        // Eliminate problem from list
-        if (diaControl.problemasActivos.Count >= 3)
-        {
-             diaControl.problemasActivos[2].SetRenderStatus(false); // Sets as false because no longer active
-            diaControl.problemasActivos.RemoveAt(2);
-        }
-        // Problem not defined for some reason
-        else 
-        {
-            Debug.Log("No existe ese problema");
-        }
-
-        Debug.Log("Seleccionó tercera pregunta");
-        uiControl.HidePregunta(); // Calls UI to handle question closing
-    }
-    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
