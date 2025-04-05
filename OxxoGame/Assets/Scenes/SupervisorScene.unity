@@ -913,6 +913,7 @@ MonoBehaviour:
   spawnButton1: {fileID: 676408871}
   spawnButton2: {fileID: 1008079887}
   uIControlSuper: {fileID: 308973985}
+  npcController: {fileID: 664204432}
 --- !u!4 &496949909
 Transform:
   m_ObjectHideFlags: 0
@@ -1196,6 +1197,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595108238}
   m_CullTransparentMesh: 1
+--- !u!1 &664204431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664204433}
+  - component: {fileID: 664204432}
+  m_Layer: 0
+  m_Name: npcController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &664204432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664204431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3f39aade578824a80979d3614a172f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expediente: {fileID: 1772668106}
+  local: {fileID: 685604516}
+  preguntaUno: {fileID: 226862270}
+  preguntaDos: {fileID: 230780126}
+  preguntaTres: {fileID: 725297274}
+  Respuesta: {fileID: 1596802566}
+--- !u!4 &664204433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664204431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1051.3895, y: 528.86676, z: -345.78012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676408869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,7 +3200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1173579303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6125,3 +6176,4 @@ SceneRoots:
   - {fileID: 78233125}
   - {fileID: 1324574951}
   - {fileID: 830251872}
+  - {fileID: 664204433}
