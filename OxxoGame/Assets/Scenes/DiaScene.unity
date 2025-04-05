@@ -6590,7 +6590,9 @@ MonoBehaviour:
   dineroDiaActual: 0
   timePerDay: 12
   time: 0
+  checkDayActive: 1
   daySkipped: 0
+  gameOver: 0
   elotesGanados: 0
   expGanado: 0
   problemaPrefab: {fileID: 3396387173896151370, guid: fb30c678b66a54899b3a80bc142c6b45, type: 3}
@@ -8492,7 +8494,7 @@ GameObject:
   - component: {fileID: 915468734}
   - component: {fileID: 915468733}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8577,9 +8579,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EndGamesController, Assembly-CSharp
-        m_MethodName: RegresarMenu
+      - m_Target: {fileID: 1349794129}
+        m_TargetAssemblyTypeName: UIControlDia, Assembly-CSharp
+        m_MethodName: Gotomenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

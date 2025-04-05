@@ -182,7 +182,12 @@ public class UIControlDia : MonoBehaviour
         
         DiaControl.Instance.daySkipped = false; // Sets back to day has not been skipped flag 
         //DiaControl.Instance.dayCoroutine = DiaControl.Instance.StartCoroutine(DiaControl.Instance.StartDay()); // Restarts day
-        DiaControl.Instance.StartDay(); // Starts day now without coroutine
+        
+        // If day is not currently active and the game is not over
+        if (!DiaControl.Instance.checkDayActive && !DiaControl.Instance.gameOver)
+        {
+            DiaControl.Instance.StartDay(); // Starts day if it is active 
+        }
     }
 
     //checa si ya se contestaron la cantidad de preguntas determinadas y 
@@ -196,8 +201,9 @@ public class UIControlDia : MonoBehaviour
     // Manda a la escena final del juego
     public void ShowResultados()
     {
-        // Frena el tiempo
+        // Frena el tiempo y cambia day
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
+        DiaControl.Instance.gameOver = true; // Sets game as ended
 
         canva.SetActive(false);
         pausa.SetActive(false);
@@ -221,7 +227,7 @@ public class UIControlDia : MonoBehaviour
         pausa.SetActive(false);
         pregunta.SetActive(false);
         menuResultados.SetActive(false);
-        //DiaControl.Instance.ReiniciarDia(); 
+        DiaControl.Instance.ReiniciarDia(); 
     }
 
 

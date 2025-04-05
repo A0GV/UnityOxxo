@@ -29,9 +29,11 @@ public class DiaControl : MonoBehaviour
     // Control de tiempo
     public int timePerDay = 12; // Sets day length
     public int time; // Public because needed in UI control to reset time
-    bool checkDayActive = true; // Used to check if day is active 
+    public bool checkDayActive = true; // Used to check if day is active 
     public Coroutine dayCoroutine; // To track the day coroutine
     public bool daySkipped = false; // Checks if user skipped day animation
+
+    public bool gameOver = false; // Sets game over to false 
     
     // User money
     public int elotesGanados; 
@@ -65,11 +67,11 @@ public class DiaControl : MonoBehaviour
     // Si usuario reinicia el día, solo se vuelve a llamar awake para destruir la info, no funciona bien tho
     public void ReiniciarDia()
     {
-        SceneManager.LoadScene("storeView"); // Restarts the scene
         dinero = 0;
         elotesGanados = 0; 
         expGanado = 0;
         //Awake();
+        SceneManager.LoadScene( SceneManager.GetActiveScene().name );
     }
 
     //Termina corrutinas e inicializa variables, cambiado Start -> Awake 
@@ -113,6 +115,8 @@ public class DiaControl : MonoBehaviour
     // Starts a new day, public to restart day from UIControl IEnumerator
     public void StartDay()
     {
+        //StopDayCoroutine(); // Stops just in case 
+
         checkDayActive = true; // Starts the day 
         time = 0; // Ensures time is reset just in case
         dineroDiaActual = 0; // Resets day earnings 
@@ -129,7 +133,16 @@ public class DiaControl : MonoBehaviour
             Debug.Log(problemasActivos[i].GetNombreProblema());
         }
 
-        dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
+        // If day is active and has not ended yet, starts the day
+        if (checkDayActive && !gameOver)
+        {
+            dayCoroutine = StartCoroutine(ResumeDay()); // Stores coroutine reference to be able to stop it, useful to manipulate it in other parts of the program without causing coroutine errors (having multiple active and such) 
+        }
+        else 
+        {
+            Debug.Log("Day is not active");
+        }
+        
     }
 
     // Coroutine para manejar el tiempo del día
@@ -151,9 +164,23 @@ public class DiaControl : MonoBehaviour
                 checkDayActive = false;
                 dinero += dineroDiaActual;
                 uiController.ShowPregunta();
+                yield break; // Exits coroutine just in case
             }
         }
+        yield break; // Exits coroutine just in case
     }
+
+    /* Para forzar stop coroutine
+    public void StopDayCoroutine()
+    {
+        if (dayCoroutine != null)
+        {
+            StopCoroutine(dayCoroutine);
+            dayCoroutine = null;
+        }
+        checkDayActive = false;
+    }
+    */
     
     // Get para saber cuantas preguntas han sido contestadas
     public int Getcontestadas()
