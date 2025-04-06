@@ -18,6 +18,7 @@ public class DiaControl : MonoBehaviour
     static public DiaControl Instance; // Instance de controller
     public UIControlDia uiController;
     public DDResolver resolverInstance; 
+    public DDSpawner spawnerInstance;
 
     // To reload game
     public GameObject storeView;
@@ -128,10 +129,15 @@ public class DiaControl : MonoBehaviour
         GenerarProblemasDelDia(); // Sets new problems
         SpawnIconProblem(); // Renders icons
 
+        // Crea ajolote
+        spawnerInstance.StartSpawning();
+
+        /*
         for (int i = 0; i < problemasActivos.Count; i++) 
         {
             Debug.Log(problemasActivos[i].GetNombreProblema());
         }
+        */
 
         // If day is active and has not ended yet, starts the day
         if (checkDayActive && !gameOver)
@@ -169,18 +175,6 @@ public class DiaControl : MonoBehaviour
         }
         yield break; // Exits coroutine just in case
     }
-
-    /* Para forzar stop coroutine
-    public void StopDayCoroutine()
-    {
-        if (dayCoroutine != null)
-        {
-            StopCoroutine(dayCoroutine);
-            dayCoroutine = null;
-        }
-        checkDayActive = false;
-    }
-    */
     
     // Get para saber cuantas preguntas han sido contestadas
     public int Getcontestadas()
