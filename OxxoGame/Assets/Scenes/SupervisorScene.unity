@@ -1232,6 +1232,8 @@ MonoBehaviour:
   preguntaDos: {fileID: 230780126}
   preguntaTres: {fileID: 725297274}
   Respuesta: {fileID: 1596802566}
+  speedLocal: 0.05
+  speedExpedient: 0.02
 --- !u!4 &664204433
 Transform:
   m_ObjectHideFlags: 0
@@ -1449,7 +1451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OXXO Plaza Centro
+  m_Text: 
 --- !u!222 &685604517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5028,10 +5030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Ubicaci\xF3n: Av. Reforma #123\n\nHorario: 7 AM - 11 PM (Lun-Vie), 8 AM
-    - 10 PM (S\xE1b-Dom)\n\nVentas: $3,210 este mes\n\nCondici\xF3n: Limpieza 4/5
-    | Inventario bajo\n\nProyectos: Renovaci\xF3n de bebidas | Capacitaci\xF3n activa\n\nPromo:
-    2x1 Caf\xE9 (Ma\xF1anas)"
+  m_Text: 
 --- !u!222 &1772668107
 CanvasRenderer:
   m_ObjectHideFlags: 0

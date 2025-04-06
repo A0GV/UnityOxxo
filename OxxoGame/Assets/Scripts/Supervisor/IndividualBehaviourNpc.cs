@@ -85,6 +85,10 @@ public class IndividualBehaviourNpc : MonoBehaviour
         }
     }
 
+    void userChoices()
+    {
+        
+    }
 
 
 
