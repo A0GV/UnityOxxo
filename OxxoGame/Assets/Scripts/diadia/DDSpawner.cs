@@ -4,10 +4,11 @@ using System.Collections.Generic;
 public class DDSpawner : MonoBehaviour
 {
     public static DDSpawner Instance;
+    DDPoints pointsInstance;
     public GameObject prefabAjolote;
     public Transform spawnPoint; // Donde empieza la animación
     public int maxAxolotls = 4;
-    public float spawnInterval = 3f; // Tiempo entre spawns como float
+    public float spawnInterval = 1.25f; // Tiempo entre spawns como float, mínimo 1.25 segudos entre spawns
 
     private List<GameObject> spawnedAxolotls = new List<GameObject>();
     private float timerSpawn; // Otro timer solo para sus movimeintos
@@ -60,9 +61,31 @@ public class DDSpawner : MonoBehaviour
 
         DDPoints dd = newAxolotl.GetComponent<DDPoints>(); // Guarda points aquí 
         dd.SendMessage("SetPath", SpawnerPoints); // Llama para set los points desde el otro script
+        dd.pointMoveSpeed = CalculateSpeed();
 
         spawnedAxolotls.Add(newAxolotl); // Agrega ajolote a lista
 
 
+    }
+
+    // Modifies spawner speed based on how many are answered right, so more right answers makes them walk faster and respawn faster
+    public float CalculateSpeed() 
+    {
+        int totalPointsSolved = PlayerPrefs.GetInt("countAlta", 0) + PlayerPrefs.GetInt("countMed", 0) + PlayerPrefs.GetInt("countLow", 0);  
+
+        // Default is 3f if no questions have been answered
+        if (totalPointsSolved == 0)
+        {
+            return 3f; 
+        }
+        // Otherwise at least one answered and can use that
+        else 
+        {
+            float ratioAltas = (float)PlayerPrefs.GetInt("countAlta") / totalPointsSolved * 3; // Goes from 0 to 1, so multiplying by 3 so that max speed can be 6 with a perfect score once added to current speed
+            float spawnerMoveSpeed = 3f + ratioAltas; // Base speed is 3, answering all lows will have speed at 3. If all are right, will be doing 3 + 3. If have half altas, then speed will be 4.5
+            return spawnerMoveSpeed;
+        }
+
+        
     }
 }

@@ -6,7 +6,7 @@ public class DDPoints : MonoBehaviour
     Animator animatorController;
     [SerializeField] Transform[] Points; // Porque lo puso en el tutorial
     private int pointsIndex; 
-    [SerializeField] private int pointMoveSpeed = 3 ; // Sets start at 3, gets faster if user has more right
+    [SerializeField] public float pointMoveSpeed = 3f; // Sets start at 3, gets faster if user has more right
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,12 +24,6 @@ public class DDPoints : MonoBehaviour
         {
             transform.position = Points[pointsIndex].position;
         }
-    }
-
-    // Modifies spawner speed based on satisfaction
-    public void calculateSpeed() 
-    {
-        int totalPointsSolved = PlayerPrefs.GetInt("countAlta", 0) + PlayerPrefs.GetInt("countMed", 0) + PlayerPrefs.GetInt("countLow", 0);
     }
 
     // Update is called once per frame
