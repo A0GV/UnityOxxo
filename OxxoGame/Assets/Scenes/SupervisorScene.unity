@@ -546,7 +546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\n\xBFCu\xE1l ha sido nuestro mayor error recientemente?\n\n"
+  m_Text: 
 --- !u!222 &226862271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\xBFQu\xE9 \xE1rea de la tienda necesita m\xE1s atenci\xF3n ahora mismo?\n\n"
+  m_Text: 
 --- !u!222 &230780127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1666,7 +1666,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\n\nSi pudieras mejorar solo una cosa en la tienda, \xBFqu\xE9 ser\xEDa?"
+  m_Text: 
 --- !u!222 &725297275
 CanvasRenderer:
   m_ObjectHideFlags: 0
