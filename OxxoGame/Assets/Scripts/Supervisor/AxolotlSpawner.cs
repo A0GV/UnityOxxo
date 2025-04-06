@@ -50,6 +50,7 @@ public class AxolotlSpawner : MonoBehaviour
 
         var data = npcController.StartCoroutine(npcController.GetDataNpc(selectedNpcId));
         // StartCoroutine(npcController.textoAnimado());
+        // npcController.StartCoroutine(npcController.GetPreguntas(selectedNpcId));
 
         contador++;
         // Si ya hay un Axolotl en la escena, lo eliminamos

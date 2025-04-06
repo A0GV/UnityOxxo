@@ -61,36 +61,63 @@ public class npcController : MonoBehaviour
         if (Expediente != null)
         {
             Expediente.text = ""; // Limpia el texto antes de iniciar la animación
-            StartCoroutine(textoAnimado(dataofNPC.local,local, speedLocal ));
-            StartCoroutine(textoAnimado(dataofNPC.expediente,Expediente,speedExpedient));
+            StartCoroutine(textoAnimado(dataofNPC.local, local, speedLocal));
+            StartCoroutine(textoAnimado(dataofNPC.expediente, Expediente, speedExpedient));
         }
+        StartCoroutine(GetPreguntas(id));
     }
 
     public IEnumerator textoAnimado(string texto, Text component, float speed)
     {
         Debug.Log("Funcion textoAnimado casteada");
-        // string txt = PlayerPrefs.GetString("local");
-        Debug.Log(texto);
+        // Debug.Log(texto);
 
-        component.text="";
+        component.text = "";
         foreach (char character in texto.ToCharArray())
         {
-            Debug.Log(character);
             component.text += character;
             yield return new WaitForSeconds(speed);
         }
     }
 
-    //  public IEnumerator localAnimado()
-    // {
-    //     Debug.Log("Funcion textoAnimado casteada");
-    //     string txt = PlayerPrefs.GetString("expediente");
-    //     Debug.Log(txt);
-    //     foreach (char character in txt.ToCharArray())
-    //     {
-    //         Debug.Log(character);
-    //         local.text += character;
-    //         yield return new WaitForSeconds(speed);
-    //     }
-    // }
+    public IEnumerator GetPreguntas(int id)
+    {
+        Debug.Log("Get preguntas casteadas");
+        preguntaUno.text ="";
+        preguntaDos.text ="";
+        preguntaTres.text ="";
+        Debug.Log("Get preguntas casteada");
+        string JSONurl = $"https://localhost:7119/controller/GetPreguntas?id={id}";
+        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
+        web.certificateHandler = new ForceAcceptAll();
+        yield return web.SendWebRequest();
+
+        // Deserializa la lista de preguntas
+        List<preguntas> LPreguntas = JsonConvert.DeserializeObject<List<preguntas>>(web.downloadHandler.text);
+
+        preguntaUno.text = LPreguntas[0].pregunta;
+        Debug.Log(LPreguntas[0].pregunta);
+        preguntaDos.text = LPreguntas[1].pregunta;
+        Debug.Log(LPreguntas[1].pregunta);
+        preguntaTres.text = LPreguntas[2].pregunta;
+        Debug.Log(LPreguntas[2].pregunta);
+
+    }
+
+    public IEnumerator GetRespuestas(int id)
+    {
+        Debug.Log("Get preguntas casteada");
+        string JSONurl = $"https://localhost:7119/controller/GetRespuestas?id={id}";
+        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
+        web.certificateHandler = new ForceAcceptAll();
+        yield return web.SendWebRequest();
+
+        // Deserializa la lista de preguntas
+        List<dialogo> LRespuestas = JsonConvert.DeserializeObject<List<dialogo>>(web.downloadHandler.text);
+
+        PlayerPrefs.SetString("RespuestaUno", LRespuestas[0].respuesta);
+        PlayerPrefs.SetString("RespuestaDos", LRespuestas[1].respuesta);
+        PlayerPrefs.SetString("RespuestaTres", LRespuestas[2].respuesta);
+
+    }
 }
