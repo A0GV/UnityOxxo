@@ -20318,6 +20318,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1337597123240533101, guid: 9223c1b198afb45699233a61fbbdb50b, type: 3}
+      propertyPath: pointMoveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337597123240533101, guid: 9223c1b198afb45699233a61fbbdb50b, type: 3}
       propertyPath: 'Points.Array.data[0]'
       value: 
       objectReference: {fileID: 251055051}

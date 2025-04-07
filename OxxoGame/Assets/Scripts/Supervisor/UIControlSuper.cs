@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 
 public class UIControlSuper : MonoBehaviour
@@ -14,12 +15,30 @@ public class UIControlSuper : MonoBehaviour
     public GameObject respuesta;
     public GameObject pausa;
 
+    public GameObject resumenExtendido;
+    public string[] textosFinal;
+    public int malos;
+    public int buenos;
+
+    public int elotes;
+    public int burbujas;
+
+    public Text speech;
+
+    public Text Resume;
+    public Text Points;
+
+    public Text ResuemnExt;
+
     private Coroutine resumenCoroutine; // Stores the coroutine reference
     private bool isPaused = false; // Tracks if the game is paused
+    static public npcController Instance;
+
+
 
     void Start()
     {
-        StartTime(); // Start the summary coroutine on game start
+        textosFinal = new string[8];
     }
 
     // Starts the coroutine to periodically show the summary panel
@@ -51,6 +70,7 @@ public class UIControlSuper : MonoBehaviour
         resumen.SetActive(false);
         manual.SetActive(false);
         pausa.SetActive(false);
+        respuesta.SetActive(false);
     }
 
     // Displays the summary panel and hides the main panel
@@ -58,6 +78,21 @@ public class UIControlSuper : MonoBehaviour
     {
         main.SetActive(false);
         resumen.SetActive(true);
+        string finalTxt=$"Tuviste\n{buenos}/7 aciertos\n  {malos}/7\n Si quieres ver porque. Presiona el boton de siguiente.";
+        string points=$"Conseguiste {burbujas} burbujas y {elotes} elotes";
+        StartCoroutine(npcController.Instance.textoAnimado(finalTxt,Resume,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
+        StartCoroutine(npcController.Instance.textoAnimado(points,Points,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
+
+    }
+
+    public void ShowResumenExtendidio()
+    {
+        main.SetActive(false);
+        resumen.SetActive(false);
+        resumenExtendido.SetActive(true);
+        string finalText = string.Join("\n", textosFinal);
+        StartCoroutine(npcController.Instance.textoAnimado(finalText, ResuemnExt, npcController.Instance.speedLocal));
+
     }
 
     // Controls the visibility of different UI panels based on the panel name
@@ -69,6 +104,7 @@ public class UIControlSuper : MonoBehaviour
         resumen.SetActive(false);
         respuesta.SetActive(false);
         pausa.SetActive(false);
+        resumenExtendido.SetActive(false);
 
         // Show the selected panel based on the provided name
         switch (panelName)
@@ -128,5 +164,54 @@ public class UIControlSuper : MonoBehaviour
     {
         Time.timeScale = 1;
         SuperControl.Instance.EndMiniGame();
+    }
+
+    public void ShowResponse(int numPregunta)
+    {
+        string respuestaTexto;
+
+        // Obtener la respuesta según la pregunta seleccionada
+        switch (numPregunta)
+        {
+            case 1:
+                respuestaTexto = PlayerPrefs.GetString("RespuestaUno");
+                break;
+            case 2:
+                respuestaTexto = PlayerPrefs.GetString("RespuestaDos");
+                break;
+            case 3:
+                respuestaTexto = PlayerPrefs.GetString("RespuestaTres");
+                break;
+            default:
+                respuestaTexto = "Pregunta no válida";
+                break;
+        }
+
+        // Mostrar el canvas de respuesta
+        ShowPanel("ResponseCanvas");
+        Debug.Log(respuestaTexto);
+        StartCoroutine(npcController.Instance.textoAnimado(respuestaTexto, speech, npcController.Instance.speedLocal));
+    }
+
+    public void decisiones(int decision)
+    {
+        Debug.Log($"Decisiones casteada, se llamo como {decision}");
+        int esBueno=PlayerPrefs.GetInt("esBueno");
+        string texto=PlayerPrefs.GetString("malaDecision");
+        string local=PlayerPrefs.GetString("local");
+        if (esBueno!=decision)
+        {
+
+            malos++;
+            textosFinal[malos] = $"{local}: {texto}";
+            Debug.Log("Malos tiene el valor de"+malos);
+        }
+        else
+        {
+            buenos++;
+            burbujas=burbujas+20;
+            elotes=elotes+40;
+            Debug.Log("Buenos, tiene el valod de"+buenos);
+        }
     }
 }

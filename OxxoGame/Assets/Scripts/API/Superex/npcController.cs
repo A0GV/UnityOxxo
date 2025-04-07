@@ -55,6 +55,7 @@ public class npcController : MonoBehaviour
         // Guarda los datos en PlayerPrefs
         PlayerPrefs.SetInt("esBueno", dataofNPC.es_bueno);
         PlayerPrefs.SetString("malaDecision", dataofNPC.textoparamaladecision);
+        PlayerPrefs.SetString("local", dataofNPC.local);
 
         Debug.Log(JsonConvert.SerializeObject(dataofNPC, Formatting.Indented));
 
@@ -86,7 +87,7 @@ public class npcController : MonoBehaviour
         preguntaUno.text ="";
         preguntaDos.text ="";
         preguntaTres.text ="";
-        Debug.Log("Get preguntas casteada");
+        // Debug.Log("Get preguntas casteada");
         string JSONurl = $"https://localhost:7119/controller/GetPreguntas?id={id}";
         UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
@@ -96,17 +97,18 @@ public class npcController : MonoBehaviour
         List<preguntas> LPreguntas = JsonConvert.DeserializeObject<List<preguntas>>(web.downloadHandler.text);
 
         preguntaUno.text = LPreguntas[0].pregunta;
-        Debug.Log(LPreguntas[0].pregunta);
+        // Debug.Log(LPreguntas[0].pregunta);
         preguntaDos.text = LPreguntas[1].pregunta;
-        Debug.Log(LPreguntas[1].pregunta);
+        // Debug.Log(LPreguntas[1].pregunta);
         preguntaTres.text = LPreguntas[2].pregunta;
-        Debug.Log(LPreguntas[2].pregunta);
+        // Debug.Log(LPreguntas[2].pregunta);
+        StartCoroutine(GetRespuestas(id));
 
     }
 
     public IEnumerator GetRespuestas(int id)
     {
-        Debug.Log("Get preguntas casteada");
+        Debug.Log("Get respuestas casteada");
         string JSONurl = $"https://localhost:7119/controller/GetRespuestas?id={id}";
         UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
