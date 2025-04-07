@@ -78,7 +78,7 @@ public class UIControlSuper : MonoBehaviour
     {
         main.SetActive(false);
         resumen.SetActive(true);
-        string finalTxt=$"Tuviste\n{buenos}/7 aciertos\n  {malos}/7\n Si quieres ver porque. Presiona el boton de siguiente.";
+        string finalTxt=$"Tuviste\n{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
         string points=$"Conseguiste {burbujas} burbujas y {elotes} elotes";
         StartCoroutine(npcController.Instance.textoAnimado(finalTxt,Resume,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
         StartCoroutine(npcController.Instance.textoAnimado(points,Points,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
