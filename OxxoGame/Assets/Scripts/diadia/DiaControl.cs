@@ -19,6 +19,7 @@ public class DiaControl : MonoBehaviour
     public UIControlDia uiController;
     public DDResolver resolverInstance; 
     public DDSpawner spawnerInstance;
+    public DDAPI apiInstance; 
 
     // To reload game
     public GameObject storeView;
@@ -48,6 +49,7 @@ public class DiaControl : MonoBehaviour
 
     // Using API connection
     public int id_usuario = 7; // Will be using 7 until login is complete
+    public int diasJugados = 0; // Días q ha jugado este juego
     public int expExtra = 0; // Extra exp based on number of times played before
 
     
@@ -92,6 +94,8 @@ public class DiaControl : MonoBehaviour
         // Instances
         Instance = this;
         DontDestroyOnLoad(this.gameObject); // Para no destruir instancia
+        //StartCoroutine(apiInstance.GetDaysPlayed());
+
     }
 
     public int CalcularExpExtra() 
