@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoreScene.unity
     guid: db654869248deab418ff739443d38e16
+  - enabled: 1
+    path: Assets/Scenes/TutorialEnemigos.unity
+    guid: 7d12e2a0ac5c5a64db83256935693f4c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

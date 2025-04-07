@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 public class PreguntaManager : MonoBehaviour
 {
     [System.Serializable]
     public class Pregunta
     {
+        public int id; // ID único de la pregunta
         public string textoPregunta; // El texto de la pregunta
         public string[] opciones;   // Opciones de respuesta
         public int respuestaCorrecta; // Índice de la respuesta correcta (0-3)
@@ -35,6 +37,8 @@ public class PreguntaManager : MonoBehaviour
 
     private int rachaContador = 0; // Contador de respuestas correctas consecutivas
 
+    private const string apiUrl = "https://localhost:7119/Pregunta/GetPreguntasEnemigo"; // URL de la API
+
     void Start()
     {
         // Asignar eventos a los botones
@@ -47,8 +51,8 @@ public class PreguntaManager : MonoBehaviour
         // Obtener referencia al controlador de UI
         uiController = FindFirstObjectByType<UIControlEnemigos>();
 
-        // Mostrar la primera pregunta
-        MostrarNuevaPregunta();
+        // Cargar preguntas desde la API
+        StartCoroutine(CargarPreguntasDesdeAPI());
     }
 
     void Update()
@@ -61,6 +65,31 @@ public class PreguntaManager : MonoBehaviour
             if (tiempoRestante <= 0)
             {
                 TiempoAgotado();
+            }
+        }
+    }
+
+    IEnumerator CargarPreguntasDesdeAPI()
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
+        {
+            request.certificateHandler = new ForceAcceptAll(); // Aceptar todos los certificados SSL
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                string json = request.downloadHandler.text;
+
+                // Deserializar el JSON como un array de preguntas
+                Pregunta[] preguntasArray = JsonHelper.FromJson<Pregunta>(json);
+                preguntas = new List<Pregunta>(preguntasArray);
+
+                Debug.Log("Preguntas cargadas correctamente desde la API.");
+                MostrarNuevaPregunta();
+            }
+            else
+            {
+                Debug.LogError("Error al cargar preguntas desde la API: " + request.error);
             }
         }
     }
@@ -292,5 +321,27 @@ public class PreguntaManager : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    [System.Serializable]
+    private class PreguntaList
+    {
+        public List<Pregunta> preguntas;
+    }
+}
+
+public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        string newJson = "{ \"array\": " + json + "}";
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
+        return wrapper.array;
+    }
+
+    [System.Serializable]
+    private class Wrapper<T>
+    {
+        public T[] array;
     }
 }
