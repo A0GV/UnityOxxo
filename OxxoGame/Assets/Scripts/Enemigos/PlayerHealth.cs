@@ -21,7 +21,8 @@ public class PlayerHealth : MonoBehaviour
         if (currentLives <= 0)
         {
             Debug.Log("¡El jugador ha muerto!");
-            uiController.ShowPanel("Perder");
+            uiController.ShowPanel("Finalizar");
+            Time.timeScale = 0; // Pausar el juego al llegar al panel de finalizar
         }
     }
 }

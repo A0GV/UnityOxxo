@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class JugadorDisparo : MonoBehaviour
 {
@@ -8,14 +9,15 @@ public class JugadorDisparo : MonoBehaviour
     public int maxBalas = 5;      // Máximo número de balas que puede tener el jugador
     private int balasActuales;    // Número actual de balas disponibles
     private UIControlEnemigos uiController; // Controlador de la UI para actualizar las balas
+    public GameObject panelJuego; // Referencia al PanelJuego
 
     void Start()
     {
         // Inicializar las balas al máximo al inicio del juego
-        balasActuales = maxBalas;
+        balasActuales = 0;
 
         // Buscar el controlador de UI en la escena
-        uiController = FindFirstObjectByType<UIControlEnemigos>();
+        uiController = Object.FindFirstObjectByType<UIControlEnemigos>();
 
         // Actualizar la UI con el número inicial de balas
         if (uiController != null)
@@ -33,9 +35,16 @@ public class JugadorDisparo : MonoBehaviour
         // Apuntar el arma hacia el cursor del mouse
         Apuntar();
 
-        // Disparar si se presiona el botón izquierdo del mouse y hay balas disponibles
-        if (Input.GetMouseButtonDown(0) && balasActuales > 0)
+        // Disparar si se presiona el botón izquierdo del mouse, el juego no está pausado y no se hizo clic en la UI
+        if (Input.GetMouseButtonDown(0) && balasActuales > 0 && Time.timeScale > 0 && !EventSystem.current.IsPointerOverGameObject())
         {
+            // Verificar si el clic no ocurre sobre PanelJuego
+            if (panelJuego != null && RectTransformUtility.RectangleContainsScreenPoint(panelJuego.GetComponent<RectTransform>(), Input.mousePosition, Camera.main))
+            {
+                Debug.Log("Clic en PanelJuego, no se dispara.");
+                return;
+            }
+
             Disparar();
         }
     }
