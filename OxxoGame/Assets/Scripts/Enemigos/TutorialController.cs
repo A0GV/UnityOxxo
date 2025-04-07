@@ -67,8 +67,7 @@ public class TutorialController : MonoBehaviour
     public void SalirJuego()
     {
         Debug.Log("Saliendo del juego...");
-        UnityEditor.EditorApplication.isPlaying = false;
-        // Application.Quit();
+        SceneManager.LoadScene("MenuScene"); 
     }
     void MostrarPaso(int index)
     {

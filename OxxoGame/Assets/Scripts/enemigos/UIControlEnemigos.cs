@@ -156,8 +156,8 @@ public class UIControlEnemigos : MonoBehaviour
 
     void RegresarMenu()
     {
-        Debug.Log("Cerrando el juego...");
-        UnityEditor.EditorApplication.isPlaying = false;
-        // Application.Quit();
+        Debug.Log("Saliendo al menú...");
+        Time.timeScale = 1; // Asegurarse de que el tiempo esté en escala normal
+        SceneManager.LoadScene("MenuScene");
     }
 }
