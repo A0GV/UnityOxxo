@@ -46,11 +46,10 @@ public class DiaControl : MonoBehaviour
     public List<Problema> problemasActivos = new List<Problema>(); // Lista de problemas activos 
     int numProblemasActivos = 0; // Monitorea número de problemas activos
 
-    /* To count user priorities
-    public int solvedHigh; 
-    public int solvedMed; 
-    public int solvedLow;
-    */
+    // Using API connection
+    public int id_usuario = 7; // Will be using 7 until login is complete
+    public int expExtra = 0; // Extra exp based on number of times played before
+
     
 
     // Valor máximo de cada tipo de problema
@@ -93,6 +92,11 @@ public class DiaControl : MonoBehaviour
         // Instances
         Instance = this;
         DontDestroyOnLoad(this.gameObject); // Para no destruir instancia
+    }
+
+    public int CalcularExpExtra() 
+    {
+        return 0; 
     }
 
     void Start()
