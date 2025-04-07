@@ -1,22 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour
 {
-    public GameObject[] panelesPorPaso;  // Todos los paneles del tutorial en orden
-    public GameObject panelJuego;        // Panel del gameplay final
-    public GameObject scenery;           // Objeto Scenery
+    public static bool saltarTutorial = false; // Variable estática para recordar si se debe saltar el tutorial
 
+    public GameObject[] panelesPorPaso;  // Todos los paneles del tutorial en orden
     private int currentStep = 0;
 
     void Awake()
     {
-        // Desactivar todo al inicio para asegurar que nada aparezca antes del tutorial
-        if (scenery != null)
-            scenery.SetActive(false);
-
-        if (panelJuego != null)
-            panelJuego.SetActive(false);
-
+        // Desactivar todos los paneles al inicio
         foreach (GameObject panel in panelesPorPaso)
         {
             if (panel != null)
@@ -26,55 +20,48 @@ public class TutorialController : MonoBehaviour
 
     void Start()
     {
-        // Asegurarse de que el primer panel siempre esté activo
-        if (panelesPorPaso.Length > 0 && panelesPorPaso[0] != null)
+        if (saltarTutorial)
         {
-            currentStep = 0;
-            MostrarPaso(currentStep); // Muestra el primer panel del tutorial
+            CargarEscenaJuego();
         }
         else
         {
-            Debug.LogWarning("El primer panel del tutorial no está asignado o el array está vacío.");
+            if (panelesPorPaso.Length > 0 && panelesPorPaso[0] != null)
+            {
+                currentStep = 0;
+                MostrarPaso(currentStep);
+            }
+            else
+            {
+                Debug.LogWarning("El primer panel del tutorial no está asignado o el array está vacío.");
+            }
         }
     }
 
     public void SiguientePaso()
     {
-        Debug.Log($"currentStep: {currentStep}, panelesPorPaso.Length: {panelesPorPaso.Length}");
-        if (currentStep >= panelesPorPaso.Length)
+        if (currentStep >= panelesPorPaso.Length - 1)
         {
-            IniciarJuego();
+            // Si es el último paso, cargar la escena del juego
+            CargarEscenaJuego();
             return;
         }
 
-        if (panelesPorPaso[currentStep] == null)
-        {
-            Debug.LogError($"El panel en el índice {currentStep} es null. Verifica el array panelesPorPaso.");
-            return;
-        }
+        if (panelesPorPaso[currentStep] != null)
+            panelesPorPaso[currentStep].SetActive(false);
 
-        panelesPorPaso[currentStep].SetActive(false);
         currentStep++;
 
         if (currentStep < panelesPorPaso.Length)
         {
             MostrarPaso(currentStep);
         }
-        else
-        {
-            IniciarJuego();
-        }
     }
 
     public void SaltarTutorial()
     {
-        foreach (GameObject panel in panelesPorPaso)
-        {
-            if (panel != null)
-                panel.SetActive(false);
-        }
-
-        IniciarJuego();
+        saltarTutorial = true;
+        CargarEscenaJuego();
     }
 
     public void SalirJuego()
@@ -83,7 +70,6 @@ public class TutorialController : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         // Application.Quit();
     }
-
     void MostrarPaso(int index)
     {
         if (index >= 0 && index < panelesPorPaso.Length)
@@ -101,7 +87,7 @@ public class TutorialController : MonoBehaviour
             RectTransform rt = panel.GetComponent<RectTransform>();
             if (rt != null)
             {
-                rt.anchoredPosition = Vector2.zero; // Centra el panel en la pantalla
+                rt.anchoredPosition = Vector2.zero;
             }
         }
         else
@@ -110,17 +96,8 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    void IniciarJuego()
+    void CargarEscenaJuego()
     {
-        gameObject.SetActive(false);
-
-        if (scenery != null)
-            scenery.SetActive(true);
-
-        if (panelJuego != null)
-            panelJuego.SetActive(true);
-
-        // Mostrar el panel "Apuntar" al iniciar el juego
-        FindFirstObjectByType<UIControlEnemigos>().ShowPanel("Estatus");
+        SceneManager.LoadScene("EnemigosGameScene");
     }
 }
