@@ -7,8 +7,9 @@ using System.Collections;
 public class DDAPI : MonoBehaviour
 {
     public DiaControl diaControl; // Instance de DiaControl
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    // Usa API para checar diasJugados y mandarlo al DiaControl
+    void Awake()
     {
         StartCoroutine(GetDaysPlayed());
 
@@ -22,7 +23,7 @@ public class DDAPI : MonoBehaviour
 
     IEnumerator GetDaysPlayed() 
     {
-        // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego
+        // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
         string JSONurl = "https://localhost:7119/manageCurrency/GetDaysPlayed?id_logged=" + diaControl.id_usuario + "&id_jugando=3";
         UnityEngine.Debug.Log("Connected to localhost"); // Daba error otherwise?
         UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
@@ -37,12 +38,6 @@ public class DDAPI : MonoBehaviour
         {
             diaControl.diasJugados = JsonConvert.DeserializeObject<int>(web.downloadHandler.text); // Necesitas especificar q está usando un <int> para deserialize
             UnityEngine.Debug.Log("Dias jugados: " + diaControl.diasJugados);
-            /*
-            List<Libros> listaLibros = new List<Libros>();
-            listaLibros = 
-            LoadBookInfo(BookSelection, listaLibros); 
-            PlayerPrefs.SetInt("book_no", BookSelection);
-            */
         }
     }
 }
