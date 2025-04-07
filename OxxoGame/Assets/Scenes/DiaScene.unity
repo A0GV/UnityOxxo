@@ -2051,6 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b77272b6284044c490a87967961673e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diaControl: {fileID: 691201615}
 --- !u!1 &221079718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6868,7 @@ MonoBehaviour:
   uiController: {fileID: 1349794129}
   resolverInstance: {fileID: 1321622537}
   spawnerInstance: {fileID: 548108682}
+  apiInstance: {fileID: 0}
   storeView: {fileID: 1253369322}
   dinero: 0
   dineroDiaActual: 0
@@ -6898,6 +6900,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 145400280319a4807a5c4eead0a96338, type: 2}
   problemasActivos: []
   id_usuario: 7
+  diasJugados: 0
   expExtra: 0
   totalSatisfaction: 0
   planograma: 7
@@ -16959,7 +16962,7 @@ GameObject:
   m_Layer: 5
   m_Name: Questions
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
