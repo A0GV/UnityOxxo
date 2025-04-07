@@ -40,4 +40,31 @@ public class DDAPI : MonoBehaviour
             UnityEngine.Debug.Log("Dias jugados: " + diaControl.diasJugados);
         }
     }
+
+    // Para post datos de jugada en historial y usuario_historial 
+    public IEnumerator PostDatosJuego()
+    {
+        string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
+
+        // Use form data para agregar los datos al JSON
+        WWWForm form = new WWWForm();
+        form.AddField("id_usuario", diaControl.id_usuario);
+        form.AddField("id_juego", 3);
+        form.AddField("monedas", diaControl.elotesGanados);
+        form.AddField("exp", diaControl.expGanado);
+
+        UnityWebRequest request = UnityWebRequest.Post(url, form); // Para hacer un post 
+        request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
+        yield return request.SendWebRequest();
+
+        // Ver si funciona
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error al enviar datos: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Se agregó todo :D");
+        }
+    }
 }
