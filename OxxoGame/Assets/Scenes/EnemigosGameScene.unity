@@ -834,11 +834,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7a6b81508392f4d33bc560c86d9c3583, type: 3}
-    m_FontSize: 45
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1431,8 +1431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.241074, y: -148.98195}
-  m_SizeDelta: {x: 997.265, y: 163.759}
+  m_AnchoredPosition: {x: -35.661957, y: -62.791}
+  m_SizeDelta: {x: 1184.911, y: 195.146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394656687
 MonoBehaviour:
@@ -2152,8 +2152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.92408, y: -326.57294}
-  m_SizeDelta: {x: 1024.934, y: 191.425}
+  m_AnchoredPosition: {x: -13.898865, y: -274.42017}
+  m_SizeDelta: {x: 1217.786, y: 228.115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648797165
 MonoBehaviour:
@@ -3167,8 +3167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.558, y: 363.108}
-  m_SizeDelta: {x: 1219.8, y: 458.559}
+  m_AnchoredPosition: {x: -24.558, y: 420.412}
+  m_SizeDelta: {x: 1219.8, y: 343.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968136007
 MonoBehaviour:
@@ -3203,8 +3203,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "El gerente no cumple sus objetivos de ventas, \xBFqu\xE9 debe hacer el
-    supervisor regional?"
+  m_Text: PREGUNTA PREGUNTA PREGUNTA PREGUNTA PREGUNTA
 --- !u!222 &968136008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3713,11 +3712,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7a6b81508392f4d33bc560c86d9c3583, type: 3}
-    m_FontSize: 45
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4888,11 +4887,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7a6b81508392f4d33bc560c86d9c3583, type: 3}
-    m_FontSize: 45
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7107,11 +7106,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7a6b81508392f4d33bc560c86d9c3583, type: 3}
-    m_FontSize: 45
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 45
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7301,8 +7300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48, y: 37}
-  m_SizeDelta: {x: 992.782, y: 163.759}
+  m_AnchoredPosition: {x: -33, y: 158.83716}
+  m_SizeDelta: {x: 1179.584, y: 195.146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924723065
 MonoBehaviour:
@@ -8392,8 +8391,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.000072, y: -510.47885}
-  m_SizeDelta: {x: 1024.934, y: 176.395}
+  m_AnchoredPosition: {x: -32.999954, y: -493.574}
+  m_SizeDelta: {x: 1217.786, y: 210.204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138114097
 MonoBehaviour:
