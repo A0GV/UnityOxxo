@@ -37,7 +37,7 @@ public class DDResolver : MonoBehaviour
             }
             else if (prioridadResuelto == 1)
             {
-                int currentValue = PlayerPrefs.GetInt("countMed", 0);
+                int currentValue = PlayerPrefs.GetInt("countLow", 0);
                 PlayerPrefs.SetInt("countLow", currentValue + 1);
             }
             else 
