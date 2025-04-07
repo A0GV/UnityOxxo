@@ -15,8 +15,11 @@ public class AxolotlSpawner : MonoBehaviour
     public npcController npcController;
 
     private int contador = 0;
+    private int flag;
 
     private List<int> availableNpcIds = new List<int>(); // List to track available NPC IDs
+
+    private bool resumenMostrado = false; // Variable para controlar si ya se mostró el resumen
 
     private void Start()
     {
@@ -31,14 +34,25 @@ public class AxolotlSpawner : MonoBehaviour
             SpawnAxolotl();
         }
 
-        if (contador == 7)
+        if (contador == 7 && !resumenMostrado)
         {
-            uIControlSuper.ShowResumen();
+            resumenMostrado = true; // Evita que se llame repetidamente
+
+            if (uIControlSuper.resumenExtendido.activeSelf && flag == 0)
+            {
+                flag = 1;
+                uIControlSuper.ShowResumenExtendidio();
+            }
+            else
+            {
+                uIControlSuper.ShowResumen();
+            }
         }
     }
 
     public void SpawnAxolotl()
     {
+        Debug.Log("Spawner casteado");
         // Aqui mi idea es que, cuando se haga spawn de uno, llame a la funcion que jala los datos, de ahi, los guarda en pleyer prefs,
         // DEspues, cuando ya se pulse el boton. Poder saber si presiono Acept o deny, en base esto, comparar con lo que llego de API
         // Y guardarlo en otro player prefs, que se enseñara al final, despues y tendra la opcion de ver en que se equivoco y porque.
@@ -58,6 +72,7 @@ public class AxolotlSpawner : MonoBehaviour
         // Selecciona aleatoriamente un prefab de axolote
         GameObject selectedAxolotl = axolotlPrefabs[Random.Range(0, axolotlPrefabs.Length)];
 
+        uIControlSuper.ShowMain();
         // Instancia el nuevo Axolotl en la posición del spawnPoint
         currentAxolotl = Instantiate(selectedAxolotl, spawnPoint.position, Quaternion.identity);
     }
