@@ -10,6 +10,16 @@ public class MenuAxolotlControl : MonoBehaviour
     public Rigidbody2D rig; // Controls the character's physics
     public SpriteRenderer sr; // Manages the sprite visualization
     Animator animatorController; // Animation controller
+    public Sprite[] Default;
+    public Sprite[] Default_Walk;
+    public Sprite[] Sombrero;
+    public Sprite[] Sombrero_Walk;
+    public Sprite[] Sombrero2;
+    public Sprite[] Sombrero2_Walk;
+    public Sprite[] Sombrero3;
+    public Sprite[] Sombrero3_Walk;
+    public Sprite[] Sombrero4;
+    public Sprite[] Sombrero4_Walk;
 
     void Start()
     {
@@ -21,9 +31,12 @@ public class MenuAxolotlControl : MonoBehaviour
     {
 
         // Change the character's facing direction based on its X velocity
-        if(rig.linearVelocity.x > 0){
+        if (rig.linearVelocity.x > 0)
+        {
             sr.flipX = false;
-        }else if(rig.linearVelocity.x < 0){
+        }
+        else if (rig.linearVelocity.x < 0)
+        {
             sr.flipX = true;
         }
     }
@@ -38,23 +51,28 @@ public class MenuAxolotlControl : MonoBehaviour
         rig.linearVelocity = new Vector2(xInput * moveSpeed, rig.linearVelocity.y);
 
         // If the character is moving and not in the air, change animation to "walk"
-        if(xInput != 0 && rig.linearVelocity.y == 0){
+        if (xInput != 0 && rig.linearVelocity.y == 0)
+        {
             UpdateAnimation(PlayerAnimation.walk);
         }
-        else{
+        else
+        {
             // If the character is not moving, change animation to "idle"
             UpdateAnimation(PlayerAnimation.idle);
         }
     }
 
     // Enumeration defining the different animation states of the player
-    public enum PlayerAnimation{
+    public enum PlayerAnimation
+    {
         idle, walk, jump
     }
 
     // Method to update the character's animation based on its state
-    void UpdateAnimation(PlayerAnimation nameAnimation){
-        switch(nameAnimation){
+    void UpdateAnimation(PlayerAnimation nameAnimation)
+    {
+        switch (nameAnimation)
+        {
             case PlayerAnimation.idle:
                 // Set Animator parameters for "idle" state
                 animatorController.SetBool("isWalking", false);
