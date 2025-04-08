@@ -77,12 +77,12 @@ public class MenuAxolotlControl : MonoBehaviour
         rig.linearVelocity = new Vector2(xInput * moveSpeed, rig.linearVelocity.y);
 
         // Determinar si el personaje está caminando (velocidad X no es cero)
-        bool shouldBeWalking = Mathf.Abs(xInput) > 0.01f;
+        bool deberiaDeCaminar = Mathf.Abs(xInput) > 0.01f;
         
         // Solo actualizar isWalking y la animación si hay un cambio
-        if (isWalking != shouldBeWalking)
+        if (isWalking != deberiaDeCaminar)
         {
-            isWalking = shouldBeWalking;
+            isWalking = deberiaDeCaminar;
             
             // Actualizar la animación basada en el estado
             UpdateAnimation(isWalking ? PlayerAnimation.walk : PlayerAnimation.idle);
