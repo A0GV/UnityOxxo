@@ -198,7 +198,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ajolote_pelon1_1_0: 6237424228392881541
+      ajolote_pelon1_1_1: 924963597436525401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
