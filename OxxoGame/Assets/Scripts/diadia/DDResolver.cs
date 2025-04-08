@@ -45,21 +45,9 @@ public class DDResolver : MonoBehaviour
                 Debug.Log("Error incrementando count de prioridades");
             }
 
-            /*
-            // Update el exp
-            int elotePregunta = PlayerPrefs.GetInt("elotes"); 
-            elotePregunta += problemaResuelto.GetPrioridad(); // Incrementa elotes por prioridad dada
-            Debug.Log("Elotes nuevos: " + elotePregunta);
-            PlayerPrefs.SetInt("elotes", elotePregunta); // Sets elote al valor nuevo
-
-            int expPregunta = PlayerPrefs.GetInt("exp");
-            expPregunta += problemaResuelto.GetPrioridad() * 2; 
-            PlayerPrefs.SetInt("exp", expPregunta);
-
-            PlayerPrefs.Save(); // Porque a veces no los salva
-            */
             diaControl.elotesGanados += prioridadResuelto;
-            diaControl.expGanado += prioridadResuelto * 2;
+            //diaControl.expGanado += prioridadResuelto * 2;
+            diaControl.expGanado = (diaControl.elotesGanados + diaControl.diasJugados) * 5; // Función para exp, elotes * dias jugados multiplicado por 5
 
             diaControl.problemasActivos.Remove(problemaResuelto); // So long bye bye
         }

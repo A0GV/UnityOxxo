@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIControlDia : MonoBehaviour
 {
-    // Instance
+    // Instances
     static public DiaControl Instance; // Instance de controller
+    public DDAPI apiInstance; 
 
     // Pop-ups
     public GameObject canva;
@@ -218,6 +219,9 @@ public class UIControlDia : MonoBehaviour
         finalTextHigh.text = PlayerPrefs.GetInt("countAlta", 0).ToString(); 
         finalTextMed.text = PlayerPrefs.GetInt("countMed", 0).ToString(); 
         finalTextLow.text = PlayerPrefs.GetInt("countLow", 0).ToString(); 
+
+        // Enviar todo a BD
+        StartCoroutine(apiInstance.PostDatosJuego());
     }
 
     // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
@@ -232,10 +236,10 @@ public class UIControlDia : MonoBehaviour
 
 
     // Manda al menú de resultados si se pica en fin
-    public void Gotomenu()
+    public void PausaEndGame()
     {
-        // Save elotes and exp amount amount
-        SceneManager.LoadScene("MenuScene");
+        // Llamar resultados
+        ShowResultados();
     }
 
     // Pausa
@@ -247,10 +251,6 @@ public class UIControlDia : MonoBehaviour
         menuResultados.SetActive(false);
         DiaControl.Instance.StopCoroutine(DiaControl.Instance.dayCoroutine); // Uses instance to stop the dayCoroutine reference
         // Valores acumulados 
-        /*
-        textElote.text = PlayerPrefs.GetInt("elotes").ToString(); 
-        textExp.text = PlayerPrefs.GetInt("exp").ToString(); 
-        */
         textElote.text = DiaControl.Instance.elotesGanados.ToString(); 
         textExp.text = DiaControl.Instance.expGanado.ToString(); 
     }
