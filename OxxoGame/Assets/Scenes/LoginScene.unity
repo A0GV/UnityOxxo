@@ -556,7 +556,7 @@ SpriteRenderer:
   m_Size: {x: 1.02, y: 0.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &408093983
@@ -739,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1921.5, y: -1267}
+  m_AnchoredPosition: {x: 960, y: -728}
   m_SizeDelta: {x: 348.9438, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462223742
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 70
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -813,6 +813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a2ae40980784340809bc89fab56fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correoInput: {fileID: 408093985}
+  contrasenaInput: {fileID: 1919341704}
+  loginAPI: {fileID: 0}
 --- !u!4 &670719417
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1168,7 @@ SpriteRenderer:
   m_Size: {x: 2.01, y: 3.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &980740600
@@ -1511,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1920, y: -1080}
+  m_AnchoredPosition: {x: 958.5, y: -541}
   m_SizeDelta: {x: 199.524, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198113736
@@ -1541,7 +1544,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 70
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
