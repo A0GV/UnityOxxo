@@ -8,6 +8,7 @@ public class DDResolver : MonoBehaviour
 {    
     public DiaControl diaControl; // Instance de controller
     public UIControlDia uiControl;
+    public DDSFX sfxInstance; 
 
     public void SolveProblem(Problema problemaResuelto)
     {
@@ -29,16 +30,19 @@ public class DDResolver : MonoBehaviour
             {
                 int currentValue = PlayerPrefs.GetInt("countAlta", 0);
                 PlayerPrefs.SetInt("countAlta", currentValue + 1);
+                sfxInstance.PlayHighSound(); 
             }
             else if (prioridadResuelto == 2) 
             {
                 int currentValue = PlayerPrefs.GetInt("countMed", 0);
                 PlayerPrefs.SetInt("countMed", currentValue + 1);
+                sfxInstance.PlayMidSound(); 
             }
             else if (prioridadResuelto == 1)
             {
                 int currentValue = PlayerPrefs.GetInt("countLow", 0);
                 PlayerPrefs.SetInt("countLow", currentValue + 1);
+                sfxInstance.PlayLowSound(); 
             }
             else 
             {

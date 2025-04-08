@@ -9,6 +9,7 @@ public class UIControlDia : MonoBehaviour
     // Instances
     static public DiaControl Instance; // Instance de controller
     public DDAPI apiInstance; 
+    public DDSFX sfxInstance; 
 
     // Pop-ups
     public GameObject canva;
@@ -119,6 +120,7 @@ public class UIControlDia : MonoBehaviour
     // Function to set skip day
     public void SkipDay() 
     {
+        sfxInstance.PlaySpeedSound(); // Plays pop sound
         DiaControl.Instance.daySkipped = true;
         DiaControl.Instance.SkipCalcularDinero(); // Llama función indicando q se skip el día y actualize cantidad de dinero
         ShowMoney(); // Shows money just in case
@@ -224,9 +226,15 @@ public class UIControlDia : MonoBehaviour
         StartCoroutine(apiInstance.PostDatosJuego());
     }
 
+    public void GoToMenu() 
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
     // Reiniciar no guarda cantidad de elotes ni EXP, vuelve a empezar de 0
     public void RestartGame()
     {
+        sfxInstance.PlayButtonSound(); 
         canva.SetActive(true);
         pausa.SetActive(false);
         pregunta.SetActive(false);
@@ -238,6 +246,7 @@ public class UIControlDia : MonoBehaviour
     // Manda al menú de resultados si se pica en fin
     public void PausaEndGame()
     {
+        sfxInstance.PlayButtonSound(); 
         // Llamar resultados
         ShowResultados();
     }
@@ -245,6 +254,7 @@ public class UIControlDia : MonoBehaviour
     // Pausa
     public void pausado()
     {
+        sfxInstance.PlayButtonSound(); 
         canva.SetActive(false);
         pregunta.SetActive(false);
         pausa.SetActive(true);
@@ -258,6 +268,7 @@ public class UIControlDia : MonoBehaviour
     // Resume game
     public void despausado()
     {
+        sfxInstance.PlayButtonSound(); 
         canva.SetActive(true);
         pausa.SetActive(false);
         pregunta.SetActive(false);
