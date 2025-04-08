@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607179c47dc5a44a3ba0803565e419e7, type: 3}
   m_Name: CajeroFinanza
   m_EditorClassIdentifier: 
-  problemaNombre: Programa finanziamento
+  problemaNombre: Programa financiamiento
   impactoNegativo: -5
-  descripcion: El cajero no conoce el programa de finanziamento
+  descripcion: El cajero no conoce el programa de financiamiento
+  prioridadSolve: 0
   icon: {fileID: 3227517291228842897, guid: d9ab3dca8672dfc4d9af8f8430f14064, type: 3}
   posicion: {x: -1.55, y: 0.42}
   renderedIcon: 0
