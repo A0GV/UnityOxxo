@@ -12006,6 +12006,7 @@ MonoBehaviour:
   highSound: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
   midSound: {fileID: 8300000, guid: 72127805eb2bc4e7fbf2e02eca266cfa, type: 3}
   lowSound: {fileID: 8300000, guid: 5fdb13d3756c84fecac96f5a2d124370, type: 3}
+  speedUp: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
 --- !u!82 &1278248409
 AudioSource:
   m_ObjectHideFlags: 0

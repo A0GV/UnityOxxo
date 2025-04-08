@@ -11,6 +11,7 @@ public class DDSFX : MonoBehaviour
     public AudioClip midSound; // Sonido al responder medio
     public AudioClip lowSound; // Sonido al perder
     //public AudioClip pop; // Sonido pop -21
+    public AudioClip speedUp; // -46
     
     private AudioSource audioSource;
 
@@ -52,5 +53,10 @@ public class DDSFX : MonoBehaviour
     public void PlayLowSound()
     {
         audioSource.PlayOneShot(lowSound, 1.0f);
+    }
+
+    public void PlaySpeedSound()
+    {
+        audioSource.PlayOneShot(speedUp, 1.0f);
     }
 }

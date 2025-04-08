@@ -120,7 +120,7 @@ public class UIControlDia : MonoBehaviour
     // Function to set skip day
     public void SkipDay() 
     {
-        sfxInstance.PlayButtonSound(); // Plays pop sound
+        sfxInstance.PlaySpeedSound(); // Plays pop sound
         DiaControl.Instance.daySkipped = true;
         DiaControl.Instance.SkipCalcularDinero(); // Llama función indicando q se skip el día y actualize cantidad de dinero
         ShowMoney(); // Shows money just in case
