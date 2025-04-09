@@ -85,6 +85,12 @@ public class JugadorDisparo : MonoBehaviour
             uiController.ActualizarBalas(balasActuales);
         }
 
+        // Reproducir el sonido de disparo
+        if (EnemigosSFX.Instance != null)
+        {
+            EnemigosSFX.Instance.PlayShoot();
+        }
+
         // Mostrar en la consola el número de balas restantes
         Debug.Log("Balas restantes: " + balasActuales);
     }

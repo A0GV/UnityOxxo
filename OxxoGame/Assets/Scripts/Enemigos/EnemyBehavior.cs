@@ -60,6 +60,12 @@ public class EnemyBehavior : MonoBehaviour
         }
         else if (collision.CompareTag("Player"))
         {
+            // Reproducir el sonido de impacto con el jugador
+            if (EnemigosSFX.Instance != null)
+            {
+                EnemigosSFX.Instance.PlayEnemyHitPlayer();
+            }
+
             // Destruir el enemigo si toca al jugador
             Destroy(gameObject);
 
