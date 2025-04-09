@@ -6,7 +6,7 @@ public class MenuAxolotlControl : MonoBehaviour
     // Adjust movement speed and jump force
     public float moveSpeed;
     public GameObject[] Axolots;
-    public Transform SpawnPoint;
+    private Transform SpawnPoint;
     private GameObject player;
     // References to player components
     public Rigidbody2D rig; // Controls the character's physics
