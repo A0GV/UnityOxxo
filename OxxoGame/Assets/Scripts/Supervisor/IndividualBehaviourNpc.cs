@@ -85,22 +85,7 @@ public class IndividualBehaviourNpc : MonoBehaviour
         }
     }
 
-     public IEnumerator TalkingAnimation(float duration = 2f)
-    {
-        // Establecer flag para indicar que está hablando
-        isTalking = true;
 
-        // Cambiar a animación de hablar
-        UpdateAnimation(NpcAnimation.Talking);
-
-        // Esperar la duración especificada
-        yield return new WaitForSeconds(duration);
-
-        // Terminar de hablar y volver al estado anterior
-        isTalking = false;
-
-        // La animación volverá a ser actualizada en el próximo frame por Update()
-    }
 
 
 

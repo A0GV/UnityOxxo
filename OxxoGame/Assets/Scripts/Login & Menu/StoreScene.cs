@@ -27,9 +27,10 @@ public class StoreScene : MonoBehaviour
         // Obtener el saldo actual (no sobreescribir cada vez)
         int saldoActual = PlayerPrefs.HasKey("Elotes") ? PlayerPrefs.GetInt("Elotes") : 1500;
         
-        if (!PlayerPrefs.HasKey("Elotes")) {
+        if (PlayerPrefs.HasKey("Elotes")) {
             PlayerPrefs.SetInt("Elotes", 1500);
         }
+        saldoActual=1500;
         
         if (dinero <= saldoActual) // Si tienes suficiente dinero
         {

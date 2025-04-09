@@ -7,7 +7,17 @@ using System.Collections;
 public class LoginAPI : MonoBehaviour
 {
     public static int? UserId { get; private set; }
-    public usuario_skinController usuario_skinController;
+    
+    void Start()
+    {
+        // Verificar si existe un usuario_skinController en la escena
+        if (usuario_skinController.Instancia == null)
+        {
+            // Si no existe, crear uno
+            GameObject controllerObject = new GameObject("SkinController");
+            controllerObject.AddComponent<usuario_skinController>();
+        }
+    }
 
     // Método para iniciar sesión
     public IEnumerator Login(string email, string password)
@@ -18,6 +28,7 @@ public class LoginAPI : MonoBehaviour
 
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
+            request.certificateHandler = new ForceAcceptAll();
             // Enviar la solicitud
             yield return request.SendWebRequest();
 
@@ -28,6 +39,16 @@ public class LoginAPI : MonoBehaviour
                 {
                     UserId = userId; // Guardar el ID del usuario
                     Debug.Log($"Login successful. User ID: {UserId}");
+                    
+                    // Verificar que la instancia existe antes de llamar al método
+                    if (usuario_skinController.Instancia != null)
+                    {
+                        StartCoroutine(usuario_skinController.Instancia.getSkinActive(UserId));
+                    }
+                    else
+                    {
+                        Debug.LogError("usuario_skinController.Instancia is null!");
+                    }
                 }
                 else
                 {
@@ -39,7 +60,5 @@ public class LoginAPI : MonoBehaviour
                 Debug.LogError($"Login failed: {request.error}");
             }
         }
-        StartCoroutine(usuario_skinController.getSkinActive(UserId));
-        
     }
 }
