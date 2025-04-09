@@ -13,6 +13,7 @@ public class StoreScene : MonoBehaviour
     public int idItem;
     public int dinero;
     public Sprite[] spSombreros;
+    public Button[] Adquiridos;
 
     public Button buy;
 
@@ -69,7 +70,7 @@ public class StoreScene : MonoBehaviour
                 dinero = 75;
                 precio.text = "COMPRAR - 75";
                 hat.sprite = spSombreros[0];
-                Debug.Log(this.idItem); // Usa this.idItem para logging
+                Debug.Log(this.idItem);
                 break;
             case 2:
                 dinero = 65;
@@ -96,11 +97,41 @@ public class StoreScene : MonoBehaviour
         comprar.SetActive(false);
     }
 
+    public void pelonPelonete()
+    {
+        // Set skin ID to 0 (no skin/hat equipped)
+        PlayerPrefs.SetInt("id_skin", 0);
+        PlayerPrefs.Save();
+            
+            
+        // Return to store view
+        ShowStore();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-
+        // Obtener la skin actual desde PlayerPrefs
+        int currentSkinId = PlayerPrefs.HasKey("id_skin") ? PlayerPrefs.GetInt("id_skin") : 0;
+        
+        // Actualizar el campo idItem con el valor correcto
+        this.idItem = currentSkinId;
+        
+        // Actualizar los botones "Quitar" basados en la skin actual
+        for (int i = 0; i < Adquiridos.Length; i++)
+        {
+            // Ajustamos la comparación: i+1 para convertir índice (0-based) a ID (1-based)
+            if (i+1 == currentSkinId)
+            {
+                Debug.Log($"El sombrero {i+1} ha sido equipado - mostrando botón de quitar");
+                Adquiridos[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                // Asegúrate de que los botones de las otras skins estén ocultos
+                Adquiridos[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -108,6 +139,4 @@ public class StoreScene : MonoBehaviour
     {
 
     }
-
-
 }

@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1831968656}
         m_TargetAssemblyTypeName: StoreScene, Assembly-CSharp
-        m_MethodName: ShowItem
+        m_MethodName: GoBackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1831968656}
         m_TargetAssemblyTypeName: StoreScene, Assembly-CSharp
-        m_MethodName: ShowItem
+        m_MethodName: GoBackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2451,7 +2451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1831968656}
         m_TargetAssemblyTypeName: StoreScene, Assembly-CSharp
-        m_MethodName: ShowItem
+        m_MethodName: GoBackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4215,7 +4215,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1831968656}
         m_TargetAssemblyTypeName: StoreScene, Assembly-CSharp
-        m_MethodName: ShowItem
+        m_MethodName: GoBackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5066,6 +5066,11 @@ MonoBehaviour:
   - {fileID: -6868980444926524059, guid: b2e875d2d61763f41a0fe618df3de92f, type: 3}
   - {fileID: 6539610311355155696, guid: ff9f172ca1ddb444ab581620cf481a78, type: 3}
   - {fileID: -4570745678017076146, guid: 62e1408e5255130449bd94c771619811, type: 3}
+  Adquiridos:
+  - {fileID: 104605914}
+  - {fileID: 405779185}
+  - {fileID: 1524185760}
+  - {fileID: 834262103}
   buy: {fileID: 1344862369}
 --- !u!4 &1831968657
 Transform:
