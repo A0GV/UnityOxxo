@@ -1,12 +1,13 @@
 using UnityEngine;
-using UnityEngine.Networking; 
-using Newtonsoft.Json; 
+using UnityEngine.Networking;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections;
 
 public class LoginAPI : MonoBehaviour
 {
     public static int? UserId { get; private set; }
+    public usuario_skinController usuario_skinController;
 
     // Método para iniciar sesión
     public IEnumerator Login(string email, string password)
@@ -38,5 +39,7 @@ public class LoginAPI : MonoBehaviour
                 Debug.LogError($"Login failed: {request.error}");
             }
         }
+            StartCoroutine(usuario_skinController.getSkinActive(UserId));
+        
     }
 }

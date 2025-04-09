@@ -86,9 +86,9 @@ public class MenuAxolotlControl : MonoBehaviour
     {
         GameObject playerSkin;
         
-        if (PlayerPrefs.HasKey("id")) 
+        if (PlayerPrefs.HasKey("id_skin")) 
         {
-            playerSkin = Axolots[PlayerPrefs.GetInt("id")];
+            playerSkin = Axolots[PlayerPrefs.GetInt("id_skin")];
         }
         else
         {
