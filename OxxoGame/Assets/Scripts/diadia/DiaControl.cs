@@ -80,6 +80,15 @@ public class DiaControl : MonoBehaviour
     void Awake()
     {   
         StopAllCoroutines();
+        if (LoginAPI.UserId.HasValue)
+        {
+            id_usuario = LoginAPI.UserId.Value; // Asigna el valor si existe
+            Debug.Log($"ID de usuario asignado: {id_usuario}");
+        }
+        else
+        {
+            Debug.LogError("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
+        }
         // Reset values 
         time = 0; 
         dineroDiaActual = 0;
