@@ -55,4 +55,6 @@ public class usuario_skinController : MonoBehaviour
             Debug.LogError($"Failed to get skin: {web.error}");
         }
     }
+
+    
 }

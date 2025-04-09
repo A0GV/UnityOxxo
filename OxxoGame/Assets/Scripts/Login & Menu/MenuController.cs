@@ -17,7 +17,10 @@ public class MenuController : MonoBehaviour
     public void setSkin()
     {
         GameObject playerSkin;
-        int skinIndex = PlayerPrefs.HasKey("id") ? PlayerPrefs.GetInt("id") : 0;
+        int skinIndex = PlayerPrefs.HasKey("id_skin") ? PlayerPrefs.GetInt("id_skin") : 0;
+        Debug.Log(skinIndex);
+        Debug.Log("Has key"+PlayerPrefs.HasKey("id_skin"));
+        Debug.Log("get int idskin"+PlayerPrefs.GetInt("id_skin"));
         
         playerSkin = Axolots[skinIndex];
         

@@ -189,6 +189,8 @@ public class UIControlSuper : MonoBehaviour
 
         // Mostrar el canvas de respuesta
         ShowPanel("ResponseCanvas");
+        StartCoroutine(IndividualBehaviourNpc.instance.TalkingAnimation());
+
         Debug.Log(respuestaTexto);
         StartCoroutine(npcController.Instance.textoAnimado(respuestaTexto, speech, npcController.Instance.speedLocal));
     }
