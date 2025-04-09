@@ -26,7 +26,7 @@ public class MenuController : MonoBehaviour
         
 
         player = Instantiate(playerSkin, SpawnPoint.position, Quaternion.identity);
-
+        Debug.Log(player);
         MenuAxolotlControl controller = player.GetComponent<MenuAxolotlControl>();
         if (controller != null)
         {

@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuScene : MonoBehaviour
 {  
     // Sonido
     DDSFX sonidoBoton; 
+    Text eloteText; 
 
     //Manda a la escena de juego seleccionada
     public void StartToPlay(string sceneName) 
