@@ -41,11 +41,20 @@ public class PreguntaManager : MonoBehaviour
 
     void Start()
     {
-        // Asignar eventos a los botones
+        // Asignar eventos a los botones de respuesta
         for (int i = 0; i < botonesRespuestas.Length; i++)
         {
             int index = i; // Necesario para capturar el índice correctamente en el closure
-            botonesRespuestas[i].onClick.AddListener(() => VerificarRespuesta(index));
+            botonesRespuestas[i].onClick.AddListener(() =>
+            {
+                VerificarRespuesta(index);
+
+                // Reproducir el sonido de clic
+                if (EnemigosSFX.Instance != null)
+                {
+                    EnemigosSFX.Instance.PlayButtonClick();
+                }
+            });
         }
 
         // Obtener referencia al controlador de UI
@@ -139,6 +148,12 @@ public class PreguntaManager : MonoBehaviour
             maicesCorrectos++; // Incrementar el contador total de respuestas correctas
             rachaContador++;   // Incrementar el contador de racha
 
+            // Reproducir el sonido de respuesta correcta
+            if (EnemigosSFX.Instance != null)
+            {
+                EnemigosSFX.Instance.PlayCorrectAnswer();
+            }
+
             // Actualizar la UI con el nuevo conteo de maíces
             if (uiController != null)
             {
@@ -176,6 +191,12 @@ public class PreguntaManager : MonoBehaviour
         {
             Debug.Log("Respuesta incorrecta.");
 
+            // Reproducir el sonido de respuesta incorrecta
+            if (EnemigosSFX.Instance != null)
+            {
+                EnemigosSFX.Instance.PlayWrongAnswer();
+            }
+
             // Terminar la racha si está activa
             if (rachaActiva)
             {
@@ -195,6 +216,12 @@ public class PreguntaManager : MonoBehaviour
         Debug.Log("Tiempo agotado.");
         temporizadorActivo = false; // Detener el temporizador
 
+        // Reproducir el sonido de tiempo agotado
+        if (EnemigosSFX.Instance != null)
+        {
+            EnemigosSFX.Instance.PlayWrongAnswer(); // Puedes usar el mismo sonido de respuesta incorrecta o uno diferente
+        }
+
         // Terminar la racha si está activa
         if (rachaActiva)
         {
@@ -209,6 +236,12 @@ public class PreguntaManager : MonoBehaviour
     {
         Debug.Log("¡Racha iniciada!");
         rachaActiva = true;
+
+        // Reproducir el sonido especial de racha
+        if (EnemigosSFX.Instance != null)
+        {
+            EnemigosSFX.Instance.PlayRachaEffect();
+        }
 
         // Mostrar los paneles de racha
         StartCoroutine(MostrarPanelRacha());

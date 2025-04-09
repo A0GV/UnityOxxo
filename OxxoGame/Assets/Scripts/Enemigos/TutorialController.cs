@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
@@ -20,6 +21,26 @@ public class TutorialController : MonoBehaviour
 
     void Start()
     {
+
+        // Asignar el evento de clic a todos los botones del tutorial
+        foreach (GameObject panel in panelesPorPaso)
+        {
+            if (panel != null)
+            {
+                Button[] botones = panel.GetComponentsInChildren<Button>();
+                foreach (Button boton in botones)
+                {
+                    boton.onClick.AddListener(() =>
+                    {
+                        if (EnemigosSFX.Instance != null)
+                        {
+                            EnemigosSFX.Instance.PlayButtonClick();
+                        }
+                    });
+                }
+            }
+        }
+
         if (saltarTutorial)
         {
             CargarEscenaJuego();
@@ -97,6 +118,13 @@ public class TutorialController : MonoBehaviour
 
     void CargarEscenaJuego()
     {
+        // Detener la música del tutorial si está sonando
+        if (EnemigosSFX.Instance != null)
+        {
+            EnemigosSFX.Instance.StopMusic();
+        }
+
+        // Cargar la escena del juego
         SceneManager.LoadScene("EnemigosGameScene");
     }
 }
