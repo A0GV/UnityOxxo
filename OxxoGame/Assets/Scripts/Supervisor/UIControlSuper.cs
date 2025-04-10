@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using Newtonsoft;
-using Newtonsoft.Json; 
+using Newtonsoft.Json;
 using UnityEngine.Rendering.Universal;
 
 
@@ -24,7 +24,9 @@ public class UIControlSuper : MonoBehaviour
     public int buenos;
 
     public int elotes;
+    public Text elotesFinalText;
     public int burbujas;
+    public Text burbujasFinalText;
     public Text textElotePausa;
     public Text textBurbujaPausa;
     public Text speech;
@@ -55,7 +57,7 @@ public class UIControlSuper : MonoBehaviour
     {
         textosFinal = new string[8];
         // Inicializa la referencia local
-        instance = FindObjectOfType<IndividualBehaviourNpc>();
+        instance = Object.FindFirstObjectByType<IndividualBehaviourNpc>();
 
         // Opcional: verificar si el singleton existe
         if (IndividualBehaviourNpc.instance == null)
@@ -101,11 +103,12 @@ public class UIControlSuper : MonoBehaviour
     {
         main.SetActive(false);
         resumen.SetActive(true);
-        string finalTxt = $"Tuviste\n{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
-        string points = $"Conseguiste {burbujas} burbujas y {elotes} elotes";
+        StartCoroutine(EnviarRecompensas());
+        string finalTxt = $"{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
+        // string points = $"Conseguiste {burbujas} burbujas y {elotes} elotes";
+        elotesFinalText.text = elotes.ToString();
+        burbujasFinalText.text = burbujas.ToString();
         StartCoroutine(npcController.Instance.textoAnimado(finalTxt, Resume, npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
-        StartCoroutine(npcController.Instance.textoAnimado(points, Points, npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
-
     }
 
     public void ShowResumenExtendidio()
@@ -155,13 +158,14 @@ public class UIControlSuper : MonoBehaviour
         isPaused = true; // Set game as paused
         pausa.SetActive(true); // Show pause panel
         Time.timeScale = 0; // Freeze game physics and coroutines
-        if (textElotePausa !=null)
+        if (textElotePausa != null)
         {
-            textElotePausa.text=elotes.ToString(); 
+            textElotePausa.text = elotes.ToString();
         }
         if (textBurbujaPausa != null)
         {
-            textBurbujaPausa.text = burbujas.ToString();}
+            textBurbujaPausa.text = burbujas.ToString();
+        }
         if (resumenCoroutine != null)
         {
             StopCoroutine(resumenCoroutine); // Stop the coroutine
@@ -193,7 +197,9 @@ public class UIControlSuper : MonoBehaviour
     // Calls the method to return to the menu scene
     public void Gotomenu()
     {
+        StartCoroutine(EnviarRecompensas());
         Time.timeScale = 1;
+
         SuperControl.Instance.EndMiniGame();
     }
 
@@ -257,14 +263,14 @@ public class UIControlSuper : MonoBehaviour
             IndividualBehaviourNpc.instance.callTalk();
         }
         // Si no existe, busca de nuevo en la escena (como fallback)
-        else if (instance != null) 
+        else if (instance != null)
         {
             instance.callTalk();
         }
         // Si tampoco existe la referencia local, intenta buscarla una última vez
-        else 
+        else
         {
-            var foundInstance = FindObjectOfType<IndividualBehaviourNpc>();
+            var foundInstance = Object.FindFirstObjectByType<IndividualBehaviourNpc>();
             if (foundInstance != null)
             {
                 foundInstance.callTalk();
@@ -278,14 +284,14 @@ public class UIControlSuper : MonoBehaviour
         }
     }
 
-     public IEnumerator EnviarRecompensas()
+    public IEnumerator EnviarRecompensas()
     {
         string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
 
         // Crear el formulario para enviar los datos
         WWWForm form = new WWWForm();
         form.AddField("id_usuario", id_usuario);
-        form.AddField("id_juego", 2); // ID del juego Supervisor
+        form.AddField("id_juego", 1); // ID del juego Supervisor
         form.AddField("monedas", elotes);
         form.AddField("exp", burbujas);
 
@@ -302,5 +308,5 @@ public class UIControlSuper : MonoBehaviour
             Debug.Log($"Recompensas enviadas: {elotes} elotes y {burbujas} burbujas");
         }
     }
-    
+
 }
