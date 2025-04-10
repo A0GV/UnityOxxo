@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  Axolots: []
   rig: {fileID: 6427249884877004254}
   sr: {fileID: 2497337438385897163}
 --- !u!70 &3501673664215229350
