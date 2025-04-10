@@ -3,7 +3,7 @@ using UnityEngine;
 public class MenuController : MonoBehaviour
 {
     public GameObject[] Axolots;
-    public Transform SpawnPoint;
+         Transform SpawnPoint;
     private GameObject player;
 
     void Awake()
