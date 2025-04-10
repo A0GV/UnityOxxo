@@ -1697,8 +1697,8 @@ MonoBehaviour:
   preguntaDos: {fileID: 230780126}
   preguntaTres: {fileID: 725297274}
   Respuesta: {fileID: 1596802566}
-  speedLocal: 0.05
-  speedExpedient: 0.02
+  speedLocal: 0.001
+  speedExpedient: 0.001
 --- !u!4 &664204433
 Transform:
   m_ObjectHideFlags: 0
@@ -3954,7 +3954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1173579303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5493,7 +5493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1548680234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5612,7 +5612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313.64734, y: 341.4452}
+  m_AnchoredPosition: {x: -306, y: 334}
   m_SizeDelta: {x: 731.3632, y: 200.0717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596802566
@@ -5637,7 +5637,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c9a7a9b034b3143489ec5ce79a17c2f2, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -5648,7 +5648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Estas ventas se debieron a...
+  m_Text: 
 --- !u!222 &1596802567
 CanvasRenderer:
   m_ObjectHideFlags: 0
