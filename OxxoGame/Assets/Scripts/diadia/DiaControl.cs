@@ -80,6 +80,7 @@ public class DiaControl : MonoBehaviour
     void Awake()
     {   
         StopAllCoroutines();
+        // Checa si hay sesión de usuario de loginAPI
         if (LoginAPI.UserId.HasValue)
         {
             id_usuario = LoginAPI.UserId.Value; // Asigna el valor si existe
@@ -87,8 +88,9 @@ public class DiaControl : MonoBehaviour
         }
         else
         {
-            Debug.LogError("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
+            Debug.Log("UserId no inició sesión");
         }
+
         // Reset values 
         time = 0; 
         dineroDiaActual = 0;
