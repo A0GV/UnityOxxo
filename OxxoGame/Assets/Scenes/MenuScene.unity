@@ -4408,7 +4408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4c22ade3ea88b45a91ecde84ab0eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSound: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
+  buttonSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   eloteText: {fileID: 42522541}
   expText: {fileID: 725594044}
   rachaText: {fileID: 2087126356}

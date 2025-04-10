@@ -40,10 +40,17 @@ public class MenuScene : MonoBehaviour
         StartCoroutine(GetRacha());
     }
 
-    //Manda a la escena de juego seleccionada
+    // Manda a escena de juego
     public void StartToPlay(string sceneName) 
     {
-        //PlayButtonSound();
+        StartCoroutine(PlaySoundAndLoad(sceneName));
+    }
+
+    //Manda a la escena de juego seleccionada
+    IEnumerator PlaySoundAndLoad(string sceneName)
+    {
+        audioSource.PlayOneShot(buttonSound, 0.1f);
+        yield return new WaitForSeconds(buttonSound.length); // Para esperar a q suene el botón antes de cambiar de escena
         SceneManager.LoadScene(sceneName);
     }
 
@@ -51,12 +58,6 @@ public class MenuScene : MonoBehaviour
     public void ExitGame(){
         UnityEditor.EditorApplication.isPlaying = false;
         //Application.Quit();
-    }
-
-    // Método para reproducir el sonido de botón
-    public void PlayButtonSound()
-    {
-        audioSource.PlayOneShot(buttonSound, 0.7f);
     }
 
     // Gets elotes totales
