@@ -15,6 +15,7 @@ public class MenuScene : MonoBehaviour
     public Text eloteText;
     public Text expText;
     public Text rachaText; 
+    int idUsuario = 7; // ID del usuario, se asigna al iniciar sesión
 
     // Poner sonido
     void Awake()
@@ -22,6 +23,17 @@ public class MenuScene : MonoBehaviour
         // Configuración inicial del audio
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
+
+        if (LoginAPI.UserId.HasValue)
+        {
+            idUsuario = LoginAPI.UserId.Value; // Asigna el valor si existe
+            Debug.Log($"ID de usuario asignado: {idUsuario}");
+        }
+        else
+        {
+            Debug.Log("No hay id usuario" + idUsuario); 
+        }
+
         // Gets valores de usuario
         StartCoroutine(GetElotes());
         StartCoroutine(GetExp());
@@ -51,7 +63,7 @@ public class MenuScene : MonoBehaviour
     IEnumerator GetElotes() 
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
-        string JSONurl = "https://localhost:7119/manageCurrency/GetElotesTotal?id_logged=" + 7; // Cambiar id_usuario
+        string JSONurl = "https://localhost:7119/manageCurrency/GetElotesTotal?id_logged=" + idUsuario; // Cambiar id_usuario
         UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
@@ -76,7 +88,7 @@ public class MenuScene : MonoBehaviour
     IEnumerator GetExp() 
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
-        string JSONurl = "https://localhost:7119/manageCurrency/GetExpTotal?id_logged=" + 7; // Cambiar id_usuario
+        string JSONurl = "https://localhost:7119/manageCurrency/GetExpTotal?id_logged=" + idUsuario; // Cambiar id_usuario
         UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
@@ -98,7 +110,7 @@ public class MenuScene : MonoBehaviour
     IEnumerator GetRacha() 
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
-        string JSONurl = "https://localhost:7119/manageCurrency/GetRacha?id_logged=" + 7; // Cambiar id_usuario
+        string JSONurl = "https://localhost:7119/manageCurrency/GetRacha?id_logged=" + idUsuario; // Cambiar id_usuario
         UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
