@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using Newtonsoft;
+using Newtonsoft.Json; 
 using UnityEngine.Rendering.Universal;
 
 
@@ -34,9 +37,20 @@ public class UIControlSuper : MonoBehaviour
     private bool isPaused = false; // Tracks if the game is paused
     static public npcController Instance;
     private IndividualBehaviourNpc instance; // Añade esta línea con los demás campos de la clase
+    private int id_usuario;
 
-
-
+    void Awake()
+    {
+        if (LoginAPI.UserId.HasValue)
+        {
+            id_usuario = LoginAPI.UserId.Value; // Asigna el valor si existe
+            Debug.Log($"ID de usuario asignado: {id_usuario}");
+        }
+        else
+        {
+            Debug.LogError("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
+        }
+    }
     void Start()
     {
         textosFinal = new string[8];
@@ -263,4 +277,30 @@ public class UIControlSuper : MonoBehaviour
             }
         }
     }
+
+     public IEnumerator EnviarRecompensas()
+    {
+        string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
+
+        // Crear el formulario para enviar los datos
+        WWWForm form = new WWWForm();
+        form.AddField("id_usuario", id_usuario);
+        form.AddField("id_juego", 2); // ID del juego Supervisor
+        form.AddField("monedas", elotes);
+        form.AddField("exp", burbujas);
+
+        UnityWebRequest request = UnityWebRequest.Post(url, form);
+        request.certificateHandler = new ForceAcceptAll(); // Utilizar la clase existente para certificados
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error al enviar recompensas: " + request.error);
+        }
+        else
+        {
+            Debug.Log($"Recompensas enviadas: {elotes} elotes y {burbujas} burbujas");
+        }
+    }
+    
 }
