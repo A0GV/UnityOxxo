@@ -47,7 +47,7 @@ public class LoginAPI : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogError("usuario_skinController.Instancia is null!");
+                        Debug.Log("usuario_skinController.Instancia is null!");
                     }
                 }
                 else

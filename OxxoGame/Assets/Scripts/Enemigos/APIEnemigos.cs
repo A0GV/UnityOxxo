@@ -12,6 +12,20 @@ public class APIEnemigos : MonoBehaviour
     private PreguntaManager preguntaManager;
     private PlayerExperience playerExperience;
 
+    void Awake()
+    {
+        // Obtener el ID del usuario desde LoginAPI
+        if (LoginAPI.UserId.HasValue)
+        {
+            idUsuario = LoginAPI.UserId.Value; // Asigna el valor si existe
+            Debug.Log($"ID de usuario asignado: {idUsuario}");
+        }
+        else
+        {
+            Debug.Log("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
+        }
+    }
+
     void Start()
     {
         // Obtener referencias a los scripts necesarios
