@@ -6,10 +6,10 @@ using UnityEngine.Networking;
 
 public class PreguntaManager : MonoBehaviour
 {
-    [System.Serializable]
+    public static PreguntaManager Instance;
     public class Pregunta
     {
-        public int id; // ID único de la pregunta
+        public int id_preguntaenemigo; // ID único de la pregunta
         public string textoPregunta; // El texto de la pregunta
         public string[] opciones;   // Opciones de respuesta
         public int respuestaCorrecta; // Índice de la respuesta correcta (0-3)
@@ -27,7 +27,7 @@ public class PreguntaManager : MonoBehaviour
     private Pregunta preguntaActual; // La pregunta que se está mostrando actualmente
     private Pregunta ultimaPregunta; // Última pregunta mostrada
 
-    private int maicesCorrectos = 0; // Contador de maíces (respuestas correctas)
+    public int maicesCorrectos = 0; // Contador de maíces (respuestas correctas)
     private UIControlEnemigos uiController; // Referencia al controlador de UI
 
     private float tiempoLimite = 10f; // Tiempo límite para responder cada pregunta
@@ -37,31 +37,32 @@ public class PreguntaManager : MonoBehaviour
 
     private int rachaContador = 0; // Contador de respuestas correctas consecutivas
 
-    private const string apiUrl = "https://localhost:7119/Pregunta/GetPreguntasEnemigo"; // URL de la API
-
     void Start()
     {
-        // Asignar eventos a los botones de respuesta
-        for (int i = 0; i < botonesRespuestas.Length; i++)
-        {
-            int index = i; // Necesario para capturar el índice correctamente en el closure
-            botonesRespuestas[i].onClick.AddListener(() =>
-            {
-                VerificarRespuesta(index);
-
-                // Reproducir el sonido de clic
-                if (EnemigosSFX.Instance != null)
-                {
-                    EnemigosSFX.Instance.PlayButtonClick();
-                }
-            });
-        }
-
         // Obtener referencia al controlador de UI
         uiController = FindFirstObjectByType<UIControlEnemigos>();
 
-        // Cargar preguntas desde la API
-        StartCoroutine(CargarPreguntasDesdeAPI());
+        // Obtener referencia a APIEnemigos
+        APIEnemigos apiEnemigos = FindFirstObjectByType<APIEnemigos>();
+        if (apiEnemigos != null)
+        {
+            StartCoroutine(apiEnemigos.CargarPreguntasDesdeAPI((preguntasCargadas) =>
+            {
+                if (preguntasCargadas != null)
+                {
+                    preguntas = preguntasCargadas;
+                    MostrarNuevaPregunta();
+                }
+                else
+                {
+                    Debug.LogError("No se pudieron cargar las preguntas.");
+                }
+            }));
+        }
+        else
+        {
+            Debug.LogError("No se encontró el script APIEnemigos en la escena.");
+        }
     }
 
     void Update()
@@ -74,31 +75,6 @@ public class PreguntaManager : MonoBehaviour
             if (tiempoRestante <= 0)
             {
                 TiempoAgotado();
-            }
-        }
-    }
-
-    IEnumerator CargarPreguntasDesdeAPI()
-    {
-        using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
-        {
-            request.certificateHandler = new ForceAcceptAll(); // Aceptar todos los certificados SSL
-            yield return request.SendWebRequest();
-
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                string json = request.downloadHandler.text;
-
-                // Deserializar el JSON como un array de preguntas
-                Pregunta[] preguntasArray = JsonHelper.FromJson<Pregunta>(json);
-                preguntas = new List<Pregunta>(preguntasArray);
-
-                Debug.Log("Preguntas cargadas correctamente desde la API.");
-                MostrarNuevaPregunta();
-            }
-            else
-            {
-                Debug.LogError("Error al cargar preguntas desde la API: " + request.error);
             }
         }
     }
@@ -129,8 +105,18 @@ public class PreguntaManager : MonoBehaviour
         textoPreguntaUI.text = preguntaActual.textoPregunta;
         for (int i = 0; i < botonesRespuestas.Length; i++)
         {
+            // Configurar el texto del botón
             botonesRespuestas[i].GetComponentInChildren<Text>().text = preguntaActual.opciones[indices[i]];
+
+            // Asignar el nombre del botón para identificar si es correcto o incorrecto
             botonesRespuestas[i].name = indices[i] == preguntaActual.respuestaCorrecta ? "Correcta" : "Incorrecta";
+
+            // Eliminar cualquier listener previo para evitar duplicados
+            botonesRespuestas[i].onClick.RemoveAllListeners();
+
+            // Capturar el índice actual y asignar el evento de clic
+            int index = i;
+            botonesRespuestas[i].onClick.AddListener(() => VerificarRespuesta(index));
         }
 
         // Reiniciar el temporizador

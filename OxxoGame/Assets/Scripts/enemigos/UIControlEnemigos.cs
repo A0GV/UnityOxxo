@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class UIControlEnemigos : MonoBehaviour
 {
+
+    public APIEnemigos apiInstance; 
+
     // Paneles de UI
     public GameObject Estatus;
     public GameObject Pregunta;
@@ -145,6 +148,7 @@ public class UIControlEnemigos : MonoBehaviour
     {
         Pausa.SetActive(false);
         if (Finalizar != null) Finalizar.SetActive(true);
+        StartCoroutine(apiInstance.PostDatosJuego());
         Time.timeScale = 0;
     }
 
