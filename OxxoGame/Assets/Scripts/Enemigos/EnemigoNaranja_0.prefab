@@ -189,5 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd22eee52d8849949b056f6aeb4d6ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemigosSFX: {fileID: 92705533679502875, guid: bdad11dc06a6abc4cac6de2d0972a48d, type: 3}
   speed: 1
   experiencePoints: 40

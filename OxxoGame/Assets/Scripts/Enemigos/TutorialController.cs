@@ -118,12 +118,6 @@ public class TutorialController : MonoBehaviour
 
     void CargarEscenaJuego()
     {
-        // Detener la música del tutorial si está sonando
-        if (EnemigosSFX.Instance != null)
-        {
-            EnemigosSFX.Instance.StopMusic();
-        }
-
         // Cargar la escena del juego
         SceneManager.LoadScene("EnemigosGameScene");
     }

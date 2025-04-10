@@ -85,19 +85,4 @@ public class EnemigosSFX : MonoBehaviour
         audioSource.PlayOneShot(enemyHitPlayerClip, 1.0f);
     }
 
-    public void StopMusic()
-    {
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
-    }
-
-    private void PlayMusic(AudioClip clip, float volume, bool loop)
-    {
-        audioSource.clip = clip;
-        audioSource.volume = volume;
-        audioSource.loop = loop;
-        audioSource.Play();
-    }
 }

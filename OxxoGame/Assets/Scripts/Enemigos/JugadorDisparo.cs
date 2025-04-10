@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class JugadorDisparo : MonoBehaviour
 {
+    public EnemigosSFX enemigosSFX; // Referencia al script de sonidos de enemigos
     public GameObject balaPrefab; // Prefab de la bala que se disparará
     public Transform firePoint;   // Punto desde donde se disparan las balas
     public Transform arma;        // Referencia al objeto de arma
@@ -86,9 +87,9 @@ public class JugadorDisparo : MonoBehaviour
         }
 
         // Reproducir el sonido de disparo
-        if (EnemigosSFX.Instance != null)
+        if (enemigosSFX != null)
         {
-            EnemigosSFX.Instance.PlayShoot();
+            enemigosSFX.PlayShoot();
         }
 
         // Mostrar en la consola el número de balas restantes
