@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerExperience : MonoBehaviour
 {
+    public static PlayerExperience Instance;
     public int currentExperience = 0; // Experiencia actual del jugador
     private UIControlEnemigos uiController;
 

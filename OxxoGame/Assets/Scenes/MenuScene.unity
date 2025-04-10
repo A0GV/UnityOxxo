@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 42522542}
   - component: {fileID: 42522541}
   m_Layer: 5
-  m_Name: text
+  m_Name: eloteTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 120
+  m_Text: 000000
 --- !u!222 &42522542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2322,7 +2322,7 @@ GameObject:
   - component: {fileID: 725594045}
   - component: {fileID: 725594044}
   m_Layer: 5
-  m_Name: text (1)
+  m_Name: expTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2344,8 +2344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.5511, y: -3.7827}
-  m_SizeDelta: {x: 141.1244, y: 66.2993}
+  m_AnchoredPosition: {x: 26.8302, y: -3.7827}
+  m_SizeDelta: {x: 173.1794, y: 66.2993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725594044
 MonoBehaviour:
@@ -2380,7 +2380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 35
+  m_Text: 0000000
 --- !u!222 &725594045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3071,7 +3071,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1932936671}
   - {fileID: 1362263488}
   - {fileID: 1371717670}
   m_Father: {fileID: 0}
@@ -4409,6 +4408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4c22ade3ea88b45a91ecde84ab0eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
+  eloteText: {fileID: 42522541}
+  expText: {fileID: 725594044}
+  rachaText: {fileID: 2087126356}
 --- !u!4 &1362263488
 Transform:
   m_ObjectHideFlags: 0
@@ -4453,7 +4456,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1371717670}
   - component: {fileID: 1371717669}
-  - component: {fileID: 1371717671}
   m_Layer: 0
   m_Name: SFXMenu
   m_TagString: Untagged
@@ -4573,24 +4575,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 912527262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1371717671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371717668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6153668d19741e1bc32af01354db59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
-  backgroundMusic: {fileID: 0}
-  highSound: {fileID: 0}
-  midSound: {fileID: 0}
-  lowSound: {fileID: 0}
-  speedUp: {fileID: 0}
 --- !u!1 &1374183936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6538,37 +6522,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
---- !u!1 &1932936670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1932936671}
-  m_Layer: 0
-  m_Name: UIControl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1932936671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932936670}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 264.21405, y: 79.363464, z: -2.1692715}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 912527262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960004182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7062,7 +7015,7 @@ GameObject:
   - component: {fileID: 2087126357}
   - component: {fileID: 2087126356}
   m_Layer: 5
-  m_Name: text (2)
+  m_Name: rachaTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7084,8 +7037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -3.7826}
-  m_SizeDelta: {x: 141.1244, y: 66.2993}
+  m_AnchoredPosition: {x: 14.9803, y: -3.7826}
+  m_SizeDelta: {x: 116.8567, y: 66.2993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087126356
 MonoBehaviour:
@@ -7120,7 +7073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 0000
 --- !u!222 &2087126357
 CanvasRenderer:
   m_ObjectHideFlags: 0
