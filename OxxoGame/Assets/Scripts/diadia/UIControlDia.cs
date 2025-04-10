@@ -166,6 +166,11 @@ public class UIControlDia : MonoBehaviour
                 botonScript3.SetProblema(problemaUI);
             }
         }
+
+        // Resumen de problemas con prioridades
+        Debug.Log("1: " + DiaControl.Instance.problemasActivos[0].GetNombreProblema() + " " + DiaControl.Instance.problemasActivos[0].GetPrioridad() + 
+                "    2: " + DiaControl.Instance.problemasActivos[1].GetNombreProblema() + " " + DiaControl.Instance.problemasActivos[1].GetPrioridad() + 
+                "    3: " + DiaControl.Instance.problemasActivos[2].GetNombreProblema() + " " + DiaControl.Instance.problemasActivos[2].GetPrioridad());
     }
 
     // Esconde la pregunta y cuenta las preguntas que han salido

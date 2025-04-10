@@ -21,6 +21,7 @@ public class DDAPI : MonoBehaviour
         
     }
 
+    // Cantidad de días que ha jugado el usuario logeado 
     IEnumerator GetDaysPlayed() 
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
@@ -37,7 +38,7 @@ public class DDAPI : MonoBehaviour
         else
         {
             diaControl.diasJugados = JsonConvert.DeserializeObject<int>(web.downloadHandler.text); // Necesitas especificar q está usando un <int> para deserialize
-            UnityEngine.Debug.Log("Dias jugados: " + diaControl.diasJugados);
+            //UnityEngine.Debug.Log("Dias jugados: " + diaControl.diasJugados);
         }
     }
 

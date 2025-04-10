@@ -13,11 +13,8 @@ public class DDButtonSolve1 : MonoBehaviour
     
     if (problema == null)
     {
-        Debug.LogError($"SetProblema recibió un problema null en {gameObject.name}");
         return;
     }
-
-    Debug.Log($"Asignado a botón: {problema.GetNombreProblema()}");
 }
 
     public void Resolver()
