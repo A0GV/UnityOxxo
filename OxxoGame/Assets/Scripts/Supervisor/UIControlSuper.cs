@@ -29,16 +29,24 @@ public class UIControlSuper : MonoBehaviour
     public Text Points;
 
     public Text ResuemnExt;
-
     private Coroutine resumenCoroutine; // Stores the coroutine reference
     private bool isPaused = false; // Tracks if the game is paused
     static public npcController Instance;
+    private IndividualBehaviourNpc instance; // Añade esta línea con los demás campos de la clase
 
 
 
     void Start()
     {
         textosFinal = new string[8];
+        // Inicializa la referencia local
+        instance = FindObjectOfType<IndividualBehaviourNpc>();
+
+        // Opcional: verificar si el singleton existe
+        if (IndividualBehaviourNpc.instance == null)
+        {
+            Debug.LogWarning("No se encontró ningún objeto con componente IndividualBehaviourNpc en la escena");
+        }
     }
 
     // Starts the coroutine to periodically show the summary panel
@@ -78,10 +86,10 @@ public class UIControlSuper : MonoBehaviour
     {
         main.SetActive(false);
         resumen.SetActive(true);
-        string finalTxt=$"Tuviste\n{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
-        string points=$"Conseguiste {burbujas} burbujas y {elotes} elotes";
-        StartCoroutine(npcController.Instance.textoAnimado(finalTxt,Resume,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
-        StartCoroutine(npcController.Instance.textoAnimado(points,Points,npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
+        string finalTxt = $"Tuviste\n{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
+        string points = $"Conseguiste {burbujas} burbujas y {elotes} elotes";
+        StartCoroutine(npcController.Instance.textoAnimado(finalTxt, Resume, npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
+        StartCoroutine(npcController.Instance.textoAnimado(points, Points, npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
 
     }
 
@@ -188,6 +196,7 @@ public class UIControlSuper : MonoBehaviour
         }
 
         // Mostrar el canvas de respuesta
+        talkAxolotl();
         ShowPanel("ResponseCanvas");
         Debug.Log(respuestaTexto);
         StartCoroutine(npcController.Instance.textoAnimado(respuestaTexto, speech, npcController.Instance.speedLocal));
@@ -196,22 +205,53 @@ public class UIControlSuper : MonoBehaviour
     public void decisiones(int decision)
     {
         Debug.Log($"Decisiones casteada, se llamo como {decision}");
-        int esBueno=PlayerPrefs.GetInt("esBueno");
-        string texto=PlayerPrefs.GetString("malaDecision");
-        string local=PlayerPrefs.GetString("local");
-        if (esBueno!=decision)
+        int esBueno = PlayerPrefs.GetInt("esBueno");
+        string texto = PlayerPrefs.GetString("malaDecision");
+        string local = PlayerPrefs.GetString("local");
+        if (esBueno != decision)
         {
 
             malos++;
             textosFinal[malos] = $"{local}: {texto}";
-            Debug.Log("Malos tiene el valor de"+malos);
+            Debug.Log("Malos tiene el valor de" + malos);
         }
         else
         {
             buenos++;
-            burbujas=burbujas+20;
-            elotes=elotes+40;
-            Debug.Log("Buenos, tiene el valod de"+buenos);
+            burbujas = burbujas + 20;
+            elotes = elotes + 40;
+            Debug.Log("Buenos, tiene el valod de" + buenos);
+        }
+    }
+
+    void talkAxolotl()
+    {
+        Debug.Log("Se llamo a callNpc");
+
+        // Intenta usar primero la referencia del singleton
+        if (IndividualBehaviourNpc.instance != null)
+        {
+            IndividualBehaviourNpc.instance.callTalk();
+        }
+        // Si no existe, busca de nuevo en la escena (como fallback)
+        else if (instance != null) 
+        {
+            instance.callTalk();
+        }
+        // Si tampoco existe la referencia local, intenta buscarla una última vez
+        else 
+        {
+            var foundInstance = FindObjectOfType<IndividualBehaviourNpc>();
+            if (foundInstance != null)
+            {
+                foundInstance.callTalk();
+                // Actualiza la referencia local para próximas llamadas
+                instance = foundInstance;
+            }
+            else
+            {
+                Debug.LogError("No hay referencia al componente IndividualBehaviourNpc para llamar a callTalk()");
+            }
         }
     }
 }
