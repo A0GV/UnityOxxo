@@ -22,7 +22,8 @@ public class UIControlSuper : MonoBehaviour
 
     public int elotes;
     public int burbujas;
-
+    public Text textElotePausa;
+    public Text textBurbujaPausa;
     public Text speech;
 
     public Text Resume;
@@ -136,9 +137,17 @@ public class UIControlSuper : MonoBehaviour
     // Pauses the game and stops the summary coroutine
     public void PauseGame()
     {
+
         isPaused = true; // Set game as paused
         pausa.SetActive(true); // Show pause panel
         Time.timeScale = 0; // Freeze game physics and coroutines
+        if (textElotePausa !=null)
+        {
+            textElotePausa.text=elotes.ToString(); 
+        }
+        if (textBurbujaPausa != null)
+        {
+            textBurbujaPausa.text = burbujas.ToString();}
         if (resumenCoroutine != null)
         {
             StopCoroutine(resumenCoroutine); // Stop the coroutine
@@ -219,7 +228,7 @@ public class UIControlSuper : MonoBehaviour
         {
             buenos++;
             burbujas = burbujas + 20;
-            elotes = elotes + 40;
+            elotes = elotes + 4;
             Debug.Log("Buenos, tiene el valod de" + buenos);
         }
     }

@@ -1335,6 +1335,8 @@ MonoBehaviour:
   buenos: 0
   elotes: 0
   burbujas: 0
+  textElotePausa: {fileID: 1785764991}
+  textBurbujaPausa: {fileID: 532406472}
   speech: {fileID: 1596802566}
   Resume: {fileID: 856197020}
   Points: {fileID: 595108240}
@@ -1428,8 +1430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.03345, y: -0}
-  m_SizeDelta: {x: 100.658, y: 141.2657}
+  m_AnchoredPosition: {x: 184.6908, y: 0}
+  m_SizeDelta: {x: 203.9728, y: 141.2657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532406472
 MonoBehaviour:
@@ -5493,7 +5495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1548680234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6338,8 +6340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119, y: -5}
-  m_SizeDelta: {x: 100.658, y: 141.2657}
+  m_AnchoredPosition: {x: 142.98376, y: -5}
+  m_SizeDelta: {x: 148.6256, y: 141.2657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785764991
 MonoBehaviour:
@@ -6786,7 +6788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1865053504
 MonoBehaviour:
   m_ObjectHideFlags: 0
