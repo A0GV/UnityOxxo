@@ -52,12 +52,12 @@ public class LoginAPI : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Failed to parse user ID.");
+                    Debug.Log("Failed to parse user ID.");
                 }
             }
             else
             {
-                Debug.LogError($"Login failed: {request.error}");
+                Debug.Log($"Login failed: {request.error}");
             }
         }
     }

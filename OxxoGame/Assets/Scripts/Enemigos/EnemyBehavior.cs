@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+
     public float speed = 2.0f;  // Velocidad del enemigo
     public int experiencePoints = 50; // Experiencia que otorga este enemigo
-
     private Transform player;   // Referencia al jugador
     private Rigidbody2D rb;     // Referencia al Rigidbody2D del enemigo
 
@@ -60,11 +60,6 @@ public class EnemyBehavior : MonoBehaviour
         }
         else if (collision.CompareTag("Player"))
         {
-            // Reproducir el sonido de impacto con el jugador
-            if (EnemigosSFX.Instance != null)
-            {
-                EnemigosSFX.Instance.PlayEnemyHitPlayer();
-            }
 
             // Destruir el enemigo si toca al jugador
             Destroy(gameObject);

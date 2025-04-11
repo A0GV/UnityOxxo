@@ -7,7 +7,7 @@ public class IniciarSesion : MonoBehaviour
 {
     [SerializeField] private InputField correoInput; // Campo de entrada para el correo
     [SerializeField] private InputField contrasenaInput; // Campo de entrada para la contraseña
-    // [SerializeField] private GameObject panelError; // Panel para mostrar errores (opcional)
+    [SerializeField] private GameObject panelError; // Panel para mostrar errores (opcional)
     [SerializeField] private LoginAPI loginAPI; // Asignar manualmente desde el Inspector
 
     void Start()
@@ -17,13 +17,13 @@ public class IniciarSesion : MonoBehaviour
             loginAPI = FindAnyObjectByType<LoginAPI>(); // Buscar el componente en toda la escena
             if (loginAPI == null)
             {
-                Debug.LogError("El componente LoginAPI no está presente en la escena.");
+                Debug.Log("El componente LoginAPI no está presente en la escena.");
             }
         }
 
         if (correoInput == null || contrasenaInput == null /* || panelError == null */)
         {
-            Debug.LogError("Uno o más campos de entrada no están asignados en el Inspector.");
+            Debug.Log("Uno o más campos de entrada no están asignados en el Inspector.");
         }
     }
 
@@ -35,8 +35,8 @@ public class IniciarSesion : MonoBehaviour
         // Validar que los campos no estén vacíos
         if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(contrasena))
         {
-            // MostrarPanelError("Por favor, completa todos los campos."); // Comentado por ahora
-            Debug.LogError("Por favor, completa todos los campos.");
+            MostrarPanelError("Por favor, completa todos los campos."); // Comentado por ahora
+            Debug.Log("Por favor, completa todos los campos.");
             return;
         }
 
@@ -57,12 +57,12 @@ public class IniciarSesion : MonoBehaviour
         else
         {
             // Inicio de sesión fallido
-            // MostrarPanelError("Credenciales inválidas. Intenta de nuevo."); // Comentado por ahora
-            Debug.LogError("Credenciales inválidas. Intenta de nuevo.");
+            MostrarPanelError("Credenciales inválidas. Intenta de nuevo."); // Comentado por ahora
+            Debug.Log("Credenciales inválidas. Intenta de nuevo.");
         }
     }
 
-    /*
+
     private void MostrarPanelError(string mensaje)
     {
         if (panelError != null)
@@ -70,10 +70,10 @@ public class IniciarSesion : MonoBehaviour
             // Aquí puedes configurar el panel para mostrar el mensaje de error
             panelError.SetActive(true);
             // Opcional: Si el panel tiene un texto hijo, puedes configurarlo aquí
-            // Text textoError = panelError.GetComponentInChildren<Text>();
-            // if (textoError != null) textoError.text = mensaje;
+            Text textoError = panelError.GetComponentInChildren<Text>();
+            if (textoError != null) textoError.text = mensaje;
         }
-        Debug.LogError(mensaje);
+        Debug.Log(mensaje);
     }
-    */
+
 }

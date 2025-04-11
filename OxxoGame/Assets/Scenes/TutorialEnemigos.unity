@@ -1224,7 +1224,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
   m_Text: "\xA1Bienvenido a Enemigos! Soy Cacto, tu gu\xEDa en esta misi\xF3n. Aqu\xED
-    aprender\xE1s todo lo que necesitas para ser un asesor de primera."
+    aprender\xE1s lo que necesitas para ser un asesor de primera."
 --- !u!222 &377169830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1756,7 +1756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 210, y: 99}
+  m_AnchoredPosition: {x: 214, y: 0}
   m_SizeDelta: {x: -763.7837, y: -337.3157}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547334297
@@ -1792,7 +1792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Ah, eres t\xFA\u2026 \xA1El asesor de tienda! \nTe estaba esperando."
+  m_Text: "Ah, eres t\xFA\u2026 \xA1Te estaba esperando! \n"
 --- !u!222 &547334298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5389,9 +5389,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Y aqu\xED viene lo mejor: si logras responder correctamente 3 preguntas
-    seguidas, activas una racha. Durante esa racha, podr\xE1s eliminar a los enemigos
-    sin tener que responder preguntas. \xA1Es tu recompensa por el buen desempe\xF1o!"
+  m_Text: "Aqu\xED viene lo mejor: si logras responder correctamente 5 preguntas
+    seguidas, activar\xE1s una racha. Durante esa racha, podr\xE1s eliminar a todos
+    los enemigos en pantalla al mismo tiempo. \xA1Es tu recompensa por un gran desempe\xF1o!"
 --- !u!222 &1398744541
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6338,8 +6338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 183.31445, y: 98}
-  m_SizeDelta: {x: -740.3138, y: -347.7751}
+  m_AnchoredPosition: {x: 202, y: 77}
+  m_SizeDelta: {x: -873.106, y: -347.775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716077954
 MonoBehaviour:
@@ -6374,9 +6374,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Cada vez que apuntes a un enemigo, el juego te har\xE1 una pregunta de
-    capacitaci\xF3n. Si respondes correctamente, lo eliminas. Si fallas, se te har\xE1
-    otra pregunta hasta que aciertes. \xA1Nada de miedo, es para aprender!"
+  m_Text: "Al comenzar el juego, los enemigos te atacar\xE1n. Responde las preguntas
+    a tu izquierda correctamente para conseguir balas. Usa el cursor para apuntar
+    y haz clic para disparar y eliminarlos."
 --- !u!222 &1716077955
 CanvasRenderer:
   m_ObjectHideFlags: 0
