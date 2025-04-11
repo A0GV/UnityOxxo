@@ -19,16 +19,6 @@ public class SuperControl : MonoBehaviour
         uiController.ShowMain();
 
         // Initializes additional settings or functionalities
-        init();
-    }
-
-    void init()
-    {
-        // If the UI controller exists, start the timer for showing the summary panel
-        if (uiController != null)
-        {
-            uiController.StartTime();
-        }
     }
 
     // Loads the MenuScene, typically called when exiting a mini-game

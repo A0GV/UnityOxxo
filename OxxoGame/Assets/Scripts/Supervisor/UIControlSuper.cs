@@ -35,60 +35,32 @@ public class UIControlSuper : MonoBehaviour
     public Text Points;
 
     public Text ResuemnExt;
-    private Coroutine resumenCoroutine; // Stores the coroutine reference
-    private bool isPaused = false; // Tracks if the game is paused
+    private Coroutine resumenCoroutine;
+    private bool isPaused = false; 
     static public npcController Instance;
-    private IndividualBehaviourNpc instance; // Añade esta línea con los demás campos de la clase
+    private IndividualBehaviourNpc instance; 
     private int id_usuario;
 
     void Awake()
     {
         if (LoginAPI.UserId.HasValue)
         {
-            id_usuario = LoginAPI.UserId.Value; // Asigna el valor si existe
+            id_usuario = LoginAPI.UserId.Value; 
             Debug.Log($"ID de usuario asignado: {id_usuario}");
         }
         else
         {
-            Debug.LogError("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
+            Debug.Log("UserId no está disponible. Asegúrate de haber iniciado sesión correctamente.");
         }
     }
     void Start()
     {
         textosFinal = new string[8];
-        // Inicializa la referencia local
         instance = Object.FindFirstObjectByType<IndividualBehaviourNpc>();
 
-        // Opcional: verificar si el singleton existe
-        if (IndividualBehaviourNpc.instance == null)
-        {
-            Debug.LogWarning("No se encontró ningún objeto con componente IndividualBehaviourNpc en la escena");
-        }
     }
 
-    // Starts the coroutine to periodically show the summary panel
-    public void StartTime()
-    {
-        if (resumenCoroutine == null)
-        {
-            // resumenCoroutine = StartCoroutine(MostrarResumen()); // Start the coroutine
-        }
-    }
 
-    // Coroutine that waits for 8 seconds and then shows the summary panel repeatedly
-    IEnumerator MostrarResumen()
-    {
-        while (true) // Infinite loop, stops only when paused
-        {
-            yield return new WaitForSeconds(8); // Waits 8 seconds
-            if (!isPaused) // Only show resumen if the game is not paused
-            {
-                ShowResumen(); // Shows the summary panel
-            }
-        }
-    }
-
-    // Displays the main panel and hides other panels
     public void ShowMain()
     {
         main.SetActive(true);
@@ -98,14 +70,12 @@ public class UIControlSuper : MonoBehaviour
         respuesta.SetActive(false);
     }
 
-    // Displays the summary panel and hides the main panel
     public void ShowResumen()
     {
         main.SetActive(false);
         resumen.SetActive(true);
         StartCoroutine(EnviarRecompensas());
-        string finalTxt = $"{buenos}/6 aciertos\n  {malos}/6 Errores de aceptacion \n Si quieres ver porque. Presiona el boton de siguiente.";
-        // string points = $"Conseguiste {burbujas} burbujas y {elotes} elotes";
+        string finalTxt = $"{buenos}/6 aciertos\n  {malos}/6 errores de aceptación \n Si quieres ver por qué, pulsa el botón de siguiente.";
         elotesFinalText.text = elotes.ToString();
         burbujasFinalText.text = burbujas.ToString();
         StartCoroutine(npcController.Instance.textoAnimado(finalTxt, Resume, npcController.Instance.speedLocal)); //Accedo a la instancia del; singleton y de ahi, llamo al metodo textoAnimado
@@ -121,10 +91,8 @@ public class UIControlSuper : MonoBehaviour
 
     }
 
-    // Controls the visibility of different UI panels based on the panel name
     public void ShowPanel(string panelName)
     {
-        // Hide all panels first
         manual.SetActive(false);
         pregunta.SetActive(false);
         resumen.SetActive(false);
@@ -132,7 +100,6 @@ public class UIControlSuper : MonoBehaviour
         pausa.SetActive(false);
         resumenExtendido.SetActive(false);
 
-        // Show the selected panel based on the provided name
         switch (panelName)
         {
             case "ManualCanvas":
@@ -143,19 +110,18 @@ public class UIControlSuper : MonoBehaviour
                 break;
             case "ResponseCanvas":
                 respuesta.SetActive(true);
-                main.SetActive(true); // Ensures the main panel remains active with the response panel
+                main.SetActive(true); 
                 break;
             case "PauseCanvas":
-                PauseGame(); // Activates pause mode
+                PauseGame(); 
                 break;
         }
     }
 
-    // Pauses the game and stops the summary coroutine
     public void PauseGame()
     {
 
-        isPaused = true; // Set game as paused
+        isPaused = true; 
         pausa.SetActive(true); // Show pause panel
         Time.timeScale = 0; // Freeze game physics and coroutines
         if (textElotePausa != null)
@@ -179,7 +145,6 @@ public class UIControlSuper : MonoBehaviour
         isPaused = false; // Unpause the game
         pausa.SetActive(false); // Hide pause panel
         Time.timeScale = 1; // Resume normal time
-        StartTime(); // Restart the coroutine
     }
 
     public void RestartGame()
