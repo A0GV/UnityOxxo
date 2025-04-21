@@ -15,7 +15,7 @@ public class MenuScene : MonoBehaviour
     public Text eloteText;
     public Text expText;
     public Text rachaText; 
-    int idUsuario = 7; // ID del usuario, se asigna al iniciar sesión
+    int idUsuario ; // ID del usuario, se asigna al iniciar sesión
 
     // Poner sonido
     void Awake()
