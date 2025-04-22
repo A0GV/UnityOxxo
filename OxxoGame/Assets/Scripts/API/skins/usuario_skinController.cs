@@ -21,40 +21,40 @@ public class usuario_skinController : MonoBehaviour
         }
     }
 
-    public IEnumerator getSkinActive(int? userId)
-    {
-        if (!userId.HasValue)
-        {
-            Debug.LogError("User ID is null. Cannot get skin.");
-            yield break;
-        }
+    // public IEnumerator getSkinActive(int? userId)
+    // {
+    //     if (!userId.HasValue)
+    //     {
+    //         Debug.LogError("User ID is null. Cannot get skin.");
+    //         yield break;
+    //     }
 
-        string JSONurl = $"https://localhost:7119/Login/datosSkin?userId={userId.Value}";
-        Debug.Log($"Fetching skin data from: {JSONurl}");
+    //     string JSONurl = $"https://localhost:7119/Login/datosSkin?userId={userId.Value}";
+    //     Debug.Log($"Fetching skin data from: {JSONurl}");
 
-        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
-        web.certificateHandler = new ForceAcceptAll();
-        yield return web.SendWebRequest();
+    //     UnityWebRequest web = UnityWebRequest.Get(JSONurl);
+    //     web.certificateHandler = new ForceAcceptAll();
+    //     yield return web.SendWebRequest();
 
-        if (web.result == UnityWebRequest.Result.Success)
-        {
-            try
-            {
-                var dataofNPC = JsonConvert.DeserializeObject<usuario_skin>(web.downloadHandler.text);
-                PlayerPrefs.SetInt("id_skin", dataofNPC.id_skin);
-                PlayerPrefs.Save();
-                Debug.Log($"Skin ID {dataofNPC.id_skin} saved successfully");
-            }
-            catch (System.Exception ex)
-            {
-                Debug.LogError($"Error deserializing skin data: {ex.Message}");
-            }
-        }
-        else
-        {
-            Debug.LogError($"Failed to get skin: {web.error}");
-        }
-    }
+    //     if (web.result == UnityWebRequest.Result.Success)
+    //     {
+    //         try
+    //         {
+    //             var dataofNPC = JsonConvert.DeserializeObject<usuario_skin>(web.downloadHandler.text);
+    //             PlayerPrefs.SetInt("id_skin", dataofNPC.id_skin);
+    //             PlayerPrefs.Save();
+    //             Debug.Log($"Skin ID {dataofNPC.id_skin} saved successfully");
+    //         }
+    //         catch (System.Exception ex)
+    //         {
+    //             Debug.LogError($"Error deserializing skin data: {ex.Message}");
+    //         }
+    //     }
+    //     else
+    //     {
+    //         Debug.LogError($"Failed to get skin: {web.error}");
+    //     }
+    // }
 
     
 }

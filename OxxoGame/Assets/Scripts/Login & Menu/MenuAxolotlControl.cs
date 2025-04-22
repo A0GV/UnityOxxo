@@ -5,22 +5,14 @@ public class MenuAxolotlControl : MonoBehaviour
 {
     // Adjust movement speed and jump force
     public float moveSpeed;
-    public GameObject[] Axolots;
-    private Transform SpawnPoint;
-    private GameObject player;
-    // References to player components
+
     public Rigidbody2D rig; // Controls the character's physics
     public SpriteRenderer sr; // Manages the sprite visualization
     Animator animatorController; // Animation controller
 
 
     void Awake()
-    {
-        if (player==null)
-        {
-            setSkin();
-        }
-    }
+    {}
     void Start()
     {
         // Gets the Animator component from the object
@@ -82,20 +74,5 @@ public class MenuAxolotlControl : MonoBehaviour
         }
     }
 
-    public void setSkin()
-    {
-        GameObject playerSkin;
-        
-        if (PlayerPrefs.HasKey("id_skin")) 
-        {
-            playerSkin = Axolots[PlayerPrefs.GetInt("id_skin")];
-        }
-        else
-        {
-            // Valor por defecto si no existe "id" en PlayerPrefs
-            playerSkin = Axolots[0]; 
-        }
-        
-        player = Instantiate(playerSkin, SpawnPoint.position, Quaternion.identity);
-    }
+
 }
