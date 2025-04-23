@@ -1,5 +1,7 @@
+using System.Collections;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,23 +26,21 @@ public class StoreScene : MonoBehaviour
 
     public void ShowBalance()
     {
-        // Obtener el saldo actual (no sobreescribir cada vez)
-        int saldoActual = PlayerPrefs.HasKey("Elotes") ? PlayerPrefs.GetInt("Elotes") : 1500;
+        // Obtener el saldo actual
+        int saldoActual =LogicForBuy.elotesstore;
         
-        if (PlayerPrefs.HasKey("Elotes")) {
-            PlayerPrefs.SetInt("Elotes", 1500);
-        }
-        saldoActual=1500;
         
         if (dinero <= saldoActual) // Si tienes suficiente dinero
         {
             // Restar el costo
             saldoActual -= dinero;
+            StartCoroutine(Updatemoney(dinero));
+
             PlayerPrefs.SetInt("Elotes", saldoActual);
             
-            // Guardar el ID de skin correctamente (SIN sumar 1)
             PlayerPrefs.SetInt("id_skin", idItem);
             PlayerPrefs.Save();
+
             
             Debug.Log($"Skin comprada: {idItem}, saldo restante: {saldoActual}");
             
@@ -134,6 +134,44 @@ public class StoreScene : MonoBehaviour
             }
         }
     }
+
+    IEnumerator Updatemoney(int monedas)
+    {
+       string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
+
+        // Use form data para agregar los datos al JSON
+        WWWForm form = new WWWForm();
+        form.AddField("id_usuario", LoginAPI.UserId.ToString());
+        form.AddField("id_juego", 3);
+        form.AddField("monedas", monedas);
+        form.AddField("exp", 0);
+
+        UnityWebRequest request = UnityWebRequest.Post(url, form); // Para hacer un post 
+        request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
+        yield return request.SendWebRequest();
+
+        // Ver si funciona
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error al enviar datos: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Se agregó todo :D");
+        }
+    }
+    IEnumerator FirstBuy(int skin)
+    {
+       string url = $"https://localhost:7119/Login/NewCompra?userId=9&id_skin={skin}";
+       return null;
+    }
+    IEnumerator UpdateSkin(int Skin)
+    {
+       string url = $"https://localhost:7119/Login/Actualizar activo?userId=9&id_skin{Skin}";
+
+        return null;
+    }
+
 
     // Update is called once per frame
     void Update()
