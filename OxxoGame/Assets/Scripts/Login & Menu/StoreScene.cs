@@ -27,9 +27,9 @@ public class StoreScene : MonoBehaviour
     public void ShowBalance()
     {
         // Obtener el saldo actual
-        int saldoActual =LogicForBuy.elotesstore;
-        
-        
+        int saldoActual = LogicForBuy.elotesstore;
+
+
         if (dinero <= saldoActual) // Si tienes suficiente dinero
         {
             // Restar el costo
@@ -37,13 +37,13 @@ public class StoreScene : MonoBehaviour
             StartCoroutine(Updatemoney(dinero));
 
             PlayerPrefs.SetInt("Elotes", saldoActual);
-            
+
             PlayerPrefs.SetInt("id_skin", idItem);
             PlayerPrefs.Save();
 
-            
+
             Debug.Log($"Skin comprada: {idItem}, saldo restante: {saldoActual}");
-            
+
             comprar.SetActive(true);
             articulo.SetActive(false);
         }
@@ -64,7 +64,7 @@ public class StoreScene : MonoBehaviour
     {
         // Asigna el valor al campo de la clase, no reasignes el parámetro
         this.idItem = itemId;
-        
+
         switch (itemId) // Usa el parámetro para el switch
         {
             case 1:
@@ -103,8 +103,8 @@ public class StoreScene : MonoBehaviour
         // Set skin ID to 0 (no skin/hat equipped)
         PlayerPrefs.SetInt("id_skin", 0);
         PlayerPrefs.Save();
-            
-            
+
+
         // Return to store view
         ShowStore();
     }
@@ -114,17 +114,17 @@ public class StoreScene : MonoBehaviour
     {
         // Obtener la skin actual desde PlayerPrefs
         int currentSkinId = PlayerPrefs.HasKey("id_skin") ? PlayerPrefs.GetInt("id_skin") : 0;
-        
+
         // Actualizar el campo idItem con el valor correcto
         this.idItem = currentSkinId;
-        
+
         // Actualizar los botones "Quitar" basados en la skin actual
         for (int i = 0; i < Adquiridos.Length; i++)
         {
             // Ajustamos la comparación: i+1 para convertir índice (0-based) a ID (1-based)
-            if (i+1 == currentSkinId)
+            if (i + 1 == currentSkinId)
             {
-                Debug.Log($"El sombrero {i+1} ha sido equipado - mostrando botón de quitar");
+                Debug.Log($"El sombrero {i + 1} ha sido equipado - mostrando botón de quitar");
                 Adquiridos[i].gameObject.SetActive(true);
             }
             else
@@ -137,7 +137,7 @@ public class StoreScene : MonoBehaviour
 
     IEnumerator Updatemoney(int monedas)
     {
-       string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
+        string url = "https://localhost:7119/manageCurrency/AgregarDatosJuego";
 
         // Use form data para agregar los datos al JSON
         WWWForm form = new WWWForm();
@@ -162,12 +162,16 @@ public class StoreScene : MonoBehaviour
     }
     IEnumerator FirstBuy(int skin)
     {
-       string url = $"https://localhost:7119/Login/NewCompra?userId=9&id_skin={skin}";
-       return null;
+        string url = $"https://localhost:7119/Login/NewCompra?userId=9&id_skin={skin}";
+
+        UnityWebRequest request = UnityWebRequest.Post(url,LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
+        request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
+        yield return request.SendWebRequest();
+
     }
     IEnumerator UpdateSkin(int Skin)
     {
-       string url = $"https://localhost:7119/Login/Actualizar activo?userId=9&id_skin{Skin}";
+        string url = $"https://localhost:7119/Login/Actualizar activo?userId=9&id_skin{Skin}";
 
         return null;
     }
