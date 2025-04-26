@@ -28,18 +28,5 @@ public class MenuController : MonoBehaviour
         player = Instantiate(playerSkin, SpawnPoint.position, Quaternion.identity);
         Debug.Log(player);
         MenuAxolotlControl controller = player.GetComponent<MenuAxolotlControl>();
-        if (controller != null)
-        {
-            controller.enabled = true;
-
-            // Configurar componentes solo si es necesario
-            if (controller.rig == null)
-                controller.rig = player.GetComponent<Rigidbody2D>();
-
-            if (controller.sr == null)
-                controller.sr = player.GetComponent<SpriteRenderer>();
-
-            // Añadir un log para verificar
-        }
     }
 }

@@ -77,7 +77,7 @@ public class LoginAPI : MonoBehaviour
             yield break;
         }
 
-        string JSONurl = $"https://localhost:7119/Login/datosSkin?userId={userId.Value}";
+        string JSONurl = $"https://localhost:7119/Login/UniquedatosSkin?userId={userId.Value}";
         Debug.Log($"Fetching skin data from: {JSONurl}");
         // skin default por si falla
         PlayerPrefs.SetInt("id_skin", 0); // Default skin ID

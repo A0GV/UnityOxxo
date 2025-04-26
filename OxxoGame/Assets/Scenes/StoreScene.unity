@@ -6226,16 +6226,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b686900275f1f24594510fbe4e1b0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comprar:
-  - {fileID: 436199081}
-  - {fileID: 1347383625}
-  - {fileID: 1070846661}
-  - {fileID: 1695855983}
-  Comprados:
+  skinPanels:
+  - {fileID: 0}
+  - {fileID: 375871683}
+  - {fileID: 158746517}
+  - {fileID: 270101368}
+  - {fileID: 1711802341}
+  quitarPanels:
+  - {fileID: 0}
   - {fileID: 104605912}
   - {fileID: 405779183}
   - {fileID: 1524185758}
   - {fileID: 834262102}
+  comprarPanels:
+  - {fileID: 0}
+  - {fileID: 436199081}
+  - {fileID: 1347383625}
+  - {fileID: 1070846661}
+  - {fileID: 1695855983}
 --- !u!1 &1960524945
 GameObject:
   m_ObjectHideFlags: 0

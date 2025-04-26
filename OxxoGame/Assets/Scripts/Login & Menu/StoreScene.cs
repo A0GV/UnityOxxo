@@ -16,8 +16,8 @@ public class StoreScene : MonoBehaviour
     public int dinero;
     public Sprite[] spSombreros;
     public Button[] Adquiridos;
-
     public Button buy;
+
 
     public void GoBackToMenu()
     {
@@ -133,6 +133,7 @@ public class StoreScene : MonoBehaviour
                 Adquiridos[i].gameObject.SetActive(false);
             }
         }
+
     }
 
     IEnumerator Updatemoney(int monedas)
@@ -164,7 +165,7 @@ public class StoreScene : MonoBehaviour
     {
         string url = $"https://localhost:7119/Login/NewCompra?userId=9&id_skin={skin}";
 
-        UnityWebRequest request = UnityWebRequest.Post(url,LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
+        UnityWebRequest request = UnityWebRequest.Post(url, LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
         request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
         yield return request.SendWebRequest();
 
@@ -175,6 +176,9 @@ public class StoreScene : MonoBehaviour
 
         return null;
     }
+
+
+
 
 
     // Update is called once per frame
