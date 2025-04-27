@@ -86,11 +86,10 @@ public class LoginAPI : MonoBehaviour
         using (UnityWebRequest web = UnityWebRequest.Get(JSONurl))
         {
             web.certificateHandler = new ForceAcceptAll();
-            web.timeout = 10; // Reduced timeout to be more responsive
             
             Debug.Log("Web request started - pre yield return");
             
-            // Simple approach - just use the built-in Unity coroutine system
+          
             yield return web.SendWebRequest();
             
             Debug.Log($"Web request completed with result: {web.result}");

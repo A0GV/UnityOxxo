@@ -27,7 +27,7 @@ public class LogicForBuy : MonoBehaviour
 
         if (web.result != UnityWebRequest.Result.Success)
         {
-            UnityEngine.Debug.Log("Error API: " + web.error);
+            Debug.Log("Error API: " + web.error);
         }
         else
         {
@@ -87,8 +87,8 @@ public class LogicForBuy : MonoBehaviour
     }
     void Awake()
     {
-        StartCoroutine(GetElotes());
         StartCoroutine(GetSkinsbuyed());
+        StartCoroutine(GetElotes());
     }
 
     // Update is called once per frame

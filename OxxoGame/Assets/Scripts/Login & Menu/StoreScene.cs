@@ -1,8 +1,10 @@
 using System.Collections;
 using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 using UnityEngine.UI;
 
 public class StoreScene : MonoBehaviour
@@ -17,6 +19,7 @@ public class StoreScene : MonoBehaviour
     public Sprite[] spSombreros;
     public Button[] Adquiridos;
     public Button buy;
+    public Text restante;
 
 
     public void GoBackToMenu()
@@ -34,18 +37,19 @@ public class StoreScene : MonoBehaviour
         {
             // Restar el costo
             saldoActual -= dinero;
-            StartCoroutine(Updatemoney(dinero));
+            StartCoroutine(Updatemoney(dinero * -1));
 
             PlayerPrefs.SetInt("Elotes", saldoActual);
 
             PlayerPrefs.SetInt("id_skin", idItem);
             PlayerPrefs.Save();
 
-
+            restante.text = saldoActual.ToString();
             Debug.Log($"Skin comprada: {idItem}, saldo restante: {saldoActual}");
 
             comprar.SetActive(true);
             articulo.SetActive(false);
+            StartCoroutine(FirstBuy(idItem));
         }
         else
         {
@@ -62,7 +66,6 @@ public class StoreScene : MonoBehaviour
 
     public void ShowItem(int itemId)
     {
-        // Asigna el valor al campo de la clase, no reasignes el parámetro
         this.idItem = itemId;
 
         switch (itemId) // Usa el parámetro para el switch
@@ -124,7 +127,7 @@ public class StoreScene : MonoBehaviour
             // Ajustamos la comparación: i+1 para convertir índice (0-based) a ID (1-based)
             if (i + 1 == currentSkinId)
             {
-                Debug.Log($"El sombrero {i + 1} ha sido equipado - mostrando botón de quitar");
+                Debug.Log($"El sombrero {i} ha sido equipado - mostrando botón de quitar");
                 Adquiridos[i].gameObject.SetActive(true);
             }
             else
@@ -143,7 +146,7 @@ public class StoreScene : MonoBehaviour
         // Use form data para agregar los datos al JSON
         WWWForm form = new WWWForm();
         form.AddField("id_usuario", LoginAPI.UserId.ToString());
-        form.AddField("id_juego", 3);
+        form.AddField("id_juego", 0);
         form.AddField("monedas", monedas);
         form.AddField("exp", 0);
 
@@ -161,22 +164,58 @@ public class StoreScene : MonoBehaviour
             Debug.Log("Se agregó todo :D");
         }
     }
-    IEnumerator FirstBuy(int skin)
+    public IEnumerator FirstBuy(int skin)
     {
-        string url = $"https://localhost:7119/Login/NewCompra?userId=9&id_skin={skin}";
+        string url = $"https://localhost:7119/Login/NewCompra?userId={LoginAPI.UserId}&id_skin={skin + 1}";
 
         UnityWebRequest request = UnityWebRequest.Post(url, LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
         request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
         yield return request.SendWebRequest();
 
     }
-    IEnumerator UpdateSkin(int Skin)
+    public IEnumerator UpdateSkin(int Skin)
+{
+    Debug.Log("Llego al Ienumertar");
+
+    string url = "https://localhost:7119/Login/Actualizaractivo";
+
+    // Create form data
+    WWWForm form = new WWWForm();
+    form.AddField("userId", LoginAPI.UserId.ToString());
+    form.AddField("id_skin", Skin);
+
+    Debug.Log($"Sending request to: {url}");
+
+    // Create a POST request but override the method to PUT
+    UnityWebRequest request = UnityWebRequest.Post(url, form);
+    request.method = "PUT";  // Override to PUT
+    request.certificateHandler = new ForceAcceptAll();
+
+    yield return request.SendWebRequest();
+    Debug.Log($"Actualizando skin: {Skin}");
+
+    if (request.result != UnityWebRequest.Result.Success)
     {
-        string url = $"https://localhost:7119/Login/Actualizar activo?userId=9&id_skin{Skin}";
-
-        return null;
+        Debug.LogError($"Error en la solicitud: {request.error}");
+        Debug.LogError($"Código HTTP: {request.responseCode}");
+        Debug.LogError($"Respuesta: {request.downloadHandler.text}");
     }
+    else
+    {
+        Debug.Log("Solicitud exitosa");
+        Debug.Log($"Respuesta: {request.downloadHandler.text}");
 
+        PlayerPrefs.SetInt("id_skin", Skin);
+        PlayerPrefs.Save();
+        GoBackToMenu();
+    }
+}
+
+    public void changeSkin(int skin)
+    {
+        StartCoroutine(UpdateSkin(skin));
+        Debug.Log("Llego a la llmada de la funcion");
+    }
 
 
 
