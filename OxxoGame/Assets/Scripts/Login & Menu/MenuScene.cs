@@ -54,12 +54,6 @@ public class MenuScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    // Exits the game application
-    public void ExitGame(){
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
-    }
-
     // Gets elotes totales
     IEnumerator GetElotes() 
     {
