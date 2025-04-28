@@ -54,6 +54,14 @@ public class MenuScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    // Exits the game application
+    public void ExitGame(){
+        // UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
+        SceneManager.LoadScene("LoginScene"); // Cambia a la escena de login
+    }
+
+
     // Gets elotes totales
     IEnumerator GetElotes() 
     {

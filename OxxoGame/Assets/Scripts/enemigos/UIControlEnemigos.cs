@@ -162,6 +162,7 @@ public class UIControlEnemigos : MonoBehaviour
     {
         Debug.Log("Saliendo al menú...");
         Time.timeScale = 1; // Asegurarse de que el tiempo esté en escala normal
+        TutorialController.saltarTutorial = false; // Reinicia el valor al cargar el menú
         SceneManager.LoadScene("MenuScene");
     }
 }
