@@ -19,8 +19,12 @@ public class StoreScene : MonoBehaviour
     public Button[] Adquiridos;
     public Button buy;
     public Text restante;
+    public Text saldoActual;
 
-
+    void Awake()
+    {
+        saldoActual.text=LogicForBuy.elotesstore.ToString();
+    }
     public void GoBackToMenu()
     {
         SceneManager.LoadScene("MenuScene");
@@ -165,7 +169,7 @@ public class StoreScene : MonoBehaviour
     }
     public IEnumerator FirstBuy(int skin)
     {
-        string url = $"https://localhost:7119/Login/NewCompra?userId={LoginAPI.UserId}&id_skin={skin + 1}";
+        string url = $"https://localhost:7119/Login/NewCompra?userId={LoginAPI.UserId}&id_skin={skin+1}";
 
         UnityWebRequest request = UnityWebRequest.Post(url, LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
         request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
