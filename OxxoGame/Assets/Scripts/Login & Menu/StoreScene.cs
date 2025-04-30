@@ -23,7 +23,15 @@ public class StoreScene : MonoBehaviour
 
     void Awake()
     {
-        saldoActual.text=LogicForBuy.elotesstore.ToString();
+        if (LogicForBuy.elotesstore == 0)
+        {
+            saldoActual.text = PlayerPrefs.GetString("elotesforstore");
+        }
+        else
+        {
+
+            saldoActual.text = LogicForBuy.elotesstore.ToString();
+        }
     }
     public void GoBackToMenu()
     {
@@ -128,9 +136,9 @@ public class StoreScene : MonoBehaviour
         for (int i = 0; i < Adquiridos.Length; i++)
         {
             // Ajustamos la comparación: i+1 para convertir índice (0-based) a ID (1-based)
-            if (i+1 == currentSkinId)
+            if (i + 1 == currentSkinId)
             {
-                Debug.Log($"El sombrero {i+1} ha sido equipado - mostrando botón de quitar");
+                Debug.Log($"El sombrero {i + 1} ha sido equipado - mostrando botón de quitar");
                 Adquiridos[i].gameObject.SetActive(true);
             }
             else
@@ -169,60 +177,60 @@ public class StoreScene : MonoBehaviour
     }
     public IEnumerator FirstBuy(int skin)
     {
-        string url = $"https://localhost:7119/Login/NewCompra?userId={LoginAPI.UserId}&id_skin={skin+1}";
+        string url = $"https://localhost:7119/Login/NewCompra?userId={LoginAPI.UserId}&id_skin={skin + 1}";
 
         UnityWebRequest request = UnityWebRequest.Post(url, LoginAPI.UserId.ToString(), idItem.ToString()); // Para hacer un post 
         request.certificateHandler = new ForceAcceptAll(); // Para accept all de integradora
         yield return request.SendWebRequest();
 
     }
-public IEnumerator UpdateSkin(int Skin)
-{
-    Debug.Log($"UpdateSkin called with skin ID: {Skin}");
-
-    string url = "https://localhost:7119/Login/Actualizaractivo";
-    
-    // Create JSON payload - ensure this is the exact ID expected by the server
-    string jsonPayload = $"{{\"userId\":{LoginAPI.UserId},\"id_skin\":{Skin+1}}}";
-    byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
-    
-    Debug.Log($"Sending JSON: {jsonPayload}");
-
-    // Manually create the UnityWebRequest for PUT
-    UnityWebRequest request = new UnityWebRequest(url, "PUT");
-    request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-    request.downloadHandler = new DownloadHandlerBuffer();
-    request.SetRequestHeader("Content-Type", "application/json");
-    request.certificateHandler = new ForceAcceptAll();
-
-    // Send request
-    yield return request.SendWebRequest();
-    Debug.Log($"Actualizando skin: {Skin}");
-
-    if (request.result != UnityWebRequest.Result.Success)
+    public IEnumerator UpdateSkin(int Skin)
     {
-        Debug.LogError($"Error en la solicitud: {request.error}");
-        Debug.LogError($"Código HTTP: {request.responseCode}");
-        Debug.LogError($"Respuesta: {request.downloadHandler.text}");
+        Debug.Log($"UpdateSkin called with skin ID: {Skin}");
+
+        string url = "https://localhost:7119/Login/Actualizaractivo";
+
+        // Create JSON payload - ensure this is the exact ID expected by the server
+        string jsonPayload = $"{{\"userId\":{LoginAPI.UserId},\"id_skin\":{Skin + 1}}}";
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+
+        Debug.Log($"Sending JSON: {jsonPayload}");
+
+        // Manually create the UnityWebRequest for PUT
+        UnityWebRequest request = new UnityWebRequest(url, "PUT");
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.certificateHandler = new ForceAcceptAll();
+
+        // Send request
+        yield return request.SendWebRequest();
+        Debug.Log($"Actualizando skin: {Skin}");
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError($"Error en la solicitud: {request.error}");
+            Debug.LogError($"Código HTTP: {request.responseCode}");
+            Debug.LogError($"Respuesta: {request.downloadHandler.text}");
+        }
+        else
+        {
+            Debug.Log("Solicitud exitosa");
+            Debug.Log($"Respuesta: {request.downloadHandler.text}");
+
+            // Save the skin selection locally - make sure this ID matches what your UI expects
+            PlayerPrefs.SetInt("id_skin", Skin);
+            PlayerPrefs.Save();
+            GoBackToMenu();
+        }
     }
-    else
+
+    public void changeSkin(int skin)
     {
-        Debug.Log("Solicitud exitosa");
-        Debug.Log($"Respuesta: {request.downloadHandler.text}");
-
-        // Save the skin selection locally - make sure this ID matches what your UI expects
-        PlayerPrefs.SetInt("id_skin", Skin);
-        PlayerPrefs.Save();
-        GoBackToMenu();
+        // Add debug logging to track the skin ID
+        Debug.Log($"changeSkin called with parameter: {skin}");
+        StartCoroutine(UpdateSkin(skin));
     }
-}
-
-public void changeSkin(int skin)
-{
-    // Add debug logging to track the skin ID
-    Debug.Log($"changeSkin called with parameter: {skin}");
-    StartCoroutine(UpdateSkin(skin));
-}
 
 
 

@@ -18,7 +18,7 @@ public class LogicForBuy : MonoBehaviour
     IEnumerator GetElotes()
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
-        string JSONurl = "https://localhost:7119/manageCurrency/GetElotesTotal?id_logged=" + LoginAPI.UserId.Value; 
+        string JSONurl = "https://localhost:7119/manageCurrency/GetElotesTotal?id_logged=" + LoginAPI.UserId.Value;
         UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
@@ -33,6 +33,9 @@ public class LogicForBuy : MonoBehaviour
         {
             elotesstore = JsonConvert.DeserializeObject<int>(web.downloadHandler.text); // Necesitas especificar q está usando un <int> para deserialize
         }
+
+        Debug.Log("el GetElotes de LogicForBuy se activo");
+
 
         Debug.Log("Elotes: " + elotes);
     }

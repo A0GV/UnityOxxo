@@ -8,7 +8,7 @@ public class LoginAPI : MonoBehaviour
 {
     // Singleton instance
     public static LoginAPI Instance { get; private set; }
-    
+
     // User ID stored statically
     public static int? UserId { get; private set; }
 
@@ -19,10 +19,10 @@ public class LoginAPI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
-        DontDestroyOnLoad(gameObject); 
-        
+        DontDestroyOnLoad(gameObject);
+
         Debug.Log("LoginAPI initialized as singleton");
     }
 
@@ -38,7 +38,7 @@ public class LoginAPI : MonoBehaviour
         {
             request.certificateHandler = new ForceAcceptAll();
             request.timeout = 10; // Set timeout to 10 seconds
-            
+
             // Enviar la solicitud
             yield return request.SendWebRequest();
 
@@ -49,7 +49,7 @@ public class LoginAPI : MonoBehaviour
                 {
                     UserId = userId; // Guardar el ID del usuario
                     Debug.Log($"Login successful. User ID: {UserId}");
-                    
+
                     // Store skin data immediately after login
                     yield return GetSkinActiveLocal(UserId);
                 }
@@ -86,23 +86,23 @@ public class LoginAPI : MonoBehaviour
         using (UnityWebRequest web = UnityWebRequest.Get(JSONurl))
         {
             web.certificateHandler = new ForceAcceptAll();
-            
+
             Debug.Log("Web request started - pre yield return");
-            
-          
+
+
             yield return web.SendWebRequest();
-            
+
             Debug.Log($"Web request completed with result: {web.result}");
-            
+
             if (web.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Success getting skin data");
                 Debug.Log($"Response data: {web.downloadHandler.text}");
-                
+
                 try
                 {
                     var dataofNPC = JsonConvert.DeserializeObject<usuario_skin>(web.downloadHandler.text);
-                    PlayerPrefs.SetInt("id_skin", dataofNPC.id_skin-1);
+                    PlayerPrefs.SetInt("id_skin", dataofNPC.id_skin - 1);
                     PlayerPrefs.Save();
                     Debug.Log($"Skin ID {dataofNPC.id_skin} saved successfully to PlayerPrefs");
                 }
@@ -116,7 +116,7 @@ public class LoginAPI : MonoBehaviour
             {
                 Debug.LogError($"Failed to get skin. Result: {web.result}, Error: {web.error}");
                 Debug.LogError($"Response code: {web.responseCode}");
-                
+
                 // Try to log the response body even on error
                 if (web.downloadHandler != null && !string.IsNullOrEmpty(web.downloadHandler.text))
                 {
@@ -124,6 +124,13 @@ public class LoginAPI : MonoBehaviour
                 }
             }
         }
+    }
+
+    // Añade esto a LoginAPI.cs
+    public static void Logout()
+    {
+        UserId = null;
+        Debug.Log("User logged out successfully");
     }
 
     // Add a public method to retrieve skin data manually if needed

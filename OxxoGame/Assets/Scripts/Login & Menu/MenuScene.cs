@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Networking; 
-using Newtonsoft.Json; 
+using UnityEngine.Networking;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections;
 using System;
 
 public class MenuScene : MonoBehaviour
-{  
+{
     // Sonido
     private AudioSource audioSource;
     public AudioClip buttonSound;
     public Text eloteText;
     public Text expText;
-    public Text rachaText; 
-    int idUsuario ; // ID del usuario, se asigna al iniciar sesión
+    public Text rachaText;
+    int idUsuario; // ID del usuario, se asigna al iniciar sesión
 
     // Poner sonido
     void Awake()
@@ -31,7 +31,7 @@ public class MenuScene : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay id usuario" + idUsuario); 
+            Debug.Log("No hay id usuario" + idUsuario);
         }
 
         // Gets valores de usuario
@@ -41,7 +41,7 @@ public class MenuScene : MonoBehaviour
     }
 
     // Manda a escena de juego
-    public void StartToPlay(string sceneName) 
+    public void StartToPlay(string sceneName)
     {
         StartCoroutine(PlaySoundAndLoad(sceneName));
     }
@@ -55,19 +55,22 @@ public class MenuScene : MonoBehaviour
     }
 
     // Exits the game application
-    public void ExitGame(){
+    public void ExitGame()
+    {
         // UnityEditor.EditorApplication.isPlaying = false;
         //Application.Quit();
         SceneManager.LoadScene("LoginScene"); // Cambia a la escena de login
+        LoginAPI.Logout(); // Llama al nuevo método
+        ;
     }
 
 
     // Gets elotes totales
-    IEnumerator GetElotes() 
+    IEnumerator GetElotes()
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
         string JSONurl = "https://localhost:7119/manageCurrency/GetElotesTotal?id_logged=" + idUsuario; // Cambiar id_usuario
-        UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
+        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
 
@@ -85,14 +88,15 @@ public class MenuScene : MonoBehaviour
         Debug.Log("Elotes: " + elotes);
 
         eloteText.text = elotes.ToString();
+        PlayerPrefs.SetString("elotesforstore", elotes.ToString());
     }
 
     // Gets exp total
-    IEnumerator GetExp() 
+    IEnumerator GetExp()
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
         string JSONurl = "https://localhost:7119/manageCurrency/GetExpTotal?id_logged=" + idUsuario; // Cambiar id_usuario
-        UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
+        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
 
@@ -110,11 +114,11 @@ public class MenuScene : MonoBehaviour
     }
 
     // Gets racha total
-    IEnumerator GetRacha() 
+    IEnumerator GetRacha()
     {
         // Usa id de jugador para checar su exp, cambiar jugando si están en otro juego. Cabmiar diaControl cuando funcione validación de cuenta de usuario
         string JSONurl = "https://localhost:7119/manageCurrency/GetRacha?id_logged=" + idUsuario; // Cambiar id_usuario
-        UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
+        UnityWebRequest web = UnityWebRequest.Get(JSONurl);
         web.certificateHandler = new ForceAcceptAll();
         yield return web.SendWebRequest();
 
@@ -135,13 +139,13 @@ public class MenuScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
